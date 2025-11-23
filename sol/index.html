@@ -6,6 +6,67 @@
     <title>一個可以讓貓打翻咖啡的地方</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../favicon.png">
+    <style>
+        .solution-item {
+            border: 0.125rem solid var(--catOrange); /* 2px */
+            margin-bottom: 1rem;
+            border-radius: 0.5rem; /* 8px 圓角 */
+            background-color: var(--catCream);
+            overflow: hidden; /* 確保內容不溢出圓角 */
+        }
+
+        /* 標題 (Summary) 樣式 */
+        .solution-item summary {
+            display: block; /* 讓 summary 填滿寬度 */
+            padding: 1rem 1.25rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: var(--catOrange);
+            color: white; /* 確保文字可見 */
+            transition: background-color 0.2s;
+            user-select: none; /* 防止內容被選中時影響美觀 */
+        }
+
+        .solution-item summary:hover {
+            background-color: #d8894d; /* 稍暗的橘色 */
+        }
+
+        /* details 展開時的箭頭隱藏或調整（可選） */
+        .solution-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .solution-item summary::marker {
+            display: none;
+        }
+
+        /* 內容區塊樣式 */
+        .solution-detail {
+            padding: 1.25rem;
+            background-color: white; /* 內容使用白色底 */
+            border-top: 0.0625rem solid var(--catGrayBase);
+        }
+
+        .solution-detail h3 {
+            color: var(--catBrown);
+            margin-top: 0.5rem;
+            border-bottom: 0.125rem dotted var(--catGrayBase); /* 底部虛線 */
+            padding-bottom: 0.25rem;
+        }
+
+        .solution-video-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--catBrown);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.25rem;
+        }
+        .solution-video-link:hover {
+            background-color: #55443d;
+        }
+    </style>
 </head>
 <body>
 

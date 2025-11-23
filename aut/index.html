@@ -6,6 +6,227 @@
     <title>一個可以讓貓打翻咖啡的地方</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../favicon.png">
+    <style>
+    /* --- 區塊佈局重設 --- */
+    main {
+        padding-top: 0; /* 讓第一個 section 可以延伸到 header 下方 */
+    }
+
+    /* 頂部介紹區塊 (作者簡介與頭像) */
+    .author-intro-story {
+        max-width: 55rem; /* 稍微放寬一點 */
+        margin: 0 auto;
+        padding: 3.75rem 1.25rem 2rem; /* 調整底部間距 */
+        text-align: center;
+        background-color: var(--catCream); /* 淺色背景，給介紹區視覺提升 */
+    }
+
+    /* --- 頭像設計優化 --- */
+    .author-photo-center {
+        width: 12rem; /* 放大頭像 */
+        height: 12rem;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1.5rem;
+        
+        /* 增加貓咪主題邊框：橘色外框 + 陰影，讓頭像成為焦點 */
+        border: 0.375rem solid var(--catOrange); /* 6px 實心橘色邊框 */
+        box-shadow: 0 0.5rem 1rem rgba(90, 62, 54, 0.2); /* 深棕色陰影 */
+    }
+
+    /* 標籤容器，用於佈局 */
+    .author-tags-container {
+        display: flex; /* 啟用 Flexbox 佈局 */
+        flex-wrap: wrap; /* 標籤太多時允許換行 */
+        justify-content: center; /* 標籤居中對齊 */
+        gap: 0.75rem; /* 12px -> 0.75rem (標籤間距) */
+        margin-bottom: 2rem; /* 與下方段落的間距 */
+    }
+
+    /* 標籤基本樣式 */
+    .tag {
+        padding: 0.4rem 0.8rem;
+        border: 1px solid var(--catBrown);
+        border-radius: 3rem; /* 輕微圓角 */
+        font-size: 0.95em;
+        font-weight: bold;
+        white-space: nowrap; /* 防止標籤內容換行 */
+        /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
+        /* background-color: var(--catBrown); */
+        color: var(--catBrown);
+    }
+
+    /* --- 標題與段落 --- */
+
+    .sub-heading {
+        font-size: 1.1em;
+        color: var(--catOrange);
+        font-weight: 500;
+        margin-bottom: 2rem;
+    }
+
+    .story-paragraph {
+        font-size: 1.05em;
+        line-height: 1.8;
+        text-align: justify; /* 讓簡介文字置中更簡潔 */
+        margin: 1.25rem auto;
+        max-width: 40rem; /* 限制段落寬度，提高可讀性 */
+        color: var(--catDarkText);
+    }
+
+    /* --- 區塊 2: 貓咪語錄區塊 --- */
+    .cat-quote-section {
+        background-color: var(--catBrown); /* 深色背景，與頂部區塊形成強烈對比 */
+        padding: 2.5rem 1.25rem;
+        text-align: center;
+        color: white;
+        margin-bottom: 5rem;
+    }
+
+    .cat-quote-box {
+        max-width: 45rem;
+        margin: 0 auto;
+    }
+
+    /* 確保 cat-quote 有相對定位，才能讓子元素準確定位 */
+    .cat-quote {
+        font-family: serif;
+        font-size: 1.6em;
+        font-style: italic;
+        line-height: 1.5;
+        margin-bottom: 0.5rem;
+        position: relative; /* 確保子元素絕對定位的參考點 */
+        padding: 0 1.5rem; /* 增加左右內邊距，為大引號留出空間 */
+    }
+
+    .cat-quote::before,
+    .cat-quote::after {
+        content: '❝';
+        font-family: Arial, sans-serif; /* 使用更具視覺衝擊力的字體 */
+        font-size: 4em; /* 放大引號，作為視覺重點 */
+        color: var(--catOrange); /* 使用主題橘色 */
+        position: absolute;
+        opacity: 0.5; /* 降低透明度，讓它看起來是背景裝飾 */
+        line-height: 1; /* 調整行高以控制定位 */
+        z-index: 0; /* 確保引號在文字之下 */
+    }
+
+    /* 左上角引號 */
+    .cat-quote::before {
+        left: 0;
+        top: -1.5rem; /* 移到行文字上方 */
+        transform: translateX(-50%); /* 微調置中 */
+    }
+
+    /* 右下角引號 */
+    .cat-quote::after {
+        content: '❞'; /* 使用不同的引號，更美觀 */
+        right: 0;
+        bottom: -1rem; /* 移到行文字下方 */
+        transform: rotate(180deg) translateX(-50%); /* 旋轉並微調置中 */
+    }
+    .quote-source {
+        font-size: 0.9em;
+        color: rgba(255, 255, 255, 0.7);
+        text-align: right;
+        display: block;
+        margin-top: 1rem;
+    }
+
+
+    /* --- 區塊 3: 技能 Grid 佈局 --- */
+    .author-skills-contact {
+        background-color: rgba(244, 162, 97, 0.1); /* 淺橘色底 */
+        padding: 3rem 1.25rem;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        font-size: 2rem;
+        color: var(--catBrown);
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+        gap: 1.875rem;
+        max-width: 62.5rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .skill-item {
+        background-color: white;
+        padding: 1.5625rem;
+        border-radius: 0.625rem;
+        /* 略微抬升的陰影，讓卡片更有層次感 */
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); 
+        transition: transform 0.3s ease;
+    }
+
+    .skill-item:hover {
+        transform: translateY(-0.25rem); /* 懸停時略微上浮 */
+        box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+    }
+
+    .skill-icon {
+        font-size: 3em; /* 圖標放大 */
+        display: block;
+        margin-bottom: 0.625rem;
+    }
+    .skill-item h3 {
+        color: var(--catBrown);
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+    .skill-item p {
+        font-size: 0.95em;
+        color: var(--catDarkText);
+    }
+
+    /* --- 區塊 4: 聯繫按鈕組 --- */
+    .contact-section {
+        padding: 2.5rem 1.25rem 3.75rem;
+        background-color: var(--catCream); /* 與頂部區塊顏色一致 */
+    }
+
+    .contact-buttons {
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.9375rem;
+        max-width: 50rem;
+    }
+
+    .contact-btn {
+        padding: 0.75rem 1.5625rem;
+        border-radius: 3.125rem;
+        text-decoration: none;
+        font-weight: bold;
+        /* 預設使用主題深棕色 */
+        color: white;
+        background-color: var(--catBrown);
+        transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .contact-btn:hover {
+        background-color: var(--catOrange); /* 懸停時變為橘色 */
+        transform: scale(1.05);
+    }
+
+    /* RWD 調整 */
+    @media screen and (max-width: 37.5rem) {
+        .story-paragraph {
+            text-align: left; /* 在小螢幕上靠左對齊通常更好讀 */
+        }
+        .cat-quote {
+            font-size: 1.4em;
+        }
+    }
+    </style>
 </head>
 <body>
 
@@ -29,55 +250,69 @@
         </div>
     </header>
 
-<main>
+    <main>
 
-    <section class="author-intro-story" style="text-align: center;">
-
-        <img src="author.png" alt="獨立製作者 Shengle" class="author-photo-center">
-        
-        <h1>關於作者－－Shengle</h1>
-        <h2 class="sub-heading">獨立開發者 / 硬體設計師 / 攝影愛好者 / SEO文章撰寫</h2>
-        
-        <p class="story-paragraph">我是 Shengle，一名硬體工程師，喜歡到處走走的 SUPER I 人，每天都要和 AI 聊天，無可救藥的水豚控。熱愛攝影、文學創作與登山健行。目前以「撰風」之名於網路創作，經營個人網站撰風 I 人旅行誌，並為漫步時光的編輯。</p>
-
-    </section>
-
-    <section>
-    
-        <div class="skills-grid">
-            <div class="skill-item">
-                <span class="skill-icon">🖥️</span>
-                <h3>核心程式設計</h3>
-                <p>JavaScript、HTML、Python，搭配 VIVERSE EXTENSION</p>
+        <section class="author-intro-story primary-section">
+            <div class="intro-content">
+                <img src="author.png" alt="獨立製作者 Shengle" class="author-photo-center">
+                
+                <h1>關於作者－－Shengle</h1>
+                <div class="author-tags-container">
+                    <span class="tag">遊戲獨立開發者</span>
+                    <span class="tag">光學硬體工程師</span>
+                    <span class="tag">攝影愛好者</span>
+                    <span class="tag">SEO文章撰寫</span>
+                </div>
+                
+                <p class="story-paragraph">我是 Shengle，一名硬體工程師，喜歡到處走走的 SUPER I 人，每天都要和 AI 聊天，無可救藥的水豚控。熱愛攝影、文學創作與登山健行。目前以「撰風」之名於網路創作，經營個人網站撰風 I 人旅行誌，並為漫步時光的編輯。</p>
             </div>
-            <div class="skill-item">
-                <span class="skill-icon">💡</span>
-                <h3>遊戲與關卡設計</h3>
-                <p>故事設計、邏輯解謎、虛擬展覽、互動遊戲</p>
-            </div>
-            <div class="skill-item">
-                <span class="skill-icon">🎨</span>
-                <h3>視覺與動畫</h3>
-                <p>統合 AI 美術設計－－靜態圖片、動態圖片、影片生成</p>
-            </div>
-        </div>
+        </section>
         
-    </section>
+        <section class="cat-quote-section">
+            <div class="cat-quote-box">
+                <p class="cat-quote">
+                    在貓咪打翻咖啡前，完成你的程式碼。那是唯一的 deadline。
+                </p>
+                <p class="quote-source">— 虛擬貓咪，程式哲學家</p>
+            </div>
+        </section>
 
-    <section>
+        <section class="author-skills-contact secondary-section">
+            <h2 class="section-title">我的技能樹</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <span class="skill-icon">🖥️</span>
+                    <h3>核心程式設計</h3>
+                    <p>JavaScript、HTML、Python，搭配 VIVERSE EXTENSION</p>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">💡</span>
+                    <h3>遊戲與關卡設計</h3>
+                    <p>故事設計、邏輯解謎、虛擬展覽、互動遊戲</p>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🎨</span>
+                    <h3>視覺與動畫</h3>
+                    <p>統合 AI 美術設計－－靜態圖片、動態圖片、影片生成</p>
+                </div>
+            </div>
+            
+        </section>
 
-        <div class="contact-buttons">
-            <a href="https://jfsblog.com/" target="_blank" class="contact-btn social-btn">個人網站</a>
-            <a href="https://strolltimes.com/" target="_blank" class="contact-btn social-btn">漫步時光</a>
-            <a href="https://www.facebook.com/strolltimes/" target="_blank" class="contact-btn social-btn">Facebook</a>
-            <a href="https://www.instagram.com/strolltimes/" target="_blank" class="contact-btn social-btn">Instagram</a>
-            <a href="https://github.com/jfsblog" target="_blank" class="contact-btn social-btn">GitHub</a>
-            <a href="https://worlds.viverse.com/zh-TW/profile/shengle" target="_blank" class="contact-btn social-btn">VIVERSE</a>
-        </div>
+        <section class="contact-section">
+            <h2 class="section-title">與我聯繫</h2>
+            <div class="contact-buttons">
+                <a href="https://jfsblog.com/" target="_blank" class="contact-btn">撰風旅食</a>
+                <a href="https://strolltimes.com/" target="_blank" class="contact-btn">漫步時光</a>
+                <a href="https://www.facebook.com/strolltimes/" target="_blank" class="contact-btn">Facebook</a>
+                <a href="https://www.instagram.com/strolltimes/" target="_blank" class="contact-btn">Instagram</a>
+                <a href="https://github.com/jfsblog" target="_blank" class="contact-btn">GitHub</a>
+                <a href="https://worlds.viverse.com/zh-TW/profile/shengle" target="_blank" class="contact-btn">VIVERSE</a>
+            </div>
+        </section>
 
-    </section>
-
-</main>
+    </main>
 
     <footer style="text-align: center; padding: 20px; background-color: var(--catBrown); color: var(--catCream);">
         Copyright © Shengle

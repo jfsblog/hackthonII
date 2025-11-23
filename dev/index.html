@@ -6,6 +6,48 @@
     <title>一個可以讓貓打翻咖啡的地方</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../favicon.png">
+    <style>
+        .ai-application-card,
+        .project-challenge-card {
+            /* 外觀：讓整體像一張卡片 */
+            background-color: white; /* 白色底 */
+            /* border: 1px solid var(--catGrayBase); */
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
+        }
+
+        /* H3 標籤樣式：使其看起來像卡片的標籤或橫幅 */
+        .ai-application-card h3,
+        .project-challenge-card h3 {
+            /* 核心背景和顏色 */
+            background-color: var(--catOrange); /* 橘色強調色 */
+            color: white;
+            padding: 0.75rem 1.25rem;
+            margin-top: 0; /* 移除瀏覽器預設的頂部間距 */
+            
+            /* 圓角處理：只保留上方圓角 */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            font-size: 1.2rem;
+            letter-spacing: 0.05rem;
+        }
+
+        /* P 內容樣式 */
+        .ai-application-card p,
+        .project-challenge-card p {
+            padding: 1.25rem; /* 增加內邊距，讓內容透氣 */
+            line-height: 1.8; /* 增加行距，提升可讀性 */
+            color: var(--catDarkText); /* 確保文字顏色清晰 */
+            font-size: 1rem;
+        }
+
+        /* 圖標樣式 (如果使用 Font Awesome) */
+        .ai-application-card h3 i,
+        .project-challenge-card h3 i {
+            margin-right: 0.5rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -46,6 +88,8 @@
     </section>
 
     <section>
+
+        <h2>開發一覽表</h2>
 
         <img src="work_time_gantt.png" width="100%" alt="">
 
@@ -456,6 +500,42 @@
                 </tr>
             </tbody>
         </table>
+    </section>
+
+    <section>
+        <h2>開發模組</h2>
+        TBD
+    </section>
+
+    <section>
+        <h2>開發心得</h2>
+            <div class="ai-application-card">
+                <h3>
+                    <i class="fas fa-paw"></i> AI應用說明
+                </h3>
+                <p>
+                    TBD
+                </p>
+            </div>
+
+            <div class="project-challenge-card">
+                <h3>
+                    <i class="fas fa-lightbulb"></i> 專案挑戰與突破
+                </h3>
+                <p>
+                    TBD
+                </p>
+            </div>
+
+            <div class="project-challenge-card">
+                <h3>
+                    <i class="fas fa-lightbulb"></i> 時間侷促下的取捨
+                </h3>
+                <p>
+                    TBD
+                </p>
+            </div>
+
     </section>
 
 
