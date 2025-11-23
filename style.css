@@ -1,0 +1,254 @@
+:root {
+    --catCream: #FFF8EA;
+    --catOrange: #F4A261;
+    --catBrown: #5A3E36;
+    --catGrayBase: #AAAAAA;
+    --catGrayHover: #C0C0C0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--catCream);
+    color: var(--catBrown);
+}
+
+/* Header */
+header {
+    background-color: var(--catOrange);
+    text-align: center;
+    font-size: 1rem;
+    color: var(--catCream);
+}
+
+header img {
+    max-width: 500px;
+}
+
+/* 全局超連結 */
+a {
+    color: var(--catBrown);
+    text-decoration: none;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+/* hover 狀態 */
+a:hover {
+    color: var(--catOrange);
+    text-decoration: underline;
+}
+
+/* 特別處理 table 裡的超連結 */
+table a {
+    color: var(--catBrown);
+}
+
+table a:hover {
+    color: var(--catOrange);
+    text-decoration: underline;
+}
+
+/* Nav */
+#main-nav {
+    width: 100%;
+    background-color: var(--catBrown);
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    position: relative; /* 作為固定和絕對定位的基準點 */
+    top: 0;
+    transition: top 0.3s;
+}
+
+#main-nav.fixed {
+    position: fixed;  /* 滾動後固定頂部 */
+    top: 0;
+}
+
+#main-nav a {
+    text-decoration: none;
+    color: var(--catCream);
+    padding: 1rem 1.5rem;
+    transition: background-color 0.3s;
+}
+
+#main-nav a:hover {
+    background-color: var(--catGrayHover);
+    color: var(--catBrown);
+}
+
+/* 漢堡按鈕在大螢幕時隱藏 */
+#main-nav a.icon {
+    display: none; 
+}
+
+
+/* 手機版響應 */
+@media screen and (max-width: 768px) {
+
+    h1 {
+        padding-top: 3rem;
+    }
+
+    #main-nav {
+        flex-direction: column; /* 將選單項目改為垂直堆疊 */
+        align-items: flex-start; /* 讓項目靠左對齊 */
+    }
+
+    /* 1. 預設隱藏所有非 icon 的連結 */
+    #main-nav a:not(.icon) {
+        display: none;
+        width: 100%;
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+    /* 2. 漢堡按鈕 (icon) 始終顯示，並定位在右上角 */
+    #main-nav a.icon {
+        display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 1rem 1.5rem;
+            background-color: var(--catBrown);
+            width: 100%;
+    }
+    
+    #main-nav.responsive a {
+        display: block;
+    }
+    
+    #main-nav.responsive a:first-of-type {
+        margin-top: 3.5rem; 
+    }
+
+    #main-nav.responsive a.icon {
+        margin-top: 0;
+    }
+}
+
+h1 { text-align: center; }
+
+h2 {
+    border-bottom: 2px solid var(--catOrange);
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: var(--catOrange);
+    color: var(--catCream);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--catBrown);
+    color: var(--catCream);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--catBrown);
+    color: var(--catCream);
+    margin-top: 2rem;
+}
+
+#backtotop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    padding: 0.5rem 0.8rem;
+    font-size: 1.5rem;
+    background-color: var(--catOrange);
+    color: var(--catCream);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#backtotop:hover {
+    background-color: var(--catBrown);
+    color: var(--catCream);
+}
+
+
+/* 章節框 */
+
+.section-wrapper {
+    padding: 2rem 2rem 2rem 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: #FFF0D9; /* 輕微不同於 body 的背景色 */
+    /* border: 2px solid var(--catOrange); */
+    border-radius: 10px;
+    scroll-margin-top: 60px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* h2 標題和框融為一體 */
+.section-wrapper h2 {
+    background-color: var(--catOrange);
+    color: var(--catCream);
+    margin: -2rem -2rem 1rem -2rem; /* 貼齊框的上方和左右 */
+    padding: 1rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: none;
+    text-align: center;
+}
+
+/* details 配色 */
+details {
+    background-color: var(--catBrown);
+    color: var(--catCream);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* details 展開狀態 */
+details[open] {
+    background-color: var(--catOrange);
+    color: var(--catCream);
+}
+
+/* summary */
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* summary hover */
+summary:hover {
+    color: #FFF0D9; /* 與章節背景不同，明顯區分 */
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+th, td {
+    border: 1px solid var(--catBrown);
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--catOrange);
+    color: var(--catCream);
+    cursor: pointer;
+}
+
+tr:nth-child(even) { background-color: var(--catCream); }
+tr:nth-child(odd) { background-color: #FFEFD5; }

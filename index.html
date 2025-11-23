@@ -2,353 +2,105 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>WEBSITE PROTOTYPE</title>
+    <title>一個可以讓貓打翻咖啡的地方</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
-        :root {
-            --catCream: #FFF8EA;
-            --catOrange: #F4A261;
-            --catBrown: #5A3E36;
-            --catGrayBase: #AAAAAA;
-            --catGrayHover: #C0C0C0;
-        }
+    a.btn{
+        color: white;
+    }
+    a.btn:hover{
+        text-decoration: none;
+    }
+    .btn {
+        display: inline-block;
+        background-color: #1a73e8;
+        color: white;
+        font-weight: bold;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background-color 0.3s, transform 0.2s;
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: var(--catCream);
-            color: var(--catBrown);
-        }
-
-        /* Header */
-        header {
-            background-color: var(--catOrange);
-            padding: 1rem;
-            text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--catCream);
-        }
-
-        /* 全局超連結 */
-        a {
-            color: var(--catBrown);
-            text-decoration: none;
-            transition: color 0.3s, text-decoration 0.3s;
-        }
-
-        /* hover 狀態 */
-        a:hover {
-            color: var(--catOrange);
-            text-decoration: underline;
-        }
-
-        /* 特別處理 table 裡的超連結 */
-        table a {
-            color: var(--catBrown);
-        }
-
-        table a:hover {
-            color: var(--catOrange);
-            text-decoration: underline;
-        }
-
-        /* Nav */
-        #main-nav {
-            width: 100%;
-            background-color: var(--catBrown);
-            display: flex;
-            justify-content: center;
-            z-index: 1000;
-            position: relative; /* 一開始就在正常文檔流中 */
-            top: 0;
-            transition: top 0.3s;
-        }
-
-        #main-nav.fixed {
-            position: fixed;  /* 滾動後固定頂部 */
-            top: 0;
-        }
-
-        #main-nav a {
-            text-decoration: none;
-            color: var(--catCream);
-            padding: 1rem 1.5rem;
-            transition: background-color 0.3s;
-        }
-
-        #main-nav a:hover {
-            background-color: var(--catGrayHover);
-            color: var(--catBrown);
-        }
-
-        /* Section wrapper */
-        .section-wrapper {
-            padding-top: 4rem;
-            padding-bottom: 3rem;
-            max-width: 900px;
-            margin: auto;
-            scroll-margin-top: 60px; /* 避免標題被 nav 遮住 */
-        }
-
-        h1 { text-align: center; }
-
-        h2 {
-            border-bottom: 2px solid var(--catOrange);
-            padding-bottom: 0.3rem;
-            margin-bottom: 1rem;
-        }
-
-        button {
-            background-color: var(--catOrange);
-            color: var(--catCream);
-            border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: var(--catBrown);
-            color: var(--catCream);
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: var(--catBrown);
-            color: var(--catCream);
-            margin-top: 2rem;
-        }
-
-        #backtotop {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-            padding: 0.5rem 0.8rem;
-            font-size: 1.5rem;
-            background-color: var(--catOrange);
-            color: var(--catCream);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        #backtotop:hover {
-            background-color: var(--catBrown);
-            color: var(--catCream);
-        }
-
-        /* 章節框 */
-        .section-wrapper {
-            padding: 2rem 2rem 2rem 2rem;
-            max-width: 900px;
-            margin: 2rem auto;
-            background-color: #FFF0D9; /* 輕微不同於 body 的背景色 */
-            border: 2px solid var(--catOrange);
-            border-radius: 10px;
-            scroll-margin-top: 60px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        /* h2 標題和框融為一體 */
-        .section-wrapper h2 {
-            background-color: var(--catOrange);
-            color: var(--catCream);
-            margin: -2rem -2rem 1rem -2rem; /* 貼齊框的上方和左右 */
-            padding: 1rem;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-            border-bottom: none;
-        }
-
-        /* details 配色 */
-        details {
-            background-color: var(--catBrown);
-            color: var(--catCream);
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        /* details 展開狀態 */
-        details[open] {
-            background-color: var(--catOrange);
-            color: var(--catCream);
-        }
-
-        /* summary */
-        summary {
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        /* summary hover */
-        summary:hover {
-            color: #FFF0D9; /* 與章節背景不同，明顯區分 */
-        }
-
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 2rem;
-        }
-
-        th, td {
-            border: 1px solid var(--catBrown);
-            padding: 0.5rem;
-            text-align: left;
-        }
-
-        th {
-            background-color: var(--catOrange);
-            color: var(--catCream);
-            cursor: pointer;
-        }
-
-        tr:nth-child(even) { background-color: var(--catCream); }
-        tr:nth-child(odd) { background-color: #FFEFD5; }
+    .btn:hover {
+        background-color: #155ab6;
+        transform: translateY(-2px);
+    }
     </style>
 </head>
 <body>
 
-<header id="main-header">WEBSITE PROTOTYPE</header>
+<header id="main-header">
+    <img src="Header.png" alt="Header">
+    <nav id="main-nav">
+       <a href="index.html">遊戲介紹</a>
+       <a href="sol/index.html">過關解答</a>
+       <a href="dev/index.html">開發歷程</a>
+       <a href="res/index.html">素材資源</a>
+       <a href="aut/index.html">關於作者</a>
+       <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
+    </nav>
+</header>
 
-<nav id="main-nav">
-    <a href="#game">遊戲介紹</a>
-    <a href="#solutions">過關解答</a>
-    <a href="#development">開發歷程</a>
-    <a href="#assets">素材資源</a>
-    <a href="#about">關於作者</a>
-</nav>
 
-<div class="section-wrapper" id="home">
-    <section>
-        <p>這裡是專門介紹我們最新遊戲「貓咪冒險」的網站，你可以找到遊戲介紹、過關解答、開發歷程與素材資源。</p>
-        <button onclick="location.href='#game'">開始探索遊戲</button>
-    </section>
+
+<h1>遊戲介紹</h1>
+
+
+<div class="section-wrapper">
+
+    <h2>開始遊戲</h2>
+
+    <div style="margin-top: 20px; text-align: center;">
+    <a href="https://worlds.viverse.com/zh-TW/XdktB3m" target="_blank" class="btn">START</a>
+    </div>
+
+    <p>網頁第一次載入需要較久的時間，請稍作等待</p>
+
 </div>
 
-<div class="section-wrapper" id="game">
-    <section>
-        <h2>遊戲介紹</h2>
-        <p>「貓咪冒險」是一款解謎與冒險結合的遊戲，玩家將扮演可愛貓咪，探索神秘地圖並解開謎題。</p>
-        <ul>
-            <li>精美手繪風格地圖</li>
-            <li>多層次關卡設計</li>
-            <li>輕鬆操作，適合所有年齡層</li>
-        </ul>
-    </section>
+
+<div class="section-wrapper">
+    
+    <h2>前導影片</h2>
+
+    <video src="StartVideo-V2.mp4" style="width: 100%; height: auto;" controls></video>
+
+    <p>世界很大，但對某些小小的生命而言，只需要一個能被稱作「家」的小小的地方。</p>
+
+    <p>我們穿梭在鋼筋水泥的迷宮，習慣了人潮的喧囂，卻常常遺忘那些，在陰影中等待被看見的柔軟靈魂。</p>
+
+    <p>牠們無聲地走過四季，承載著遺落的孤單，卻依舊相信，會有一束光，穿透黑暗，落在牠們的頭上。</p>
+
+    <p>請跟隨這些微小的足跡，推開那扇通往溫暖和諧的門。</p>
+
 </div>
 
-<div class="section-wrapper" id="solutions">
-    <section>
-        <h2>過關解答</h2>
-        <details>
-            <summary>第一關</summary>
-            <p>找到隱藏的金幣 → 使用跳躍技能。</p>
-        </details>
-        <details>
-            <summary>第二關</summary>
-            <p>解鎖門鎖 → 尋找正確的鑰匙順序。</p>
-        </details>
-        <details>
-            <summary>第三關</summary>
-            <p>打敗守衛 → 利用隱蔽通道繞過敵人。</p>
-        </details>
-    </section>
+
+
+
+
+<div class="section-wrapper">
+    
+    <h2>操作方式</h2>
+
+    <ul>
+        <li>W/A/S/D：移動</li>
+        <li>Shift + W/A/S/D：加速移動</li>
+        <li>Space：跳躍</li>
+        <li>滑鼠點擊物件</li>
+    </ul>
+
 </div>
 
-<div class="section-wrapper" id="development">
-    <section>
-        <h2>開發歷程</h2>
-        <table>
-            <thead>
-                <tr><th>時間</th><th>內容</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>2024 Q1</td><td>遊戲概念與角色設計</td></tr>
-                <tr><td>2024 Q2</td><td>程式開發與關卡設計</td></tr>
-                <tr><td>2024 Q3</td><td>美術與音效整合</td></tr>
-                <tr><td>2024 Q4</td><td>測試與優化</td></tr>
-                <tr><td>2025 Q1</td><td>正式發布</td></tr>
-            </tbody>
-        </table>
-    </section>
-</div>
-
-<div class="section-wrapper" id="assets">
-    <section>
-        <h2>使用素材</h2>
-        <h3>工具</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>類型</th><th>名稱</th><th>作者</th><th>條款</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>程式</td><td><a href="#">Visual Studio Code</a></td><td>Microsoft</td><td>免費</td></tr>
-                <tr><td>程式</td><td><a href="#">Unity</a></td><td>Unity Technologies</td><td>免費/個人使用</td></tr>
-            </tbody>
-        </table>
-
-        <h3>素材</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>類型</th><th>素材名稱</th><th>作者</th><th>條款</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>圖片</td><td><a href="#">貓咪角色</a></td><td>自己</td><td>CC0</td></tr>
-                <tr><td>圖片</td><td><a href="#">地圖圖塊</a></td><td>自己</td><td>CC0</td></tr>
-                <tr><td>音效</td><td><a href="#">跳躍音效</a></td><td>自己</td><td>CC0</td></tr>
-            </tbody>
-        </table>
-    </section>
-</div>
-
-<div class="section-wrapper" id="about">
-    <section>
-        <h2>關於作者</h2>
-        <p>這個遊戲由貓咪遊戲工作室開發，致力於打造可愛、有趣的冒險遊戲。</p>
-    </section>
-</div>
 
 <footer>
-    &copy; 2025 貓咪遊戲工作室
+    Copyright © Shengle
 </footer>
 
 <button id="backtotop" title="返回頂端">↑</button>
 
-<script>
-    // Sticky nav
-    const nav = document.getElementById('main-nav');
-    const header = document.getElementById('main-header');
-    const headerHeight = header.offsetHeight;
-
-    window.addEventListener('scroll', () => {
-        if(window.scrollY >= headerHeight){
-            nav.classList.add('fixed');
-        } else {
-            nav.classList.remove('fixed');
-        }
-    });
-
-    // Back to top
-    const backtotop = document.getElementById("backtotop");
-    window.addEventListener('scroll', () => {
-        backtotop.style.display = (window.scrollY > 300) ? "block" : "none";
-    });
-    backtotop.onclick = () => {
-        window.scrollTo({top:0, behavior:'smooth'});
-    };
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
