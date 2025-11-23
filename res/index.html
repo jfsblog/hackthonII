@@ -2,325 +2,327 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>一個可以讓貓打翻咖啡的地方 - 素材資源</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一個可以讓貓打翻咖啡的地方</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../favicon.png">
-
 </head>
 <body>
 
-<header id="main-header">
-    <img src="../Header.png" alt="Header">
-    <nav id="main-nav">
-        <a href="../index.html">遊戲介紹</a>
-        <a href="../sol/index.html">過關解答</a>
-        <a href="../dev/index.html">開發歷程</a>
-        <a href="../res/index.html">素材資源</a>
-        <a href="../aut/index.html">關於作者</a>
-        <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
-    </nav>
-</header>
+    <header class="navbar">
+        <a href="../index.html" class="logo">
+            <img src="../Header.png" alt="一個可以讓貓打翻咖啡的地方" class="site-logo">
+        </a>
+        
+        <ul class="nav-links" id="navMenu">
+            <li><a href="../index.html">遊戲介紹</a></li>
+            <li><a href="../sol/index.html">過關解答</a></li>
+            <li><a href="../dev/index.html">開發歷程</a></li>
+            <li><a href="../res/index.html">素材資源</a></li>
+            <li><a href="../aut/index.html">關於作者</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
+
+<main>
+
+        <section style="text-align: center;">
+            <h1>素材資源</h1>
+            <p>本頁面詳列了在開發過程中使用的所有外部素材、工具，以及 AI 整合技術，感謝所有資源創作者！</p>
+        </section>
 
 
-<h1>素材資源</h1>
+        <section class="used-assets">
+            <h2>素材資源</h2>
+
+            <div class="resource-table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>類型</th>
+                            <th>素材</th>
+                            <th>作者</th>
+                            <th>條款</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>模型</td>
+                            <td><a href="https://sketchfab.com/3d-models/house-cat-scratching-3810db1ad7e14af6a65ae9a88d866d77">House Cat Scratching</a></td>
+                            <td>Fabbri</td>
+                            <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
+                        </tr>
+                        <tr>
+                            <td>模型</td>
+                            <td><a href="https://sketchfab.com/3d-models/low-poly-farm-v2-0e91a96ca6ee44569cf94972e30b5be4">Low Poly Farm V2</a></td>
+                            <td>EdwiixGG</td>
+                            <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
+                        </tr>
+                        <tr>
+                            <td>模型</td>
+                            <td><a href="https://sketchfab.com/3d-models/low-poly-city-assets-3bb6c7a0db9d4acc8d8302932c0c2688">Low poly City Assets</a></td>
+                            <td>Paulina Sroka</td>
+                            <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
+                        </tr>
+                        <tr>
+                            <td>模型</td>
+                            <td><a href="https://sketchfab.com/3d-models/city-park-at-sunset-ec70492df60b4d42b37b7219b7b2149e">City Park at Sunset</a></td>
+                            <td>Virginia Vidonis</td>
+                            <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
+                        </tr>
+                        <tr>
+                            <td>模型</td>
+                            <td><a href="https://sketchfab.com/3d-models/cat-sculpture-731bbb2a3dda4c3f927918419a996e67">Cat Sculpture</a></td>
+                            <td>beatrizaconrado</td>
+                            <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
+                        </tr>
+                        <tr>
+                            <td>模型</td>
+                            <td><a href="https://sketchfab.com/3d-models/elevator-front-fbe7575fa28244e7a9d69292c3b5ed4a">Elevator_Front</a></td>
+                            <td>Lena Pauly</td>
+                            <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
+                        </tr>
+                        <tr>
+                            <td>模型</td>
+                            <td><a href="https://sketchfab.com/3d-models/old-vilage-house-lod-0-065cb734d68446ec90e3b43da86a5530">Old vilage house_LOD_0</a></td>
+                            <td>Nikolay Fedorov</td>
+                            <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
+                        </tr>
+                        <tr>
+                            <td>模型</td>
+                            <td><a href="https://sketchfab.com/3d-models/minecraft-antique-piano-blockbench-17edabd5c78e442eae45fa7f7bf26c0f">Minecraft - Antique Piano [Blockbench]</a></td>
+                            <td>sedona1029</td>
+                            <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
+                        </tr>
+                        <tr>
+                        <td>模型</td>
+                            <td><a href="https://sketchfab.com/3d-models/low-poly-cat-1e7143dfafd04ff4891efcb06949a0b4">Low Poly Cat</a></td>
+                            <td>volkanongun</td>
+                            <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
+                        </tr>
+                        <tr>
+                            <td>模型</td>
+                            <td><a href="https://sketchfab.com/3d-models/studio-camera-5f1bcd2fdb3c41668a868357054f7203">Studio Camera</a></td>
+                            <td>eniusPilot2016</td>
+                            <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
+                        </tr>
+                        <tr>
+                            <td>模型</td>
+                            <td><a href="https://sketchfab.com/3d-models/coffee-mug-school-project-5f5ccee1514c440887c072fae8e0d699">Coffee Mug (School Project)</a></td>
+                            <td>Ole Gunnar Isager</td>
+                            <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
+                        </tr>
+                        <tr>
+                            <td>字型</td>
+                            <td><a href="https://github.com/ButTaiwan/genryu-font">源流明體</a></td>
+                            <td>ButTaiwan</td>
+                            <td><a href="https://openfontlicense.org/">SIL Open Font License 1.1</a></td>
+                        </tr>
+                        <tr>
+                            <td>字型</td>
+                            <td><a href="https://justfont.com/lithue/">日花</a></td>
+                            <td>justfont</td>
+                            <td><a href="https://store.justfont.com/font/lithue">購買使用</a> (影片文字)</td>
+                        </tr>
+                        <tr>
+                            <td>字型</td>
+                            <td><a href="https://cjkfonts.io/item/herogothic">字言勇士黑體</a></td>
+                            <td>CjkFonts</td>
+                            <td><a href="https://cjkfonts.io/item/herogothic">購買使用</a> (圖片文字)</td>
+                        </tr>
+                        <tr>
+                            <td>圖片</td>
+                            <td><a href="https://unsplash.com/illustrations/four-stylized-cats-in-shades-of-purple-and-pink-s3Aw5F-T2IM">four-stylized-cats-in-shades-of-purple-and-pink-s3Aw5F-T2IM</a></td>
+                            <td>Cansu Sarp</td>
+                            <td><a href="https://unsplash.com/license">Unsplash License</a></td>
+                        </tr>
+                        <tr>
+                            <td>圖片</td>
+                            <td><a href="https://unsplash.com/illustrations/two-colorful-cats-amidst-flowers-and-leaves-Hrnf4fGV7Do">two-colorful-cats-amidst-flowers-and-leaves-Hrnf4fGV7Do</a></td>
+                            <td>Prayag Aghara</td>
+                            <td><a href="https://unsplash.com/license">Unsplash License</a></td>
+                        </tr>
+                        <tr>
+                            <td>聲音</td>
+                            <td><a href="https://pixabay.com/music/solo-piano-sunrise-ambient-grand-piano-and-pad-music-8172/">Sunrise - Ambient Grand Piano and Pad Music</a></td>
+                            <td>JuliusH</td>
+                            <td><a href="https://pixabay.com/service/license-summary/">Pixabay Content License</a></td>
+                        </tr>
+                        <tr>
+                            <td>聲音</td>
+                            <td><a href="https://pixabay.com/sound-effects/button-ui-sound-effect-395762/">Button UI Sound Effect</a></td>
+                            <td>Emilianodleon</td>
+                            <td><a href="https://pixabay.com/service/license-summary/">Pixabay Content License</a></td>
+                        </tr>
+                        <tr>
+                            <td>聲音</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448549/">C4</a></td>
+                            <td>TEDAgame</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448549/">公有領域</a></td>
+                        </tr>
+                        <tr>
+                            <td>聲音</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448609/">D4</a></td>
+                            <td>TEDAgame</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448609/">公有領域</a></td>
+                        </tr>
+                        <tr>
+                            <td>聲音</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448613/">E4</a></td>
+                            <td>TEDAgame</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448613/">公有領域</a></td>
+                        </tr>
+                        <tr>
+                            <td>聲音</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448595/">F4</a></td>
+                            <td>TEDAgame</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448595/">公有領域</a></td>
+                        </tr>
+                        <tr>
+                            <td>聲音</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448552/">G4</a></td>
+                            <td>TEDAgame</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448552/">公有領域</a></td>
+                        </tr>
+                        <tr>
+                            <td>聲音</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448561/">A4</a></td>
+                            <td>TEDAgame</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448561/">公有領域</a></td>
+                        </tr>
+                        <tr>
+                            <td>聲音</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448536/">B4</a></td>
+                            <td>TEDAgame</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448536/">公有領域</a></td>
+                        </tr>
+                        <tr>
+                            <td>聲音</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448548/">C5</a></td>
+                            <td>TEDAgame</td>
+                            <td><a href="https://freesound.org/people/TEDAgame/sounds/448548/">公有領域</a></td>
+                        </tr>
+                        <tr>
+                            <td>聲音</td>
+                            <td><a href="https://zh.wikipedia.org/wiki/File:Twinkle_Twinkle_Little_Star.ogg">小星星變奏曲</a></td>
+                            <td>John Casale</td>
+                            <td><a href="https://zh.wikipedia.org/wiki/File:Twinkle_Twinkle_Little_Star.ogg">cc-by-sa-2.5</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
 
-<div class="section-wrapper">
-
-    <h2>使用素材</h2>
-
-    <table>
-    <thead>
-    <tr>
-    <th>類型</th>
-    <th>素材</th>
-    <th>作者</th>
-    <th>條款</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>模型</td>
-    <td><a href="https://sketchfab.com/3d-models/house-cat-scratching-3810db1ad7e14af6a65ae9a88d866d77">House Cat Scratching</a></td>
-    <td>Fabbri</td>
-    <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
-    </tr>
-    <tr>
-    <td>模型</td>
-    <td><a href="https://sketchfab.com/3d-models/low-poly-farm-v2-0e91a96ca6ee44569cf94972e30b5be4">Low Poly Farm V2</a></td>
-    <td>EdwiixGG</td>
-    <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
-    </tr>
-    <tr>
-    <td>模型</td>
-    <td><a href="https://sketchfab.com/3d-models/low-poly-city-assets-3bb6c7a0db9d4acc8d8302932c0c2688">Low poly City Assets</a></td>
-    <td>Paulina Sroka</td>
-    <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
-    </tr>
-    <tr>
-    <td>模型</td>
-    <td><a href="https://sketchfab.com/3d-models/city-park-at-sunset-ec70492df60b4d42b37b7219b7b2149e">City Park at Sunset</a></td>
-    <td>Virginia Vidonis</td>
-    <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
-    </tr>
-    <tr>
-    <td>模型</td>
-    <td><a href="https://sketchfab.com/3d-models/cat-sculpture-731bbb2a3dda4c3f927918419a996e67">Cat Sculpture</a></td>
-    <td>beatrizaconrado</td>
-    <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
-    </tr>
-    <tr>
-    <td>模型</td>
-    <td><a href="https://sketchfab.com/3d-models/elevator-front-fbe7575fa28244e7a9d69292c3b5ed4a">Elevator_Front</a></td>
-    <td>Lena Pauly</td>
-    <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
-    </tr>
-    <tr>
-    <td>模型</td>
-    <td><a href="https://sketchfab.com/3d-models/old-vilage-house-lod-0-065cb734d68446ec90e3b43da86a5530">Old vilage house_LOD_0</a></td>
-    <td>Nikolay Fedorov</td>
-    <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
-    </tr>
-    <tr>
-    <td>模型</td>
-    <td><a href="https://sketchfab.com/3d-models/minecraft-antique-piano-blockbench-17edabd5c78e442eae45fa7f7bf26c0f">Minecraft - Antique Piano [Blockbench]</a></td>
-    <td>sedona1029</td>
-    <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
-    </tr>
-    <tr>
-    <td>模型</td>
-    <td><a href="https://sketchfab.com/3d-models/low-poly-cat-1e7143dfafd04ff4891efcb06949a0b4">Low Poly Cat</a></td>
-    <td>volkanongun</td>
-    <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
-    </tr>
-    <tr>
-    <td>模型</td>
-    <td><a href="https://sketchfab.com/3d-models/studio-camera-5f1bcd2fdb3c41668a868357054f7203">Studio Camera</a></td>
-    <td>eniusPilot2016</td>
-    <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
-    </tr>
-    <tr>
-    <td>模型</td>
-    <td><a href="https://sketchfab.com/3d-models/coffee-mug-school-project-5f5ccee1514c440887c072fae8e0d699">Coffee Mug (School Project)</a></td>
-    <td>Ole Gunnar Isager</td>
-    <td><a href="https://sketchfab.com/licenses">CC Attribution</a></td>
-    </tr>
-    <tr>
-    <td>字型</td>
-    <td><a href="https://github.com/ButTaiwan/genryu-font">源流明體</a></td>
-    <td>ButTaiwan</td>
-    <td><a href="https://openfontlicense.org/">SIL Open Font License 1.1</a></td>
-    </tr>
-    <tr>
-    <td>字型</td>
-    <td><a href="https://justfont.com/lithue/">日花</a></td>
-    <td>justfont</td>
-    <td><a href="https://store.justfont.com/font/lithue">購買使用</a> (影片文字)</td>
-    </tr>
-    <tr>
-    <td>字型</td>
-    <td><a href="https://cjkfonts.io/item/herogothic">字言勇士黑體</a></td>
-    <td>CjkFonts</td>
-    <td><a href="https://cjkfonts.io/item/herogothic">購買使用</a> (圖片文字)</td>
-    </tr>
-    <tr>
-    <td>圖片</td>
-    <td><a href="https://unsplash.com/illustrations/four-stylized-cats-in-shades-of-purple-and-pink-s3Aw5F-T2IM">four-stylized-cats-in-shades-of-purple-and-pink-s3Aw5F-T2IM</a></td>
-    <td>Cansu Sarp</td>
-    <td><a href="https://unsplash.com/license">Unsplash License</a></td>
-    </tr>
-    <tr>
-    <td>圖片</td>
-    <td><a href="https://unsplash.com/illustrations/two-colorful-cats-amidst-flowers-and-leaves-Hrnf4fGV7Do">two-colorful-cats-amidst-flowers-and-leaves-Hrnf4fGV7Do</a></td>
-    <td>Prayag Aghara</td>
-    <td><a href="https://unsplash.com/license">Unsplash License</a></td>
-    </tr>
-    <tr>
-    <td>聲音</td>
-    <td><a href="https://pixabay.com/music/solo-piano-sunrise-ambient-grand-piano-and-pad-music-8172/">Sunrise - Ambient Grand Piano and Pad Music</a></td>
-    <td>JuliusH</td>
-    <td><a href="https://pixabay.com/service/license-summary/">Pixabay Content License</a></td>
-    </tr>
-    <tr>
-    <td>聲音</td>
-    <td><a href="https://pixabay.com/sound-effects/button-ui-sound-effect-395762/">Button UI Sound Effect</a></td>
-    <td>Emilianodleon</td>
-    <td><a href="https://pixabay.com/service/license-summary/">Pixabay Content License</a></td>
-    </tr>
-    <tr>
-    <tr>
-    <td>聲音</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448549/">C4</a></td>
-    <td>TEDAgame</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448549/">公有領域</a></td>
-    </tr>
-    <tr>
-    <td>聲音</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448609/">D4</a></td>
-    <td>TEDAgame</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448609/">公有領域</a></td>
-    </tr>
-    <tr>
-    <td>聲音</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448613/">E4</a></td>
-    <td>TEDAgame</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448613/">公有領域</a></td>
-    </tr>
-    <tr>
-    <td>聲音</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448595/">F4</a></td>
-    <td>TEDAgame</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448595/">公有領域</a></td>
-    </tr>
-    <tr>
-    <td>聲音</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448552/">G4</a></td>
-    <td>TEDAgame</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448552/">公有領域</a></td>
-    </tr>
-    <tr>
-    <td>聲音</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448561/">A4</a></td>
-    <td>TEDAgame</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448561/">公有領域</a></td>
-    </tr>
-    <tr>
-    <td>聲音</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448536/">B4</a></td>
-    <td>TEDAgame</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448536/">公有領域</a></td>
-    </tr>
-    <tr>
-    <td>聲音</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448548/">C5</a></td>
-    <td>TEDAgame</td>
-    <td><a href="https://freesound.org/people/TEDAgame/sounds/448548/">公有領域</a></td>
-    </tr>
-    <tr>
-    <td>聲音</td>
-    <td><a href="https://zh.wikipedia.org/wiki/File:Twinkle_Twinkle_Little_Star.ogg">小星星變奏曲</a></td>
-    <td>John Casale</td>
-    <td><a href="https://zh.wikipedia.org/wiki/File:Twinkle_Twinkle_Little_Star.ogg">cc-by-sa-2.5</a></td>
-    </tr>
-    </tbody>
-    </table>
-
-</div>
+        <section class="editing-tools">
+            <h2>編修工具</h2>
+            <div class="resource-table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>工具</th>
+                            <th>應用</th>
+                            <th>條款</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="https://create.viverse.com/zh-TW" target="_blank">Viverse World</a></td>
+                            <td>遊戲平台</td>
+                            <td><a href="https://www.viverse.com/terms/" target="_blank">平台服務條款</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://playcanvas.com/" target="_blank">PlayCanvas</a> (Free)</td>
+                            <td>遊戲製作</td>
+                            <td><a href="https://playcanvas.com/plans" target="_blank">無限公開專案</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.blender.org/" target="_blank">Blender</a></td>
+                            <td>3D 模型編修</td>
+                            <td><a href="https://www.blender.org/about/license/" target="_blank">GNU General Public License</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.blackmagicdesign.com/cn/products/davinciresolve" target="_blank">DaVinci Resolve</a></td>
+                            <td>影片剪輯</td>
+                            <td><a href="https://www.blackmagicdesign.com/cn/products/davinciresolve" target="_blank">免費版本授權</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://store.serif.com/en-us/update/windows/photo/2/" target="_blank">Affinity Photo 2</a></td>
+                            <td>圖片編修</td>
+                            <td><a href="https://www.affinity.co/legal/terms-of-use" target="_blank">單次購買使用</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://github.com/" target="_blank">GitHub</a></td>
+                            <td>網站架設/程式碼託管</td>
+                            <td><a href="https://docs.github.com/en/site-policy/github-terms/github-terms-of-service" target="_blank">免費服務/使用條款</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
 
+        <section class="ai-integration">
+            <h2>AI應用</h2>
+
+            <div class="resource-table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>AI 平台</th>
+                            <th>應用</th>
+                            <th>條款</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="https://chatgpt.com/">ChatGPT</a></td>
+                            <td>程式撰寫<br>程式偵錯</td>
+                            <td><a href="https://openai.com/zh-Hant/policies/row-terms-of-use/">使用條款</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://gemini.google.com/">Gemini</a></td>
+                            <td>程式撰寫<br>程式偵錯<br>劇情討論<br>圖片生成<br>網站架設</td>
+                            <td><a href="https://policies.google.com/terms?hl=zh-TW">使用條款</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://grok.com/">Grok</a></td>
+                            <td>程式偵錯<br>影片生成</td>
+                            <td><a href="https://x.ai/legal/terms-of-service">使用條款</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.deepseek.com/">DeepSeek</a></td>
+                            <td>程式偵錯</td>
+                            <td><a href="https://cdn.deepseek.com/policies/zh-CN/deepseek-terms-of-use.html">使用條款</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://claude.ai/">Claude</a> (Pro Plan)</td>
+                            <td>PlayCanvas MCP<br>程式撰寫<br>程式偵錯</td>
+                            <td><a href="https://www.claude.com/pricing">使用條款</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.tripo3d.ai/">Tripo AI</a></td>
+                            <td>3D 模型生成</td>
+                            <td><a href="https://studio.tripo3d.ai/home?model_type=all&amp;category=featured&amp;sort=recommended">使用條款</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
 
+</main>
 
+    <footer style="text-align: center; padding: 20px; background-color: var(--catBrown); color: var(--catCream);">
+        Copyright © Shengle
+    </footer>
 
-<div class="section-wrapper">
-    
-    <h2>編修工具</h2>
+    <script src="../script.js"></script>
 
-    <table>
-    <thead>
-    <tr>
-    <th>工具</th>
-    <th>應用</th>
-    <th>條款</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td><a href="https://create.viverse.com/zh-TW">Viverse World</a></td>
-    <td>遊戲平台</td>
-    <td></td>
-    </tr>
-    <tr>
-    <td><a href="https://playcanvas.com/">PlayCanvas</a> (Free)</td>
-    <td>遊戲製作</td>
-    <td><a href="https://playcanvas.com/plans">Unlimited Public Projects</a></td>
-    </tr>
-    <tr>
-    <td><a href="https://www.blender.org/">Blender</a></td>
-    <td>3D 模型編修</td>
-    <td><a href="https://www.blender.org/about/license/">GNU General Public License</a></td>
-    </tr>
-    <tr>
-    <td><a href="https://www.blackmagicdesign.com/cn/products/davinciresolve">DaVinci Resolve</a></td>
-    <td>影片剪輯</td>
-    <td><a href="https://www.blackmagicdesign.com/cn/products/davinciresolve">授權默認</a></td>
-    </tr>
-    <tr>
-    <td><a href="https://store.serif.com/en-us/update/windows/photo/2/">Affinity Photo 2</a></td>
-    <td>圖片編修</td>
-    <td><a href="https://www.affinity.co/legal/terms-of-use?utm_source=chatgpt.com">購買授權</a></td>
-    </tr>
-    </tbody>
-    </table>
-
-
-</div>
-
-
-
-
-
-
-<div class="section-wrapper">
-    
-    <h2>AI 工具</h2>
-
-    <table>
-    <thead>
-    <tr>
-    <th>AI 平台</th>
-    <th>應用</th>
-    <th>條款</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td><a href="https://chatgpt.com/">ChatGPT</a></td>
-    <td>程式撰寫<br>程式偵錯<br>網站架設</td>
-    <td><a href="https://openai.com/zh-Hant/policies/row-terms-of-use/">使用條款</a></td>
-    </tr>
-    <tr>
-    <td><a href="https://gemini.google.com/">Gemini</a></td>
-    <td>程式撰寫<br>程式偵錯<br>劇情討論<br>圖片生成</td>
-    <td><a href="https://policies.google.com/terms?hl=zh-TW">使用條款</a></td>
-    </tr>
-    <tr>
-    <td><a href="https://grok.com/">Grok</a></td>
-    <td>程式偵錯<br>影片生成</td>
-    <td><a href="https://x.ai/legal/terms-of-service">使用條款</a></td>
-    </tr>
-    <tr>
-    <td><a href="https://www.deepseek.com/">DeepSeek</a></td>
-    <td>程式偵錯</td>
-    <td><a href="https://cdn.deepseek.com/policies/zh-CN/deepseek-terms-of-use.html">使用條款</a></td>
-    </tr>
-    <tr>
-    <td><a href="https://claude.ai/">Claude</a> (Pro Plan)</td>
-    <td>PlayCanvas MCP<br>程式撰寫<br>程式偵錯</td>
-    <td><a href="https://www.claude.com/pricing">使用條款</a></td>
-    </tr>
-    <tr>
-    <td><a href="https://www.tripo3d.ai/">Tripo AI</a></td>
-    <td>3D 模型生成</td>
-    <td><a href="https://studio.tripo3d.ai/home?model_type=all&amp;category=featured&amp;sort=recommended">使用條款</a></td>
-    </tr>
-    </tbody>
-    </table>
-
-
-</div>
-
-
-
-
-
-
-<footer>
-    Copyright © Shengle
-</footer>
-
-<button id="backtotop" title="返回頂端">↑</button>
-
-<script src="../script.js"></script>
 </body>
 </html>

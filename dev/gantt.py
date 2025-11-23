@@ -12,7 +12,7 @@ catWeekend = "#F0E0D0"     # 假日背景色 (對比度更高的顏色)
 
 # --- 額外假日定義 ---
 # 設定您希望被視為假日的日期 (格式: "MM/DD")
-custom_holidays_str = ["11/21"]
+custom_holidays_str = ["10/24","11/21"]
 # 將字串轉換為 datetime.date 物件，方便比較
 custom_holidays = [datetime.strptime("2025/" + d, "%Y/%m/%d").date() for d in custom_holidays_str]
 

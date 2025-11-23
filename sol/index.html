@@ -2,44 +2,78 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>一個可以讓貓打翻咖啡的地方 - 通關解答</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一個可以讓貓打翻咖啡的地方</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../favicon.png">
-
 </head>
 <body>
 
-<header id="main-header">
-    <img src="../Header.png" alt="Header">
-    <nav id="main-nav">
-        <a href="../index.html">遊戲介紹</a>
-        <a href="../sol/index.html">過關解答</a>
-        <a href="../dev/index.html">開發歷程</a>
-        <a href="../res/index.html">素材資源</a>
-        <a href="../aut/index.html">關於作者</a>
-        <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
-    </nav>
-</header>
+    <header class="navbar">
+        <a href="../index.html" class="logo">
+            <img src="../Header.png" alt="一個可以讓貓打翻咖啡的地方" class="site-logo">
+        </a>
+        
+        <ul class="nav-links" id="navMenu">
+            <li><a href="../index.html">遊戲介紹</a></li>
+            <li><a href="../sol/index.html">過關解答</a></li>
+            <li><a href="../dev/index.html">開發歷程</a></li>
+            <li><a href="../res/index.html">素材資源</a></li>
+            <li><a href="../aut/index.html">關於作者</a></li>
+        </ul>
 
-<h1>通關解答</h1>
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
 
-<div class="section-wrapper">
-    
-    <h2>＿＿＿＿＿</h2>
+    <main>
+        <section class="solution-header" style="text-align: center;">
+            <h1>過關解答</h1>
+            <p><strong>劇透警告</strong>！請確認您已盡力嘗試解謎。點擊關卡標題即可展開或收合答案。</p>
+        </section>
 
-</div>
+        <section class="solution-content" style="max-width: 50rem; margin: 0 auto; padding: 0 1.25rem 3rem;">
+            
+            <details class="solution-item">
+                <summary>整體流程</summary>
+                <div class="solution-detail">
 
+                </div>
+            </details>
 
+            <details class="solution-item">
+                <summary>關卡 1：XXXXX</summary>
+                <div class="solution-detail">
+                    <h3>💡 提示</h3>
+                    <p>XXXXXX</p>
+                    <h3>🔑 解答</h3>
+                    <p>XXXXXX</p>
+                </div>
+            </details>
 
+            <details class="solution-item">
+                <summary>關卡 2：XXXXX</summary>
+                <div class="solution-detail">
+                    <h3>💡 提示</h3>
+                    <p>XXXXXX</p>
+                    
+                    <h3>🔑 解答</h3>
+                    <p>XXXXXX</p>
+                </div>
+            </details>
 
+        </section>
 
+    </main>
 
-<footer>
-    Copyright © Shengle
-</footer>
+    <footer style="text-align: center; padding: 20px; background-color: var(--catBrown); color: var(--catCream);">
+        Copyright © Shengle
+    </footer>
 
-<button id="backtotop" title="返回頂端">↑</button>
+    <script src="../script.js"></script>
 
-<script src="../script.js"></script>
 </body>
 </html>

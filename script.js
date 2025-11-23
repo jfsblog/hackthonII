@@ -1,29 +1,16 @@
-// Sticky nav
-const nav = document.getElementById('main-nav');
-const header = document.getElementById('main-header');
-// 請確保 header 這個元素確實存在，不然會報錯
-const headerHeight = header ? header.offsetHeight : 0; 
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
 
-
-window.addEventListener('scroll', () => {
-    if(window.scrollY >= headerHeight){
-        nav.classList.add('fixed');
-    } else {
-        nav.classList.remove('fixed');
-    }
+// 監聽漢堡圖示點擊事件
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
 });
 
-// Back to top
-const backtotop = document.getElementById("backtotop");
-window.addEventListener('scroll', () => {
-    backtotop.style.display = (window.scrollY > 300) ? "block" : "none";
+// 點擊選單項目後自動關閉選單 (RWD 體驗優化)
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
 });
-backtotop.onclick = () => {
-    window.scrollTo({top:0, behavior:'smooth'});
-};
-
-// Hamburger
-function toggleNav() {
-    // 這個函式已經正確地切換了 #main-nav 上的 responsive 類別
-    nav.classList.toggle("responsive");
-}

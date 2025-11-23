@@ -1,4 +1,10 @@
+/* ==================================== */
+/* 1. 顏色變數與全局設定 */
+/* ==================================== */
 :root {
+    /* 假設瀏覽器預設字體大小為 16px */
+    font-size: 100%; 
+
     --catCream: #FFF8EA;
     --catOrange: #F4A261;
     --catBrown: #5A3E36;
@@ -7,248 +13,469 @@
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', 'Microsoft JhengHei', sans-serif;
     background-color: var(--catCream);
     color: var(--catBrown);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
-/* Header */
-header {
-    background-color: var(--catOrange);
-    text-align: center;
-    font-size: 1rem;
-    color: var(--catCream);
-}
-
-header img {
-    max-width: 500px;
-}
-
-/* 全局超連結 */
-a {
+h1, h2 {
     color: var(--catBrown);
-    text-decoration: none;
-    transition: color 0.3s, text-decoration 0.3s;
+    font-weight: 700;
 }
 
-/* hover 狀態 */
-a:hover {
-    color: var(--catOrange);
-    text-decoration: underline;
+section {
+    padding: 1.25rem 1.25rem; /* 20px -> 1.25rem */
+    margin: 0 auto;
+    max-width: 75rem; /* 1200px -> 75rem */
 }
 
-/* 特別處理 table 裡的超連結 */
-table a {
-    color: var(--catBrown);
+/* ==================================== */
+/* 針對圖片 Logo 的尺寸控制 */
+/* ==================================== */
+
+/* 1. 確保 .logo 容器內的圖片不會超出邊界 */
+.navbar .logo {
+    display: inline-block; 
 }
 
-table a:hover {
-    color: var(--catOrange);
-    text-decoration: underline;
+img.site-logo {
+    filter: invert(1);
 }
 
-/* Nav */
-#main-nav {
-    width: 100%;
+/* 2. 控制圖片本身的尺寸 */
+.site-logo {
+    display: block;
+    height: 2.5rem;   /* 40px -> 2.5rem */
+    width: auto;
+    max-width: 100%;
+    transition: opacity 0.3s;
+}
+
+/* 3. 調整手機上的 Logo 尺寸 (RWD) */
+@media screen and (max-width: 48rem) { /* 768px -> 48rem */
+    .site-logo {
+        height: 1.875rem; /* 30px -> 1.875rem */
+    }
+}
+
+/* ==================================== */
+/* 2. 導航欄 (Navigation Bar) 樣式 */
+/* ==================================== */
+.navbar {
     background-color: var(--catBrown);
+    padding: 0.625rem 3.125rem; /* 10px 50px -> 0.625rem 3.125rem */
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
     z-index: 1000;
-    position: relative; /* 作為固定和絕對定位的基準點 */
-    top: 0;
-    transition: top 0.3s;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2); /* 2px 5px -> 0.125rem 0.3125rem */
 }
 
-#main-nav.fixed {
-    position: fixed;  /* 滾動後固定頂部 */
-    top: 0;
+.navbar .logo {
+     font-size: 1.6em;
+     font-weight: bold;
+     color: var(--catOrange);
+     text-decoration: none;
 }
 
-#main-nav a {
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: var(--catCream);
     text-decoration: none;
-    color: var(--catCream);
-    padding: 1rem 1.5rem;
-    transition: background-color 0.3s;
-}
-
-#main-nav a:hover {
-    background-color: var(--catGrayHover);
-    color: var(--catBrown);
-}
-
-/* 漢堡按鈕在大螢幕時隱藏 */
-#main-nav a.icon {
-    display: none; 
-}
-
-
-/* 手機版響應 */
-@media screen and (max-width: 768px) {
-
-    h1 {
-        padding-top: 3rem;
-    }
-
-    #main-nav {
-        flex-direction: column; /* 將選單項目改為垂直堆疊 */
-        align-items: flex-start; /* 讓項目靠左對齊 */
-    }
-
-    /* 1. 預設隱藏所有非 icon 的連結 */
-    #main-nav a:not(.icon) {
-        display: none;
-        width: 100%;
-        text-align: left;
-        box-sizing: border-box;
-    }
-
-    /* 2. 漢堡按鈕 (icon) 始終顯示，並定位在右上角 */
-    #main-nav a.icon {
-        display: block;
-            position: absolute;
-            right: 0;
-            top: 0;
-            padding: 1rem 1.5rem;
-            background-color: var(--catBrown);
-            width: 100%;
-    }
-    
-    #main-nav.responsive a {
-        display: block;
-    }
-    
-    #main-nav.responsive a:first-of-type {
-        margin-top: 3.5rem; 
-    }
-
-    #main-nav.responsive a.icon {
-        margin-top: 0;
-    }
-}
-
-h1 { text-align: center; }
-
-h2 {
-    border-bottom: 2px solid var(--catOrange);
-    padding-bottom: 0.3rem;
-    margin-bottom: 1rem;
-}
-
-button {
-    background-color: var(--catOrange);
-    color: var(--catCream);
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: var(--catBrown);
-    color: var(--catCream);
-}
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: var(--catBrown);
-    color: var(--catCream);
-    margin-top: 2rem;
-}
-
-#backtotop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    padding: 0.5rem 0.8rem;
-    font-size: 1.5rem;
-    background-color: var(--catOrange);
-    color: var(--catCream);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#backtotop:hover {
-    background-color: var(--catBrown);
-    color: var(--catCream);
-}
-
-
-/* 章節框 */
-
-.section-wrapper {
-    padding: 2rem 2rem 2rem 2rem;
-    max-width: 900px;
-    margin: 2rem auto;
-    background-color: #FFF0D9; /* 輕微不同於 body 的背景色 */
-    /* border: 2px solid var(--catOrange); */
-    border-radius: 10px;
-    scroll-margin-top: 60px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* h2 標題和框融為一體 */
-.section-wrapper h2 {
-    background-color: var(--catOrange);
-    color: var(--catCream);
-    margin: -2rem -2rem 1rem -2rem; /* 貼齊框的上方和左右 */
-    padding: 1rem;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom: none;
-    text-align: center;
-}
-
-/* details 配色 */
-details {
-    background-color: var(--catBrown);
-    color: var(--catCream);
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 5px;
+    padding: 0.9375rem 1.25rem; /* 15px 20px -> 0.9375rem 1.25rem */
+    font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* details 展開狀態 */
-details[open] {
-    background-color: var(--catOrange);
-    color: var(--catCream);
+.nav-links a:hover {
+    color: var(--catOrange);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* summary */
-summary {
+/* 漢堡圖示 */
+.hamburger {
+    display: none; 
+    cursor: pointer;
+    padding: 0.625rem; /* 10px -> 0.625rem */
+}
+
+.bar {
+    display: block;
+    width: 1.5625rem; /* 25px -> 1.5625rem */
+    height: 0.1875rem; /* 3px -> 0.1875rem */
+    margin: 0.3125rem auto; /* 5px -> 0.3125rem */
+    background-color: var(--catCream);
+    transition: all 0.3s ease-in-out;
+}
+
+/* ==================================== */
+/* 3. 共通元素樣式 */
+/* ==================================== */
+.cta-button {
+    display: inline-block;
+    background-color: var(--catOrange);
+    color: var(--catCream);
+    padding: 0.9375rem 1.875rem; /* 15px 30px -> 0.9375rem 1.875rem */
+    text-decoration: none;
+    border-radius: 3.125rem; /* 50px -> 3.125rem */
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+}
+.cta-button:hover {
+    background-color: #e09252;
+    transform: translateY(-0.125rem); /* 2px -> 0.125rem */
+}
+
+/* ==================================== */
+/* 4. RWD 影片容器樣式 */
+/* ==================================== */
+
+.video-container {
+    position: relative;
+    
+    width: 90%; 
+    /* max-width: 56.25rem; /* 900px -> 56.25rem (已註釋掉，讓 RWD 自動發揮) */
+    margin: 0 auto 2.5rem; /* 40px -> 2.5rem */
+    
+    padding-bottom: 56.25%; 
+    
+    height: 0;
+    overflow: hidden;
+    border-radius: 0.75rem; /* 12px -> 0.75rem */
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.2); /* 8px 20px -> 0.5rem 1.25rem */
+}
+
+/* 讓 <video> 標籤填滿 RWD 容器 */
+.video-container .site-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+}
+
+
+/* 響應式調整 (手機上) */
+@media screen and (max-width: 48rem) { /* 768px -> 48rem */
+    .video-container {
+        width: 100%;
+    }
+}
+
+
+/* ==================================== */
+/* 5. RWD 劇照牆樣式 */
+/* ==================================== */
+.gallery {
+    display: grid;
+    /* 桌面顯示 3 欄，最小寬度 300px -> 18.75rem */
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr)); 
+    gap: 0.9375rem; /* 15px -> 0.9375rem */
+    padding: 1.875rem 0; /* 30px -> 1.875rem */
+}
+
+.gallery img {
+    width: 100%;
+    height: 12.5rem; /* 200px -> 12.5rem */
+    display: block;
+    border-radius: 0.5rem; /* 8px -> 0.5rem */
+    object-fit: cover; 
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 4px 8px -> 0.25rem 0.5rem */
+    transition: transform 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.02);
+}
+
+/* ==================================== */
+/* 6. 響應式設計 (RWD) Media Query */
+/* ==================================== */
+@media screen and (max-width: 48rem) { /* 768px -> 48rem */
+    
+    .navbar {
+        padding: 0.625rem 1.25rem; /* 10px 20px -> 0.625rem 1.25rem */
+    }
+    
+    /* 漢堡圖示顯示 */
+    .hamburger {
+        display: block; 
+    }
+
+    /* 導航連結隱藏並堆疊 */
+    .nav-links {
+        position: absolute;
+        /* 保持頂部和寬度不變 */
+        top: 3.4375rem; /* 55px -> 3.4375rem (導航欄高度) */
+        left: 0;
+        width: 100%;
+        
+        flex-direction: column; 
+        background-color: var(--catBrown); 
+        
+        /* 關鍵修正 1：將選單向左側推 100% 隱藏 */
+        transform: translateX(-100%); 
+        transition: transform 0.3s ease-in-out;
+    }
+
+    
+    .nav-links li {
+        text-align: center;
+        border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.1); /* 1px -> 0.0625rem */
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.9375rem 0; /* 15px -> 0.9375rem */
+    }
+
+    /* 選單開啟時的狀態 */
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    /* 漢堡圖示的動畫 (變成 X) */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(0.5rem) rotate(45deg); /* 8px -> 0.5rem */
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-0.5rem) rotate(-45deg); /* -8px -> -0.5rem */
+    }
+    
+    /* 調整劇照牆，在手機上每欄寬度可以更小 */
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.375rem), 1fr)); /* 150px -> 9.375rem */
+        padding: 1.25rem 0; /* 20px -> 1.25rem */
+    }
+}
+
+
+/* ==================================== */
+/* 過關解答頁面樣式 (sol/index.html) */
+/* ==================================== */
+
+.solution-item {
+    border: 0.125rem solid var(--catOrange); /* 2px */
+    margin-bottom: 1rem;
+    border-radius: 0.5rem; /* 8px 圓角 */
+    background-color: var(--catCream);
+    overflow: hidden; /* 確保內容不溢出圓角 */
+}
+
+/* 標題 (Summary) 樣式 */
+.solution-item summary {
+    display: block; /* 讓 summary 填滿寬度 */
+    padding: 1rem 1.25rem;
+    font-size: 1.25rem;
     font-weight: bold;
     cursor: pointer;
+    background-color: var(--catOrange);
+    color: white; /* 確保文字可見 */
+    transition: background-color 0.2s;
+    user-select: none; /* 防止內容被選中時影響美觀 */
 }
 
-/* summary hover */
-summary:hover {
-    color: #FFF0D9; /* 與章節背景不同，明顯區分 */
+.solution-item summary:hover {
+    background-color: #d8894d; /* 稍暗的橘色 */
 }
 
+/* details 展開時的箭頭隱藏或調整（可選） */
+.solution-item summary::-webkit-details-marker {
+    display: none;
+}
+.solution-item summary::marker {
+    display: none;
+}
 
-table {
+/* 內容區塊樣式 */
+.solution-detail {
+    padding: 1.25rem;
+    background-color: white; /* 內容使用白色底 */
+    border-top: 0.0625rem solid var(--catGrayBase);
+}
+
+.solution-detail h3 {
+    color: var(--catBrown);
+    margin-top: 0.5rem;
+    border-bottom: 0.125rem dotted var(--catGrayBase); /* 底部虛線 */
+    padding-bottom: 0.25rem;
+}
+
+.solution-video-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--catBrown);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.25rem;
+}
+.solution-video-link:hover {
+    background-color: #55443d;
+}
+
+/* ==================================== */
+/* 素材資源頁面樣式 (res/index.html) */
+/* ==================================== */
+
+/* 表格容器 RWD */
+.resource-table-container {
+    overflow-x: auto; /* 確保表格在窄螢幕上可水平捲動 */
+    margin-top: 1.25rem; /* 20px */
+}
+
+.data-table {
     width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-}
-
-th, td {
-    border: 1px solid var(--catBrown);
-    padding: 0.5rem;
+    border-collapse: collapse; /* 合併邊框 */
     text-align: left;
+    min-width: 600px; /* 最小寬度，防止在手機上過窄 */
 }
 
-th {
+.data-table th, .data-table td {
+    padding: 0.75rem 0.9375rem; /* 12px 15px */
+    border-bottom: 0.0625rem solid var(--catGrayBase); /* 1px */
+}
+
+.data-table th {
     background-color: var(--catOrange);
     color: var(--catCream);
-    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-tr:nth-child(even) { background-color: var(--catCream); }
-tr:nth-child(odd) { background-color: #FFEFD5; }
+.data-table tr:nth-child(even) {
+    background-color: rgba(244, 162, 97, 0.05); /* 斑馬紋效果 */
+}
+
+.data-table a {
+    color: var(--catBrown);
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 0.0625rem dotted var(--catBrown);
+}
+.data-table a:hover {
+    color: var(--catOrange);
+    border-bottom-color: var(--catOrange);
+}
+
+/* 列表樣式 */
+.tool-list, .ai-list {
+    max-width: 50rem;
+    margin: 1.25rem auto; /* 20px */
+    padding: 0 1.25rem;
+}
+
+.tool-list li {
+    background-color: var(--catCream);
+    padding: 0.625rem 0; /* 10px */
+    border-bottom: 0.0625rem dotted var(--catGrayBase);
+    font-size: 1.1em;
+}
+
+
+/* ==================================== */
+/* 關於作者 */
+/* ==================================== */
+
+.author-intro-story {
+    max-width: 50rem; /* 800px -> 50rem */
+    margin: 0 auto;
+    padding: 3.75rem 1.25rem; /* 60px 20px -> 3.75rem 1.25rem */
+    text-align: center;
+}
+
+.author-photo-center {
+    width: 15rem; /* 150px -> 9.375rem */
+    height: 15rem; /* 150px -> 9.375rem */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.25rem; /* 20px -> 1.25rem */
+}
+
+.sub-heading {
+    font-size: 1.2em;
+    color: var(--catOrange);
+    font-weight: 500;
+}
+
+.story-paragraph {
+    font-size: 1.1em;
+    line-height: 1.8;
+    text-align: left;
+    margin: 1.25rem 0; /* 20px -> 1.25rem */
+}
+
+
+/* 技能 Grid 佈局 */
+.author-skills-contact {
+    background-color: rgba(244, 162, 97, 0.1);
+    padding: 1.25rem 1.25rem; /* 60px 20px -> 3.75rem 1.25rem */
+}
+
+.skills-grid {
+    display: grid;
+    /* 最小寬度 280px -> 17.5rem */
+    grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+    gap: 1.875rem; /* 30px -> 1.875rem */
+    max-width: 62.5rem; /* 1000px -> 62.5rem */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.skill-item {
+    background-color: white;
+    padding: 1.5625rem; /* 25px -> 1.5625rem */
+    border-radius: 0.625rem; /* 10px -> 0.625rem */
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05); /* 4px 12px -> 0.25rem 0.75rem */
+}
+
+.skill-icon {
+    font-size: 2.5em;
+    display: block;
+    margin-bottom: 0.625rem; /* 10px -> 0.625rem */
+}
+
+/* 聯繫按鈕組 */
+.contact-buttons {
+    text-align: center;
+    margin: 1.875rem; /* 30px -> 1.875rem */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9375rem; /* 15px -> 0.9375rem */
+}
+
+.contact-btn {
+    padding: 0.75rem 1.5625rem; /* 12px 25px -> 0.75rem 1.5625rem */
+    border-radius: 3.125rem; /* 50px -> 3.125rem */
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--catCream);
+    background-color: var(--catBrown);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+/* RWD 調整 */
+@media screen and (max-width: 37.5rem) { /* 600px -> 37.5rem */
+    .story-paragraph,
+    .cat-quote {
+        text-align: center;
+    }
+}

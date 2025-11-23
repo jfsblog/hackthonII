@@ -2,105 +2,78 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一個可以讓貓打翻咖啡的地方</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
-    <style>
-    a.btn{
-        color: white;
-    }
-    a.btn:hover{
-        text-decoration: none;
-    }
-    .btn {
-        display: inline-block;
-        background-color: #1a73e8;
-        color: white;
-        font-weight: bold;
-        padding: 12px 24px;
-        border-radius: 8px;
-        text-decoration: none;
-        transition: background-color 0.3s, transform 0.2s;
-    }
-
-    .btn:hover {
-        background-color: #155ab6;
-        transform: translateY(-2px);
-    }
-    </style>
 </head>
 <body>
 
-<header id="main-header">
-    <img src="Header.png" alt="Header">
-    <nav id="main-nav">
-       <a href="index.html">遊戲介紹</a>
-       <a href="sol/index.html">過關解答</a>
-       <a href="dev/index.html">開發歷程</a>
-       <a href="res/index.html">素材資源</a>
-       <a href="aut/index.html">關於作者</a>
-       <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
-    </nav>
-</header>
+    <header class="navbar">
+        <a href="../" class="logo">
+            <img src="Header.png" alt="一個可以讓貓打翻咖啡的地方" class="site-logo">
+        </a>
+        
+        <ul class="nav-links" id="navMenu">
+            <li><a href="index.html">遊戲介紹</a></li>
+            <li><a href="sol/index.html">過關解答</a></li>
+            <li><a href="dev/index.html">開發歷程</a></li>
+            <li><a href="res/index.html">素材資源</a></li>
+            <li><a href="aut/index.html">關於作者</a></li>
+        </ul>
 
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
 
+    <main>
+        <section class="hero-section" style="text-align: center;">
+            
+            <h1>一個可以讓貓打翻咖啡的地方</h1>
 
-<h1>遊戲介紹</h1>
+            <p>我們穿梭在鋼筋水泥的迷宮，習慣了人潮的喧囂，卻常常遺忘那些，在陰影中等待被看見的柔軟靈魂。牠們無聲地走過四季，承載著遺落的孤單，卻依舊相信，會有一束光，穿透黑暗，落在牠們的頭上。</p>
+            <p>請跟隨這些微小的足跡，推開那扇通往溫暖和諧的門。</p>
 
+            <div class="video-container">
+                <video 
+                    class="site-video"
+                    src="StartVideo-V2.mp4" 
+                    autoplay 
+                    loop 
+                    muted 
+                    playsinline 
+                    controls> 
+                    您的瀏覽器不支援 HTML5 影片。
+                </video>
+            </div>
 
-<div class="section-wrapper">
+            <a href="https://worlds.viverse.com/zh-TW/XdktB3m" class="cta-button" target="_blank">🐾立即開始您的冒險！</a>
 
-    <h2>開始遊戲</h2>
+        </section>
+        
+        <section id="gallery">
+            <div class="gallery">
+                <img src="path/to/cat_scene_01.jpg">
+                <img src="path/to/cat_scene_02.jpg">
+                <img src="path/to/cat_scene_01.jpg">
+                <img src="path/to/cat_scene_02.jpg">
+                <img src="path/to/cat_scene_01.jpg">
+                <img src="path/to/cat_scene_02.jpg">
+            </div>
+        </section>
 
-    <div style="margin-top: 20px; text-align: center;">
-    <a href="https://worlds.viverse.com/zh-TW/XdktB3m" target="_blank" class="btn">START</a>
-    </div>
+        <section id="summary" style="padding-top: 20px;">
+            </section>
+    </main>
 
-    <p>網頁第一次載入需要較久的時間，請稍作等待</p>
+    <footer style="text-align: center; padding: 20px; background-color: var(--catBrown); color: var(--catCream);">
+        Copyright © Shengle
+    </footer>
 
-</div>
+    <script src="script.js"></script>
 
-
-<div class="section-wrapper">
-    
-    <h2>前導影片</h2>
-
-    <video src="StartVideo-V2.mp4" style="width: 100%; height: auto;" controls></video>
-
-    <p>世界很大，但對某些小小的生命而言，只需要一個能被稱作「家」的小小的地方。</p>
-
-    <p>我們穿梭在鋼筋水泥的迷宮，習慣了人潮的喧囂，卻常常遺忘那些，在陰影中等待被看見的柔軟靈魂。</p>
-
-    <p>牠們無聲地走過四季，承載著遺落的孤單，卻依舊相信，會有一束光，穿透黑暗，落在牠們的頭上。</p>
-
-    <p>請跟隨這些微小的足跡，推開那扇通往溫暖和諧的門。</p>
-
-</div>
-
-
-
-
-
-<div class="section-wrapper">
-    
-    <h2>操作方式</h2>
-
-    <ul>
-        <li>W/A/S/D：移動</li>
-        <li>Shift + W/A/S/D：加速移動</li>
-        <li>Space：跳躍</li>
-        <li>滑鼠點擊物件</li>
-    </ul>
-
-</div>
-
-
-<footer>
-    Copyright © Shengle
-</footer>
-
-<button id="backtotop" title="返回頂端">↑</button>
-
-<script src="script.js"></script>
 </body>
 </html>

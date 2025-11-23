@@ -2,114 +2,88 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>一個可以讓貓打翻咖啡的地方 - 關於作者</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一個可以讓貓打翻咖啡的地方</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../favicon.png">
-    <style>
-        .profile {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .profile img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        .profile-text {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        hr {
-            border: 0;
-            height: 1px;
-            background: #ccc;
-            margin: 30px 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        ul li a {
-            color: #1a73e8;
-            text-decoration: none;
-        }
-
-        ul li a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
 
-<header id="main-header">
-    <img src="../Header.png" alt="Header">
-    <nav id="main-nav">
-        <a href="../index.html">遊戲介紹</a>
-        <a href="../sol/index.html">過關解答</a>
-        <a href="../dev/index.html">開發歷程</a>
-        <a href="../res/index.html">素材資源</a>
-        <a href="../aut/index.html">關於作者</a>
-        <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
-    </nav>
-</header>
+    <header class="navbar">
+        <a href="../index.html" class="logo">
+            <img src="../Header.png" alt="一個可以讓貓打翻咖啡的地方" class="site-logo">
+        </a>
+        
+        <ul class="nav-links" id="navMenu">
+            <li><a href="../index.html">遊戲介紹</a></li>
+            <li><a href="../sol/index.html">過關解答</a></li>
+            <li><a href="../dev/index.html">開發歷程</a></li>
+            <li><a href="../res/index.html">素材資源</a></li>
+            <li><a href="../aut/index.html">關於作者</a></li>
+        </ul>
 
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
 
-<h1>關於作者</h1>
+<main>
 
+    <section class="author-intro-story" style="text-align: center;">
 
-<div class="section-wrapper">
+        <img src="author.png" alt="獨立製作者 Shengle" class="author-photo-center">
+        
+        <h1>關於作者－－Shengle</h1>
+        <h2 class="sub-heading">獨立開發者 / 硬體設計師 / 攝影愛好者 / SEO文章撰寫</h2>
+        
+        <p class="story-paragraph">我是 Shengle，一名硬體工程師，喜歡到處走走的 SUPER I 人，每天都要和 AI 聊天，無可救藥的水豚控。熱愛攝影、文學創作與登山健行。目前以「撰風」之名於網路創作，經營個人網站撰風 I 人旅行誌，並為漫步時光的編輯。</p>
+
+    </section>
+
+    <section>
     
-    <h2>作者介紹</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <span class="skill-icon">🖥️</span>
+                <h3>核心程式設計</h3>
+                <p>JavaScript、HTML、Python，搭配 VIVERSE EXTENSION</p>
+            </div>
+            <div class="skill-item">
+                <span class="skill-icon">💡</span>
+                <h3>遊戲與關卡設計</h3>
+                <p>故事設計、邏輯解謎、虛擬展覽、互動遊戲</p>
+            </div>
+            <div class="skill-item">
+                <span class="skill-icon">🎨</span>
+                <h3>視覺與動畫</h3>
+                <p>統合 AI 美術設計－－靜態圖片、動態圖片、影片生成</p>
+            </div>
+        </div>
+        
+    </section>
 
-    <div class="profile">
-    <img src="profile.jpg" alt="Shengle 的照片">
-    <div class="profile-text">
-        <p>我是 Shengle，一名硬體工程師，喜歡到處走走的 SUPER I 人，每天都要和 AI 聊天，無可救藥的水豚控。熱愛攝影、文學創作與登山健行。目前以「撰風」之名於網路創作，經營個人網站撰風 I 人旅行誌，並為漫步時光的編輯。</p>
-    </div>
-    </div>
+    <section>
 
-    <h3>競賽經歷</h3>
+        <div class="contact-buttons">
+            <a href="https://jfsblog.com/" target="_blank" class="contact-btn social-btn">個人網站</a>
+            <a href="https://strolltimes.com/" target="_blank" class="contact-btn social-btn">漫步時光</a>
+            <a href="https://www.facebook.com/strolltimes/" target="_blank" class="contact-btn social-btn">Facebook</a>
+            <a href="https://www.instagram.com/strolltimes/" target="_blank" class="contact-btn social-btn">Instagram</a>
+            <a href="https://github.com/jfsblog" target="_blank" class="contact-btn social-btn">GitHub</a>
+            <a href="https://worlds.viverse.com/zh-TW/profile/shengle" target="_blank" class="contact-btn social-btn">VIVERSE</a>
+        </div>
 
-    <ul>
-        <li>網界博覽會網頁設計獎(環境議題類)：銀獎</li>
-        <li>白沙文學獎(散文組)：二獎</li>
-        <li>桃園縣文藝創作獎(學生組)：佳作</li>
-        <li>痞客邦與八大電視台照片徵選：第四名</li>
-        <li>VIVERSE Create Hackthon：第三名</li>
-    </ul>
+    </section>
 
+</main>
 
-    <h3>連結與社群</h3>
-    <ul>
-        <li>個人網站：<a href="https://jfsblog.com/">撰風 I 人旅行誌</a></li>
-        <li>合作編輯：<a href="https://strolltimes.com/">漫步時光：台灣活動資訊</a></li>
-        <li>Facebook：<a href="https://www.facebook.com/strolltimes/">全台活動資訊分享</a></li>
-        <li>YouTube：<a href="https://www.youtube.com/@%E6%BC%AB%E6%AD%A5%E6%99%82%E5%85%89">漫步時光</a></li>
-        <li>健行筆記：<a href="https://hiking.biji.co/index.php?q=member&amp;member=1560945">撰風旅食</a></li>
-        <li>VIVERSE WORLD: <a href="https://worlds.viverse.com/zh-TW/profile/shengle">Shengle</a></li>
-    </ul>
+    <footer style="text-align: center; padding: 20px; background-color: var(--catBrown); color: var(--catCream);">
+        Copyright © Shengle
+    </footer>
 
+    <script src="../script.js"></script>
 
-</div>
-
-
-
-
-<footer>
-    Copyright © Shengle
-</footer>
-
-<button id="backtotop" title="返回頂端">↑</button>
-
-<script src="../script.js"></script>
 </body>
 </html>
