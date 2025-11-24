@@ -15,7 +15,7 @@
         </a>
         
         <ul class="nav-links" id="navMenu">
-            <li><a href="index.html">遊戲介紹</a></li>
+            <li><a href="index.html" class="active-nav">遊戲介紹</a></li>
             <li><a href="sol/index.html">過關解答</a></li>
             <li><a href="dev/index.html">開發歷程</a></li>
             <li><a href="res/index.html">素材資源</a></li>
@@ -29,45 +29,68 @@
         </div>
     </header>
 
-    <main>
-        <section class="hero-section" style="text-align: center;">
-            
-            <h1>一個可以讓貓打翻咖啡的地方</h1>
-
-            <p>我們穿梭在鋼筋水泥的迷宮，習慣了人潮的喧囂，卻常常遺忘那些，在陰影中等待被看見的柔軟靈魂。牠們無聲地走過四季，承載著遺落的孤單，卻依舊相信，會有一束光，穿透黑暗，落在牠們的頭上。</p>
-            <p>請跟隨這些微小的足跡，推開那扇通往溫暖和諧的門。</p>
-
-            <div class="video-container">
-                <video 
-                    class="site-video"
-                    src="StartVideo-V2.mp4" 
-                    autoplay 
-                    loop 
-                    muted 
-                    playsinline 
-                    controls> 
-                    您的瀏覽器不支援 HTML5 影片。
-                </video>
-            </div>
-
-            <a href="https://worlds.viverse.com/zh-TW/XdktB3m" class="cta-button" target="_blank">🐾立即開始您的冒險！</a>
-
-        </section>
+<main>
+    <section class="media-summary-container">
         
-        <section id="gallery">
-            <div class="gallery">
-                <img src="path/to/cat_scene_01.jpg">
-                <img src="path/to/cat_scene_02.jpg">
-                <img src="path/to/cat_scene_01.jpg">
-                <img src="path/to/cat_scene_02.jpg">
-                <img src="path/to/cat_scene_01.jpg">
-                <img src="path/to/cat_scene_02.jpg">
-            </div>
-        </section>
+        <div class="media-column">
+            
+            <div class="main-media-viewer" id="mainMediaViewer">
+                </div>
+                            
 
-        <section id="summary" style="padding-top: 20px;">
-            </section>
-    </main>
+            <div class="thumbnail-gallery-scroll">
+
+                <!-- 影片縮圖 -->
+                <div class="thumbnail-item video-thumbnail-wrapper" data-media-type="video"
+                    data-media-src="https://jfsblog.github.io/hackthonII/StartVideo-V2.mp4">
+                    <img src="stills/stills (0).jpg" alt="遊戲預告片">
+                    <div class="play-icon">▶</div>
+                </div>
+
+                <!-- 一般圖片縮圖 -->
+                <div class="thumbnail-item" data-media-type="image" data-media-src="stills/stills (1).jpg">
+                    <img src="stills/stills (1).jpg">
+                </div>
+
+                <div class="thumbnail-item" data-media-type="image" data-media-src="stills/stills (3).jpg">
+                    <img src="stills/stills (3).jpg">
+                </div>
+
+                <div class="thumbnail-item" data-media-type="image" data-media-src="stills/stills (6).jpg">
+                    <img src="stills/stills (6).jpg">
+                </div>
+
+                <div class="thumbnail-item" data-media-type="image" data-media-src="stills/stills (8).jpg">
+                    <img src="stills/stills (8).jpg">
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="summary-column">
+            <div class="summary-block">
+                
+                <h1>一個可以讓貓打翻咖啡的地方</h1>
+
+                <p>我們穿梭在鋼筋水泥的迷宮，習慣了人潮的喧囂，卻常常遺忘那些，在陰影中等待被看見的柔軟靈魂。牠們無聲地走過四季，承載著遺落的孤單，卻依舊相信，會有一束光，穿透黑暗，落在牠們的頭上。</p>
+                <p>請跟隨這些微小的足跡，推開那扇通往溫暖和諧的門。</p>
+
+                <a href="https://worlds.viverse.com/zh-TW/XdktB3m" class="cta-button" target="_blank" style="text-align: center;">立即開始</a>
+
+                <div class="game-details">
+                    <p><strong>獨立開發：</strong>Shengle Wang</p>
+                    <p><strong>發表時間：</strong>2025 年 11 月 21 日</p>
+                    <p><strong>遊戲語言：</strong>繁體中文</p>
+                    <p><strong>遊戲類型：</strong>免費、小品、劇情、解謎、原型</p>
+                    <p><strong>適用平台：</strong>電腦</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+</main>
 
     <footer style="text-align: center; padding: 20px; background-color: var(--catBrown); color: var(--catCream);">
         Copyright © Shengle

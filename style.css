@@ -1,24 +1,25 @@
 /* ==================================== */
-/* 1. 顏色變數與全局設定 */
+/* 1. 顏色變數與全域基本設定 */
 /* ==================================== */
 :root {
-    /* 假設瀏覽器預設字體大小為 16px */
+    /* 預設根字體大小，瀏覽器通常為 16px */
     font-size: 100%; 
 
-    --catCream: #FFF8EA;
-    --catOrange: #F4A261;
-    --catBrown: #5A3E36;
-    --catGrayBase: #AAAAAA;
-    --catGrayHover: #C0C0C0;
+    /* 主題色彩變數 */
+    --catCream: #FFF8EA;         /* 淺米色（主要背景） */
+    --catOrange: #F4A261;        /* 亮橘色（強調色、按鈕） */
+    --catBrown: #5A3E36;         /* 深棕色（文字、導覽背景） */
+    --catGrayBase: #AAAAAA;      /* 基礎灰色 */
+    --catGrayHover: #C0C0C0;     /* 懸停灰色 */
 }
 
 body {
     font-family: 'Arial', 'Microsoft JhengHei', sans-serif;
-    background-color: var(--catCream);
-    color: var(--catBrown);
+    background-color: var(--catCream); /* 頁面背景色 */
+    color: var(--catBrown);            /* 預設文字色 */
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.6;                  /* 行高 */
 }
 
 h1, h2 {
@@ -27,258 +28,389 @@ h1, h2 {
 }
 
 section {
-    padding: 1.25rem 1.25rem; /* 20px -> 1.25rem */
-    margin: 0 auto;
-    max-width: 75rem; /* 1200px -> 75rem */
+    padding: 1.25rem 1.25rem; /* 內邊距（20px） */
+    margin: 0 auto;           /* 區塊置中 */
+    max-width: 75rem;         /* 最大寬度 1200px */
 }
 
 /* ==================================== */
-/* 針對圖片 Logo 的尺寸控制 */
+/* 2. Logo 與圖片尺寸控制 */
 /* ==================================== */
 
-/* 1. 確保 .logo 容器內的圖片不會超出邊界 */
+/* Logo 外層容器，避免圖片溢出 */
 .navbar .logo {
     display: inline-block; 
 }
 
+/* 反相顏色，使其適合深背景 */
 img.site-logo {
     filter: invert(1);
 }
 
-/* 2. 控制圖片本身的尺寸 */
+/* Logo 圖片本身尺寸 */
 .site-logo {
     display: block;
-    height: 2.5rem;   /* 40px -> 2.5rem */
+    height: 2.5rem;            /* 桌面版高度 40px */
     width: auto;
     max-width: 100%;
     transition: opacity 0.3s;
 }
 
-/* 3. 調整手機上的 Logo 尺寸 (RWD) */
-@media screen and (max-width: 48rem) { /* 768px -> 48rem */
+/* 手機版 Logo 與選單（768px 以下） */
+@media screen and (max-width: 48rem) {
+
     .site-logo {
-        height: 1.875rem; /* 30px -> 1.875rem */
+        height: 1.875rem; /* 手機版高度 30px */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 3.4375rem;             /* 放置於導航列下方 */
+        left: 0;
+        width: 100%;
+        
+        flex-direction: column;     /* 垂直排列 */
+        background-color: var(--catBrown);
+        
+        /* 初始隱藏狀態 */
+        transform: translateX(-100%); 
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* 顯示選單的狀態 */
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        text-align: center;                              /* 文字置中 */
+        border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.1);
+        width: 100%;                                     /* 滿版寬度 */
+    }
+
+    .nav-links a {
+        display: block;                                  /* 擴大點擊區 */
+        padding: 0.9375rem 0;                            /* 上下 15px */
     }
 }
 
 /* ==================================== */
-/* 2. 導航欄 (Navigation Bar) 樣式 */
+/* 3. 導覽列（Navigation Bar） */
 /* ==================================== */
 .navbar {
     background-color: var(--catBrown);
-    padding: 0.625rem 3.125rem; /* 10px 50px -> 0.625rem 3.125rem */
+    padding: 0.625rem 3.125rem;  /* 導覽內距 */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
+    justify-content: space-between; /* 左右分布（Logo + 選單） */
+    align-items: center;            /* 垂直置中 */
+    position: sticky;               /* 捲動時固定頂部 */
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2); /* 2px 5px -> 0.125rem 0.3125rem */
+    z-index: 1000;                 
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
 }
 
 .navbar .logo {
-     font-size: 1.6em;
-     font-weight: bold;
-     color: var(--catOrange);
-     text-decoration: none;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--catOrange);
+    text-decoration: none;
 }
 
 .nav-links {
-    display: flex;
-    list-style: none;
+    display: flex;     /* 水平排列 */
+    list-style: none;  /* 移除列表點 */
     padding: 0;
     margin: 0;
 }
 
 .nav-links a {
-    color: var(--catCream);
+    color: var(--catCream); 
     text-decoration: none;
-    padding: 0.9375rem 1.25rem; /* 15px 20px -> 0.9375rem 1.25rem */
+    padding: 0.9375rem 1.25rem;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
 }
 
+.active-nav{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .nav-links a:hover {
-    color: var(--catOrange);
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* 漢堡圖示 */
+/* 漢堡選單（桌面隱藏） */
 .hamburger {
     display: none; 
     cursor: pointer;
-    padding: 0.625rem; /* 10px -> 0.625rem */
+    padding: 0.625rem; /* 增加可點擊區 */
 }
 
 .bar {
     display: block;
-    width: 1.5625rem; /* 25px -> 1.5625rem */
-    height: 0.1875rem; /* 3px -> 0.1875rem */
-    margin: 0.3125rem auto; /* 5px -> 0.3125rem */
+    width: 1.5625rem;
+    height: 0.1875rem;
+    margin: 0.3125rem auto;
     background-color: var(--catCream);
     transition: all 0.3s ease-in-out;
 }
 
 /* ==================================== */
-/* 3. 共通元素樣式 */
+/* 4. Call to Action 按鈕 */
 /* ==================================== */
 .cta-button {
+    width: 100%;
     display: inline-block;
     background-color: var(--catOrange);
     color: var(--catCream);
-    padding: 0.9375rem 1.875rem; /* 15px 30px -> 0.9375rem 1.875rem */
+    padding: 0.8rem 0;
+    margin: 1rem 0;
     text-decoration: none;
-    border-radius: 3.125rem; /* 50px -> 3.125rem */
+    border-radius: 1rem;
     font-size: 1.2em;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.1s;
 }
 .cta-button:hover {
-    background-color: #e09252;
-    transform: translateY(-0.125rem); /* 2px -> 0.125rem */
+    background-color: #e09252;         /* 懸停加深 */
+    transform: translateY(-0.125rem);  /* 微浮效果 */
 }
 
 /* ==================================== */
-/* 4. RWD 影片容器樣式 */
+/* 5. 主媒體展示區（Main Viewer） */
 /* ==================================== */
 
-.video-container {
+.main-media-viewer {
     position: relative;
-    
-    width: 90%; 
-    /* max-width: 56.25rem; /* 900px -> 56.25rem (已註釋掉，讓 RWD 自動發揮) */
-    margin: 0 auto 2.5rem; /* 40px -> 2.5rem */
-    
-    padding-bottom: 56.25%; 
-    
-    height: 0;
+    width: 100%; 
+    max-width: none; 
+    margin: 0 auto 0.9375rem; 
+    padding-bottom: 56.25%;     /* 固定 16:9 比例 */
+    height: 0;                   /* 使用 padding 撐高 */
     overflow: hidden;
-    border-radius: 0.75rem; /* 12px -> 0.75rem */
-    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.2); /* 8px 20px -> 0.5rem 1.25rem */
+    background-color: #000;
+    border-radius: 0.75rem; 
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2); 
 }
 
-/* 讓 <video> 標籤填滿 RWD 容器 */
-.video-container .site-video {
+/* 圖片與影片填滿並保持比例 */
+.main-media-viewer video,
+.main-media-viewer img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background: #000;
 }
-
-
-/* 響應式調整 (手機上) */
-@media screen and (max-width: 48rem) { /* 768px -> 48rem */
-    .video-container {
-        width: 100%;
-    }
-}
-
 
 /* ==================================== */
-/* 5. RWD 劇照牆樣式 */
+/* 6. 產品頁雙欄佈局（媒體 + 摘要） */
 /* ==================================== */
-.gallery {
-    display: grid;
-    /* 桌面顯示 3 欄，最小寬度 300px -> 18.75rem */
-    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr)); 
-    gap: 0.9375rem; /* 15px -> 0.9375rem */
-    padding: 1.875rem 0; /* 30px -> 1.875rem */
+
+.media-summary-container {
+    margin: 0 auto;
+    max-width: 75rem;
+    padding: 2.5rem; 
+    display: flex;
+    gap: 1.875rem;
+    align-items: flex-start;
 }
 
-.gallery img {
-    width: 100%;
-    height: 12.5rem; /* 200px -> 12.5rem */
+/* 左邊媒體欄 */
+.media-column {
+    flex: 3;      
+    min-width: 0;
+}
+
+/* 右邊摘要欄 */
+.summary-column {
+    flex: 1.5;
+    background-color: var(--catCream); 
+    border-radius: 0.5rem;
+}
+
+.summary-column h1 {
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+/* 商品細節列 */
+.game-details p {
+    margin: 0.5rem 0;
+    padding: 0.25rem 0;
+    border-bottom: 1px dotted var(--catGrayBase);
+    font-size: 0.95em;
+}
+
+/* ==================================== */
+/* 7. 縮圖橫向滾動列（Thumbnail Gallery） */
+/* ==================================== */
+
+.thumbnail-gallery-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding-bottom: 0.25rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.thumbnail-gallery-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.thumbnail-gallery-scroll img {
+    width: 9.375rem;
+    height: 5.625rem;
+    flex-shrink: 0;
+    border-radius: 0.25rem;
+    object-fit: cover;
     display: block;
-    border-radius: 0.5rem; /* 8px -> 0.5rem */
+    cursor: pointer; 
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.thumbnail-gallery-scroll img:hover:not(.active) {
+    opacity: 0.8;
+}
+
+/* ==================================== */
+/* 8. 影片縮圖（含播放圖示） */
+/* ==================================== */
+
+.video-thumbnail-wrapper {
+    position: relative;
+    display: flex;                   
+    justify-content: center;
+    align-items: center;
+    width: 9.375rem; 
+    height: 5.625rem; 
+    flex-shrink: 0; 
+    border-radius: 0.25rem;
     object-fit: cover; 
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 4px 8px -> 0.25rem 0.5rem */
-    transition: transform 0.2s;
+    cursor: pointer; 
+    transition: opacity 0.2s, transform 0.2s;
 }
 
-.gallery img:hover {
-    transform: scale(1.02);
+.thumbnail-item.active img,
+.video-thumbnail-wrapper.active img {
+    border: 5px solid var(--catOrange);
+    border-radius: 0.5rem;
+    box-sizing: border-box;
 }
 
-/* ==================================== */
-/* 6. 響應式設計 (RWD) Media Query */
-/* ==================================== */
-@media screen and (max-width: 48rem) { /* 768px -> 48rem */
+.video-thumbnail-wrapper:hover {
+    opacity: 0.8;
+}
+
+/* 影片縮圖背景圖片 */
+.video-thumbnail-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 9.375rem; 
+    height: 5.625rem; 
+    object-fit: cover;
+    border-radius: 0.25rem; 
+    transition: filter 0.2s ease;
+}
+
+.video-thumbnail-wrapper:hover img {
+    filter: brightness(0.5);
+}
+
+/* 播放符號（三角形） */
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     
+    width: 2rem;
+    height: 2rem;
+
+    /* 半透明黑圓背景 */
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1rem;  /* 調整 ▶ 大小 */
+    color: white;     /* ▶ 顏色 */
+    line-height: 1;
+    pointer-events: none;
+}
+
+
+
+.video-thumbnail-wrapper:hover .play-icon:hover {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* ==================================== */
+/* 9. RWD：雙欄變單欄（1000px 以下） */
+/* ==================================== */
+@media screen and (max-width: 62rem) {
+
     .navbar {
-        padding: 0.625rem 1.25rem; /* 10px 20px -> 0.625rem 1.25rem */
+        padding: 0.625rem 1.25rem; 
+    }
+
+    .hamburger { display: block; }
+
+    .media-summary-container {
+        flex-direction: column;
+        gap: 0; 
+        padding: 0 1.25rem;
     }
     
-    /* 漢堡圖示顯示 */
-    .hamburger {
-        display: block; 
+    .summary-column {
+        width: 100%; 
+        order: -1;
+        margin-bottom: 1.25rem; 
+        padding: 0; 
+        background-color: transparent;
+        box-shadow: none; 
     }
-
-    /* 導航連結隱藏並堆疊 */
-    .nav-links {
-        position: absolute;
-        /* 保持頂部和寬度不變 */
-        top: 3.4375rem; /* 55px -> 3.4375rem (導航欄高度) */
-        left: 0;
-        width: 100%;
-        
-        flex-direction: column; 
-        background-color: var(--catBrown); 
-        
-        /* 關鍵修正 1：將選單向左側推 100% 隱藏 */
-        transform: translateX(-100%); 
-        transition: transform 0.3s ease-in-out;
-    }
-
     
-    .nav-links li {
-        text-align: center;
-        border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.1); /* 1px -> 0.0625rem */
+    .summary-column .summary-block {
+        padding: 1.25rem 0; 
     }
 
-    .nav-links a {
+    .media-column {
+        width: 100%; 
+        flex: none; 
+    }
+    
+    /* 行動版 CTA 全寬 */
+    .cta-button {
         display: block;
-        padding: 0.9375rem 0; /* 15px -> 0.9375rem */
+        width: 100%;
+        box-sizing: border-box; 
     }
 
-    /* 選單開啟時的狀態 */
-    .nav-links.active {
-        transform: translateX(0);
-    }
-
-    /* 漢堡圖示的動畫 (變成 X) */
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(0.5rem) rotate(45deg); /* 8px -> 0.5rem */
-    }
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-0.5rem) rotate(-45deg); /* -8px -> -0.5rem */
-    }
-    
-    /* 調整劇照牆，在手機上每欄寬度可以更小 */
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.375rem), 1fr)); /* 150px -> 9.375rem */
-        padding: 1.25rem 0; /* 20px -> 1.25rem */
+    /* 說明文字區補強間距 */
+    #long-description {
+        padding: 1.25rem;
     }
 }
 
 /* ==================================== */
-/* 表格樣式 */
+/* 10. 表格樣式（Data Table） */
 /* ==================================== */
 .data-table {
     width: 100%;
-    border-collapse: collapse; /* 合併邊框 */
+    border-collapse: collapse;
     text-align: left;
-    min-width: 600px; /* 最小寬度，防止在手機上過窄 */
+    min-width: 600px;
 }
 
 .data-table th, .data-table td {
-    padding: 0.75rem 0.9375rem; /* 12px 15px */
-    border-bottom: 0.0625rem solid var(--catGrayBase); /* 1px */
+    padding: 0.75rem 0.9375rem;
+    border-bottom: 0.0625rem solid var(--catGrayBase);
 }
 
 .data-table th {
@@ -289,7 +421,7 @@ img.site-logo {
 }
 
 .data-table tr:nth-child(even) {
-    background-color: rgba(244, 162, 97, 0.05); /* 斑馬紋效果 */
+    background-color: rgba(244, 162, 97, 0.05);
 }
 
 .data-table a {
