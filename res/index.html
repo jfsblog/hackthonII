@@ -6,26 +6,6 @@
     <title>一個可以讓貓打翻咖啡的地方</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../favicon.png">
-    <style>
-        .resource-table-container {
-            overflow-x: auto; /* 確保表格在窄螢幕上可水平捲動 */
-            margin-top: 1.25rem; /* 20px */
-        }
-
-        /* 列表樣式 */
-        .tool-list, .ai-list {
-            max-width: 50rem;
-            margin: 1.25rem auto; /* 20px */
-            padding: 0 1.25rem;
-        }
-
-        .tool-list li {
-            background-color: var(--catCream);
-            padding: 0.625rem 0; /* 10px */
-            border-bottom: 0.0625rem dotted var(--catGrayBase);
-            font-size: 1.1em;
-        }
-    </style>
 </head>
 <body>
 
@@ -49,18 +29,24 @@
         </div>
     </header>
 
-<main>
+<main class="main-container">
+    <aside class="left-sidebar">
+        <nav id="toc">
+        </nav>
+    </aside>
 
-        <section style="text-align: center;">
-            <h1>素材資源</h1>
-            <p>本頁面詳列了在開發過程中使用的所有外部素材、工具，以及 AI 整合技術，感謝所有資源創作者！</p>
-        </section>
+    <section class="content-section">
+
+        <!-- h1 -->
+        <h1>素材資源</h1>
+
+        <p>本頁面詳列了在開發過程中使用的所有外部素材、工具，以及 AI 整合技術，感謝所有資源創作者！</p>
 
 
-        <section class="used-assets">
-            <h2>素材資源</h2>
-
-            <div class="resource-table-container">
+        <!-- 內文 -->
+        <h2 id="section1">素材資源</h2>
+        <div class="content-detail open">
+            <div class="table-container">
                 <table class="data-table">
                     <thead>
                         <tr>
@@ -236,12 +222,11 @@
                     </tbody>
                 </table>
             </div>
-        </section>
+        </div>
 
-
-        <section class="editing-tools">
-            <h2>編修工具</h2>
-            <div class="resource-table-container">
+        <h2 id="section2">編修工具</h2>
+        <div class="content-detail open">
+            <div class="table-container">
                 <table class="data-table">
                     <thead>
                         <tr>
@@ -267,7 +252,7 @@
                             <td><a href="https://www.blender.org/about/license/" target="_blank">GNU General Public License</a></td>
                         </tr>
                         <tr>
-                            <td><a href="https://www.blackmagicdesign.com/cn/products/davinciresolve" target="_blank">DaVinci Resolve</a></td>
+                            <td><a href="https://www.blackmagicdesign.com/cn/products/davinciresolve" target="_blank">DaVinci Resolve</a></td>
                             <td>影片剪輯</td>
                             <td><a href="https://www.blackmagicdesign.com/cn/products/davinciresolve" target="_blank">免費版本授權</a></td>
                         </tr>
@@ -284,13 +269,11 @@
                     </tbody>
                 </table>
             </div>
-        </section>
+        </div>
 
-
-        <section class="ai-integration">
-            <h2>AI應用</h2>
-
-            <div class="resource-table-container">
+        <h2 id="section3">AI平台</h2>
+        <div class="content-detail open">
+            <div class="table-container">
                 <table class="data-table">
                     <thead>
                         <tr>
@@ -333,16 +316,23 @@
                     </tbody>
                 </table>
             </div>
-        </section>
+        </div>
+    </section>
 
-
+    <aside class="right-sidebar">
+        <!-- 右側預留空間或未來功能 -->
+    </aside>
 </main>
 
-    <footer style="text-align: center; padding: 20px; background-color: var(--catBrown); color: var(--catCream);">
+
+<!-- 放在 body 底部 -->
+<button id="scrollTopBtn" title="回到頂部">TOP</button>
+
+
+    <footer>
         Copyright © Shengle
     </footer>
 
     <script src="../script.js"></script>
-
 </body>
 </html>

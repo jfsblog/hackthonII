@@ -6,224 +6,6 @@
     <title>一個可以讓貓打翻咖啡的地方</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../favicon.png">
-    <style>
-    /* --- 區塊佈局重設 --- */
-    main {
-        padding-top: 0; /* 讓第一個 section 可以延伸到 header 下方 */
-    }
-
-    /* 頂部介紹區塊 (作者簡介與頭像) */
-    .author-intro-story {
-        max-width: 55rem; /* 稍微放寬一點 */
-        margin: 0 auto;
-        padding: 3.75rem 1.25rem 2rem; /* 調整底部間距 */
-        text-align: center;
-        background-color: var(--catCream); /* 淺色背景，給介紹區視覺提升 */
-    }
-
-    /* --- 頭像設計優化 --- */
-    .author-photo-center {
-        width: 12rem; /* 放大頭像 */
-        height: 12rem;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 1.5rem;
-        
-        /* 增加貓咪主題邊框：橘色外框 + 陰影，讓頭像成為焦點 */
-        border: 0rem solid var(--catBrown); /* 6px 實心橘色邊框 */
-        box-shadow: 0 0.5rem 1rem rgba(90, 62, 54, 0.2); /* 深棕色陰影 */
-    }
-
-    /* 標籤容器，用於佈局 */
-    .author-tags-container {
-        display: flex; /* 啟用 Flexbox 佈局 */
-        flex-wrap: wrap; /* 標籤太多時允許換行 */
-        justify-content: center; /* 標籤居中對齊 */
-        gap: 0.75rem; /* 12px -> 0.75rem (標籤間距) */
-        margin-bottom: 2rem; /* 與下方段落的間距 */
-    }
-
-    /* 標籤基本樣式 */
-    .tag {
-        padding: 0.4rem 0.4rem;
-        border: 1px solid var(--catBrown);
-        border-radius: 0.4rem;
-        font-size: 0.8rem;
-        font-weight: bold;
-        white-space: nowrap;
-        color: var(--catBrown);
-    }
-
-    /* --- 標題與段落 --- */
-
-    .sub-heading {
-        font-size: 1.1em;
-        color: var(--catOrange);
-        font-weight: 500;
-        margin-bottom: 2rem;
-    }
-
-    .story-paragraph {
-        font-size: 1.05em;
-        line-height: 1.8;
-        text-align: justify; /* 讓簡介文字置中更簡潔 */
-        margin: 1.25rem auto;
-        max-width: 40rem; /* 限制段落寬度，提高可讀性 */
-        color: var(--catDarkText);
-    }
-
-    /* --- 區塊 2: 貓咪語錄區塊 --- */
-    .cat-quote-section {
-        background-color: var(--catBrown); /* 深色背景，與頂部區塊形成強烈對比 */
-        padding: 2.5rem 1.25rem;
-        text-align: center;
-        color: white;
-        margin-bottom: 5rem;
-    }
-
-    .cat-quote-box {
-        max-width: 45rem;
-        margin: 0 auto;
-    }
-
-    /* 確保 cat-quote 有相對定位，才能讓子元素準確定位 */
-    .cat-quote {
-        font-family: serif;
-        font-size: 1.6em;
-        font-style: italic;
-        line-height: 1.5;
-        margin-bottom: 0.5rem;
-        position: relative; 
-        padding: 0 1.5rem;
-    }
-
-    .cat-quote::before,
-    .cat-quote::after {
-        content: '❝';
-        font-size: 4em;
-        color: var(--catOrange);
-        position: absolute;
-        opacity: 0.2;
-        line-height: 1;
-        z-index: 0;
-    }
-
-    /* 左上角引號 */
-    .cat-quote::before {
-        left: 0.5em;
-        top: -1.5rem;
-        transform: translateX(-50%);
-    }
-
-    /* 右下角引號 */
-    .cat-quote::after {
-        content: '❞';
-        right:0.5em;
-        bottom: -1rem; 
-        transform: rotate(180deg) translateX(-50%);
-    }
-    .quote-source {
-        font-size: 0.9em;
-        color: rgba(255, 255, 255, 0.7);
-        text-align: right;
-        display: block;
-        margin-top: 1rem;
-    }
-
-
-    /* --- 區塊 3: 技能 Grid 佈局 --- */
-    .author-skills-contact {
-        background-color: rgba(244, 162, 97, 0.1); /* 淺橘色底 */
-        padding: 3rem 1.25rem;
-    }
-
-    .section-title {
-        text-align: center;
-        margin-bottom: 2.5rem;
-        font-size: 2rem;
-        color: var(--catBrown);
-    }
-
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
-        gap: 1.875rem;
-        max-width: 62.5rem;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .skill-item {
-        background-color: white;
-        padding: 1.5625rem;
-        border-radius: 0.625rem;
-        /* 略微抬升的陰影，讓卡片更有層次感 */
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); 
-        transition: transform 0.3s ease;
-    }
-
-    .skill-item:hover {
-        transform: translateY(-0.25rem); /* 懸停時略微上浮 */
-        box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
-    }
-
-    .skill-icon {
-        font-size: 3em; /* 圖標放大 */
-        display: block;
-        margin-bottom: 0.625rem;
-    }
-    .skill-item h3 {
-        color: var(--catBrown);
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-    }
-    .skill-item p {
-        font-size: 0.95em;
-        color: var(--catDarkText);
-    }
-
-    /* --- 區塊 4: 聯繫按鈕組 --- */
-    .contact-section {
-        padding: 2.5rem 1.25rem 3.75rem;
-        background-color: var(--catCream); /* 與頂部區塊顏色一致 */
-    }
-
-    .contact-buttons {
-        text-align: center;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.9375rem;
-        max-width: 50rem;
-    }
-
-    .contact-btn {
-        padding: 0.5rem 1rem;
-        border-radius: 3.125rem;
-        text-decoration: none;
-        font-weight: bold;
-        /* 預設使用主題深棕色 */
-        color: white;
-        background-color: var(--catBrown);
-        transition: background-color 0.2s, transform 0.2s;
-    }
-
-    .contact-btn:hover {
-        background-color: var(--catOrange); /* 懸停時變為橘色 */
-        transform: scale(1.05);
-    }
-
-    /* RWD 調整 */
-    @media screen and (max-width: 37.5rem) {
-        .story-paragraph {
-            text-align: left; /* 在小螢幕上靠左對齊通常更好讀 */
-        }
-        .cat-quote {
-            font-size: 1.4em;
-        }
-    }
-    </style>
 </head>
 <body>
 
@@ -269,20 +51,18 @@
         <section class="cat-quote-section">
             <div class="cat-quote-box">
                 <p class="cat-quote">
-                    Bug 就像貓：不叫牠，它自己會跳到你鍵盤上。
+                    Bug 就像貓：不叫牠，它自己也會跳到你鍵盤上
                 </p>
-                <p class="quote-source">— 貓咪程式哲學家</p>
+                <p class="quote-source">—— 某貓咪哲學家</p>
             </div>
         </section>
 
-        <section class="author-skills-contact secondary-section">
-            <h2 class="section-title">我的技能樹</h2>
-            
+        <section class="author-skills-contact secondary-section">           
             <div class="skills-grid">
                 <div class="skill-item">
                     <span class="skill-icon">🖥️</span>
                     <h3>核心程式設計</h3>
-                    <p>JavaScript、HTML、Python，搭配 VIVERSE EXTENSION</p>
+                    <p><code>JavaScript</code>+<code>HTML</code>+<code>CSS</code>+<code>Python</code> </br> <code>VIVERSE EXTENSION</code></p>
                 </div>
                 <div class="skill-item">
                     <span class="skill-icon">💡</span>
@@ -312,11 +92,15 @@
 
     </main>
 
-    <footer style="text-align: center; padding: 20px; background-color: var(--catBrown); color: var(--catCream);">
+
+<!-- 放在 body 底部 -->
+<button id="scrollTopBtn" title="回到頂部">TOP</button>
+
+
+    <footer>
         Copyright © Shengle
     </footer>
 
     <script src="../script.js"></script>
-
 </body>
 </html>

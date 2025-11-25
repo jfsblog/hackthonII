@@ -1,4 +1,3 @@
-
 // ====================================
 // 1. 響應式網頁設計 (RWD) 漢堡選單的開關邏輯
 // ====================================
@@ -31,11 +30,6 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 const mainMediaViewer = document.getElementById('mainMediaViewer');       // 主媒體顯示區塊 (大型圖片或影片)
 // const thumbnails = document.querySelectorAll('.thumbnail-gallery-scroll img'); // 所有縮圖列表
 
-/**
- * 根據媒體類型和來源 URL，在主顯示區塊中動態創建並切換媒體內容
- * @param {string} mediaType - 媒體類型，預期為 'video' 或 'image'
- * @param {string} mediaSrc - 媒體檔案的 URL (影片或圖片的來源)
- */
 function switchMedia(mediaType, mediaSrc) {
     // 1. 清空主顯示區塊目前的內容
     mainMediaViewer.innerHTML = '';
@@ -99,3 +93,77 @@ if (thumbnails.length > 0) {
     // 載入並顯示預設的第一個媒體 (通常是影片或封面圖)
     switchMedia(defaultType, defaultSrc);
 }
+
+
+// ====================================
+// 4. TOC
+// ====================================
+document.addEventListener("DOMContentLoaded", function() {
+    // ===== 收合/展開 h2 =====
+    const headers = document.querySelectorAll(".content-section h2");
+
+    headers.forEach(h2 => {
+        const content = h2.nextElementSibling;
+
+        // 若預設開啟
+        if(content.classList.contains("open")) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            h2.classList.add("active");
+        }
+
+        h2.addEventListener("click", () => {
+            content.classList.toggle("open");
+            h2.classList.toggle("active");
+
+            if (content.classList.contains("open")) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = 0;
+            }
+        });
+    });
+
+    // ===== 生成 TOC =====
+    const toc = document.getElementById("toc");
+    if (toc) {
+        toc.innerHTML = ""; // 先清空
+        const title = document.createElement("h3");
+        title.textContent = "內容索引";
+        toc.appendChild(title);
+        const ul = document.createElement("ul");
+        headers.forEach((h2, i) => {
+            if (!h2.id) h2.id = "section-" + i;
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = "#" + h2.id;
+            a.textContent = h2.textContent;
+            li.appendChild(a);
+            ul.appendChild(li);
+        });
+        toc.appendChild(ul);
+    }
+});
+
+
+// ====================================
+// TopBtn
+// ====================================
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+// 滾動時顯示或隱藏按鈕
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) { // 滾動超過 200px 顯示
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+});
+
+// 點擊捲回頂部
+scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});

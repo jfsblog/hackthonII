@@ -6,67 +6,6 @@
     <title>一個可以讓貓打翻咖啡的地方</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../favicon.png">
-    <style>
-        .solution-item {
-            border: 0.125rem solid var(--catOrange); /* 2px */
-            margin-bottom: 1rem;
-            border-radius: 0.5rem; /* 8px 圓角 */
-            background-color: var(--catCream);
-            overflow: hidden; /* 確保內容不溢出圓角 */
-        }
-
-        /* 標題 (Summary) 樣式 */
-        .solution-item summary {
-            display: block; /* 讓 summary 填滿寬度 */
-            padding: 1rem 1.25rem;
-            font-size: 1.25rem;
-            font-weight: bold;
-            cursor: pointer;
-            background-color: var(--catOrange);
-            color: white; /* 確保文字可見 */
-            transition: background-color 0.2s;
-            user-select: none; /* 防止內容被選中時影響美觀 */
-        }
-
-        .solution-item summary:hover {
-            background-color: #d8894d; /* 稍暗的橘色 */
-        }
-
-        /* details 展開時的箭頭隱藏或調整（可選） */
-        .solution-item summary::-webkit-details-marker {
-            display: none;
-        }
-        .solution-item summary::marker {
-            display: none;
-        }
-
-        /* 內容區塊樣式 */
-        .solution-detail {
-            padding: 1.25rem;
-            background-color: white; /* 內容使用白色底 */
-            border-top: 0.0625rem solid var(--catGrayBase);
-        }
-
-        .solution-detail h3 {
-            color: var(--catBrown);
-            margin-top: 0.5rem;
-            border-bottom: 0.125rem dotted var(--catGrayBase); /* 底部虛線 */
-            padding-bottom: 0.25rem;
-        }
-
-        .solution-video-link {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: var(--catBrown);
-            color: white;
-            text-decoration: none;
-            border-radius: 0.25rem;
-        }
-        .solution-video-link:hover {
-            background-color: #55443d;
-        }
-    </style>
 </head>
 <body>
 
@@ -90,51 +29,58 @@
         </div>
     </header>
 
-    <main>
-        <section class="solution-header" style="text-align: center;">
-            <h1>過關解答</h1>
-            <p><strong>劇透警告</strong>！請確認您已盡力嘗試解謎。點擊關卡標題即可展開或收合答案。</p>
-        </section>
+<main class="main-container">
+    <aside class="left-sidebar">
+        <nav id="toc">
+        </nav>
+    </aside>
 
-        <section class="solution-content" style="max-width: 50rem; margin: 0 auto; padding: 0 1.25rem 3rem;">
-            
-            <details class="solution-item">
-                <summary>整體流程</summary>
-                <div class="solution-detail">
+    <section class="content-section">
 
-                </div>
-            </details>
+        <!-- h1 -->
+        <h1>H1</h1>
 
-            <details class="solution-item">
-                <summary>關卡 1：XXXXX</summary>
-                <div class="solution-detail">
-                    <h3>💡 提示</h3>
-                    <p>XXXXXX</p>
-                    <h3>🔑 解答</h3>
-                    <p>XXXXXX</p>
-                </div>
-            </details>
+        <!-- infobox -->
+        <div class="alert-box">
+            <div class="alert-icon">⚠️劇透警告</div>
+            <div class="alert-text">
+                本文將有據透....
+            </div>
+        </div>
 
-            <details class="solution-item">
-                <summary>關卡 2：XXXXX</summary>
-                <div class="solution-detail">
-                    <h3>💡 提示</h3>
-                    <p>XXXXXX</p>
-                    
-                    <h3>🔑 解答</h3>
-                    <p>XXXXXX</p>
-                </div>
-            </details>
 
-        </section>
+        <!-- 內文 -->
+        <h2 id="section1">整體流程</h2>
+        <div class="content-detail open">
+            <p>這個區塊預設展開。</p>
+        </div>
 
-    </main>
+        <h2 id="section2">關卡一</h2>
+        <div class="content-detail">
+            <p>預設收合。</p>
+        </div>
 
-    <footer style="text-align: center; padding: 20px; background-color: var(--catBrown); color: var(--catCream);">
+        <h2 id="section3">關卡二</h2>
+        <div class="content-detail">
+            <h3>這是H3</h3>
+            <p>預設收合。</p>
+        </div>
+    </section>
+
+    <aside class="right-sidebar">
+        <!-- 右側預留空間或未來功能 -->
+    </aside>
+</main>
+
+
+<!-- 放在 body 底部 -->
+<button id="scrollTopBtn" title="回到頂部">TOP</button>
+
+
+    <footer>
         Copyright © Shengle
     </footer>
 
     <script src="../script.js"></script>
-
 </body>
 </html>

@@ -1,6 +1,6 @@
-/* ==================================== */
-/* 1. 顏色變數與全域基本設定 */
-/* ==================================== */
+/* ============================================================= */
+/* 顏色變數與全域基本設定 */
+/* ============================================================= */
 :root {
     /* 預設根字體大小，瀏覽器通常為 16px */
     font-size: 100%; 
@@ -27,15 +27,20 @@ h1, h2 {
     font-weight: 700;
 }
 
+h1{
+    text-align: center;
+}
+
 section {
     padding: 1.25rem 1.25rem; /* 內邊距（20px） */
     margin: 0 auto;           /* 區塊置中 */
     max-width: 75rem;         /* 最大寬度 1200px */
 }
 
-/* ==================================== */
-/* 2. Logo 與圖片尺寸控制 */
-/* ==================================== */
+
+/* ============================================================= */
+/* Logo 與圖片尺寸控制 */
+/* ============================================================= */
 
 /* Logo 外層容器，避免圖片溢出 */
 .navbar .logo {
@@ -55,9 +60,7 @@ img.site-logo {
     max-width: 100%;
     transition: opacity 0.3s;
 }
-
-/* 手機版 Logo 與選單（768px 以下） */
-@media screen and (max-width: 48rem) {
+@media (max-width: 60rem){
 
     .site-logo {
         height: 1.875rem; /* 手機版高度 30px */
@@ -94,9 +97,9 @@ img.site-logo {
     }
 }
 
-/* ==================================== */
-/* 3. 導覽列（Navigation Bar） */
-/* ==================================== */
+/* ============================================================= */
+/* 導覽列 */
+/* ============================================================= */
 .navbar {
     background-color: var(--catBrown);
     padding: 0.625rem 3.125rem;  /* 導覽內距 */
@@ -139,7 +142,6 @@ img.site-logo {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* 漢堡選單（桌面隱藏） */
 .hamburger {
     display: none; 
     cursor: pointer;
@@ -155,9 +157,28 @@ img.site-logo {
     transition: all 0.3s ease-in-out;
 }
 
-/* ==================================== */
-/* 4. Call to Action 按鈕 */
-/* ==================================== */
+code {
+    background-color: var(--catCream);
+    border: 1px solid var(--catBrown);
+    padding: 1px 2px;
+    border-radius: 5px;
+    margin: 0 3px;
+}
+
+footer{
+    margin-top: 2rem;
+    text-align: center; 
+    padding: 20px; 
+    background-color: var(--catBrown); 
+    color: var(--catCream);
+}
+
+
+/* ============================================================= */
+/*  index.html  */
+/* ============================================================= */
+
+/* ---------------------------------------- Call to Action 按鈕  */
 .cta-button {
     width: 100%;
     display: inline-block;
@@ -176,24 +197,21 @@ img.site-logo {
     transform: translateY(-0.125rem);  /* 微浮效果 */
 }
 
-/* ==================================== */
-/* 5. 主媒體展示區（Main Viewer） */
-/* ==================================== */
-
+/* ---------------------------------------- 主媒體展示區  */
 .main-media-viewer {
     position: relative;
     width: 100%; 
     max-width: none; 
     margin: 0 auto 0.9375rem; 
     padding-bottom: 56.25%;     /* 固定 16:9 比例 */
-    height: 0;                   /* 使用 padding 撐高 */
+    height: 0;
     overflow: hidden;
     background-color: #000;
     border-radius: 0.75rem; 
     box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2); 
 }
 
-/* 圖片與影片填滿並保持比例 */
+/* ---------------------------------------- 圖片與影片填滿並保持比例  */
 .main-media-viewer video,
 .main-media-viewer img {
     position: absolute;
@@ -204,9 +222,7 @@ img.site-logo {
     object-fit: contain;
 }
 
-/* ==================================== */
-/* 6. 產品頁雙欄佈局（媒體 + 摘要） */
-/* ==================================== */
+/* ---------------------------------------- 產品頁雙欄佈局（媒體 + 摘要） */
 
 .media-summary-container {
     margin: 0 auto;
@@ -217,13 +233,11 @@ img.site-logo {
     align-items: flex-start;
 }
 
-/* 左邊媒體欄 */
 .media-column {
     flex: 3;      
     min-width: 0;
 }
 
-/* 右邊摘要欄 */
 .summary-column {
     flex: 1.5;
     background-color: var(--catCream); 
@@ -235,7 +249,6 @@ img.site-logo {
     margin-top: 0;
 }
 
-/* 商品細節列 */
 .game-details p {
     margin: 0.5rem 0;
     padding: 0.25rem 0;
@@ -243,9 +256,7 @@ img.site-logo {
     font-size: 0.95em;
 }
 
-/* ==================================== */
-/* 7. 縮圖橫向滾動列（Thumbnail Gallery） */
-/* ==================================== */
+/* ---------------------------------------- 縮圖橫向滾動列（Thumbnail Gallery） */
 
 .thumbnail-gallery-scroll {
     display: flex;
@@ -268,16 +279,13 @@ img.site-logo {
     display: block;
     cursor: pointer; 
     transition: opacity 0.2s, transform 0.2s;
-    margin-bottom: 2rem;
 }
 
 .thumbnail-gallery-scroll img:hover:not(.active) {
     opacity: 0.8;
 }
 
-/* ==================================== */
-/* 8. 影片縮圖（含播放圖示） */
-/* ==================================== */
+/* ---------------------------------------- 影片縮圖（含播放圖示） */
 
 .video-thumbnail-wrapper {
     position: relative;
@@ -304,7 +312,6 @@ img.site-logo {
     opacity: 0.8;
 }
 
-/* 影片縮圖背景圖片 */
 .video-thumbnail-wrapper img {
     position: absolute;
     top: 0;
@@ -320,7 +327,6 @@ img.site-logo {
     filter: brightness(0.5);
 }
 
-/* 播放符號（三角形） */
 .play-icon {
     position: absolute;
     top: 50%;
@@ -344,17 +350,13 @@ img.site-logo {
     pointer-events: none;
 }
 
-
-
 .video-thumbnail-wrapper:hover .play-icon:hover {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* ==================================== */
-/* 9. RWD：雙欄變單欄（1000px 以下） */
-/* ==================================== */
-@media screen and (max-width: 62rem) {
+/* ---------------------------------------- 雙欄變單欄（1000px 以下） */
+@media (max-width: 60rem) {
 
     .navbar {
         padding: 0.625rem 1.25rem; 
@@ -384,6 +386,7 @@ img.site-logo {
     .media-column {
         width: 100%; 
         flex: none; 
+        padding-bottom: 1rem;
     }
     
     /* 行動版 CTA 全寬 */
@@ -399,9 +402,213 @@ img.site-logo {
     }
 }
 
-/* ==================================== */
-/* 10. 表格樣式（Data Table） */
-/* ==================================== */
+/* ---------------------------------------- 文章內容 */
+
+.main-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: var(--catCream);
+}
+
+.left-sidebar,
+.right-sidebar {
+    flex: 0 0 15%;
+    margin: 0 auto;
+}
+
+.left-sidebar{
+    padding-left: 1.5rem;
+}
+
+.right-sidebar{
+    padding-right: 1.5rem;
+}
+
+.content-section {
+    width: 100%;
+    max-width: 70rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 1rem;
+}
+
+.alert-box {
+    display: flex;
+    align-items: center;
+    background-color: #FFEAEA;
+    border-left: 4px solid #E57373;
+    padding: 0.5rem 1rem;
+    margin: 1rem auto;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    width: 80%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+.alert-icon {
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    color: #E57373;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-text {
+    flex: 1;
+}
+
+@media (max-width: 60rem) {
+    .alert-box {
+        width: 95%;
+    }
+}
+
+/* ---------------------------------------- TOC */
+#toc {
+    position: sticky;
+    top: 100px;  /* sticky navbar 下方 */
+    background-color: var(--catCream);
+    border: 1px solid var(--catGrayBase);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+#toc ul {
+    padding: 0 1rem;
+    margin: 0;
+}
+
+#toc li {
+    margin-bottom: 0.5rem;
+}
+
+#toc a {
+    text-decoration: none;
+    color: var(--catBrown);
+}
+
+#toc a:hover {
+    color: var(--catOrange);
+}
+
+/* 手機版調整成單欄 */
+@media (max-width: 60rem) {
+    .main-container {
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .left-sidebar,
+    .right-sidebar,
+    .content-section {
+        width: 100%;
+        max-width: 70rem;    /* 桌面版最大寬度 */
+        margin: 0 auto;      /* 水平置中 */
+        box-sizing: border-box;
+        padding: 0 1rem;     /* 避免窄螢幕貼邊 */
+    }
+
+    #toc {
+        display: none;
+    }
+}
+
+/* ---------------------------------------- h2 標題 */
+.content-section h2 {
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    background-color: var(--catOrange);
+    color: white;
+    margin-bottom: 0;
+    border-radius: 0.5rem;
+    user-select: none;
+    position: relative;
+    transition: background-color 0.2s, border-radius 0.2s;
+    scroll-margin-top: 80px;
+}
+
+.content-section h2:hover {
+    background-color: #d8894d;
+}
+
+.content-section h2::after {
+    content: "▶";
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.3s;
+    font-size: 0.9rem;
+}
+
+.content-section h2.active {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.content-section h2.active::after {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.content-section .content-detail {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 1rem;
+    background-color: white;
+    border-left: 2px solid var(--catOrange);
+    border-right: 2px solid var(--catOrange);
+    border-bottom: 0;  /* 收合時不顯示 */
+    margin-bottom: 1rem;
+    border-radius: 0;  /* 收合時下方無圓角 */
+}
+
+.content-section .content-detail.open {
+    padding: 1rem;
+    max-height: 2000px;  /* 可用 JS 計算 scrollHeight */
+    border-bottom: 2px solid var(--catOrange);
+    border-radius: 0 0 0.5rem 0.5rem; /* 下方兩角圓 */
+}
+
+
+/* ---------------------------------------- h3 樣式 */
+.content-section h3 {
+    margin-top: 1rem;
+    border-bottom: 1px dotted var(--catGrayBase);
+    color: var(--catBrown);
+    padding-bottom: 0.25rem;
+}
+
+/* ---------------------------------------- Scroll Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--catOrange);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: none; /* 初始隱藏 */
+    z-index: 999;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: background-color 0.2s;
+}
+
+#scrollTopBtn:hover {
+    background-color: #d8894d;
+}
+
+/* ----------------------------------------表格樣式  */
 .data-table {
     width: 100%;
     border-collapse: collapse;
@@ -415,7 +622,7 @@ img.site-logo {
 }
 
 .data-table th {
-    background-color: var(--catOrange);
+    background-color: #3d3d3d;
     color: var(--catCream);
     font-weight: bold;
     text-transform: uppercase;
@@ -435,3 +642,216 @@ img.site-logo {
     color: var(--catOrange);
     border-bottom-color: var(--catOrange);
 }
+
+.table-container {
+    width: 100%;
+    max-height: 500px;
+    overflow: auto;
+    margin: 1.25rem 0;
+    font-size: 0.8rem;
+}
+
+
+/* ============================================================= */
+/* 作者介紹 */
+/* ============================================================= */
+
+main {
+    padding-top: 0; /* 讓第一個 section 可以延伸到 header 下方 */
+}
+
+.author-intro-story {
+    max-width: 55rem; /* 稍微放寬一點 */
+    margin: 0 auto;
+    padding: 3.75rem 1.25rem 2rem; /* 調整底部間距 */
+    text-align: center;
+    background-color: var(--catCream); /* 淺色背景，給介紹區視覺提升 */
+}
+
+.author-photo-center {
+    width: 12rem; /* 放大頭像 */
+    height: 12rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 0rem solid var(--catBrown); 
+    box-shadow: 0 0.5rem 1rem rgba(90, 62, 54, 0.2);
+}
+
+.author-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.tag {
+    padding: 0.4rem 0.4rem;
+    border: 1px solid var(--catBrown);
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap;
+    color: var(--catBrown);
+}
+
+.sub-heading {
+    font-size: 1.1em;
+    color: var(--catOrange);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.story-paragraph {
+    font-size: 1.05em;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 1.25rem auto;
+    max-width: 40rem;
+    color: var(--catDarkText);
+}
+
+.cat-quote-section {
+    background-color: var(--catBrown);
+    padding: 2.5rem 1.25rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 5rem;
+}
+
+.cat-quote-box {
+    max-width: 45rem;
+    margin: 0 auto;
+}
+
+.cat-quote {
+    font-family: serif;
+    font-size: 1.6em;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    position: relative; 
+    padding: 0 1.5rem;
+}
+
+.cat-quote::before,
+.cat-quote::after {
+    content: '❝';
+    font-size: 4em;
+    color: #ffffff80;
+    position: absolute;
+    opacity: 0.2;
+    line-height: 1;
+    z-index: 0;
+}
+
+.cat-quote::before {
+    left: 0.5em;
+    top: -1.5rem;
+    transform: translateX(-50%);
+}
+
+.cat-quote::after {
+    content: '❞';
+    right:0.5em;
+    bottom: -1rem; 
+    transform: rotate(180deg) translateX(-50%);
+}
+.quote-source {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: right;
+    display: block;
+    margin-top: 1rem;
+}
+
+.author-skills-contact {
+    background-color: rgba(244, 162, 97, 0.1);
+    padding: 3rem 1.25rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    color: var(--catBrown);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+    gap: 1.875rem;
+    max-width: 62.5rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.skill-item {
+    background-color: white;
+    padding: 1.5625rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+.skill-icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 0.625rem;
+}
+.skill-item h3 {
+    color: var(--catBrown);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.skill-item p {
+    font-size: 0.95em;
+    color: var(--catDarkText);
+}
+
+.contact-section {
+    padding: 2.5rem 1.25rem 3.75rem;
+    background-color: var(--catCream);
+}
+
+.contact-buttons {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9375rem;
+    max-width: 50rem;
+}
+
+.contact-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 3.125rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    background-color: var(--catBrown);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.contact-btn:hover {
+    background-color: var(--catOrange);
+    transform: scale(1.05);
+}
+
+/* RWD 調整 */
+@media screen and (max-width: 37.5rem) {
+    .story-paragraph {
+        text-align: left;
+    }
+    .cat-quote {
+        font-size: 1.4em;
+    }
+}
+
