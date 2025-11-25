@@ -717,7 +717,6 @@ main {
     padding: 2.5rem 1.25rem;
     text-align: center;
     color: white;
-    margin-bottom: 5rem;
 }
 
 .cat-quote-box {
@@ -769,6 +768,7 @@ main {
 .author-skills-contact {
     background-color: rgba(244, 162, 97, 0.1);
     padding: 3rem 1.25rem;
+    margin-top: 2rem;
 }
 
 .section-title {

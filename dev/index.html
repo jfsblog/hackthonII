@@ -7,9 +7,44 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../favicon.png">
     <style>
+
+        .keycards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+
+        .card {
+            background: #fff7f8;
+            border: 2px solid #ffb9c4;
+            border-radius: 16px;
+            padding: 20px 25px;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+        }
+
+        .card .emoji {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .card .title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #c13850;
+            margin-bottom: 8px;
+        }
+
+        .card .desc {
+            font-size: 0.95rem;
+            color: #944554;
+        }
+
         .ai-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 兩個一列 */
+            grid-template-columns: repeat(2, 1fr);
             gap: 0.2rem;
             width: 90%;
             margin: 0 auto;
@@ -117,6 +152,43 @@
         </div>
 
         <!-- 內文 -->
+
+        <h2>遊戲製作靈感</h2>
+        <div class="content-detail open">
+            <div class="keycards">
+                <div class="card">
+                    <div class="emoji">💖</div>
+                    <div class="title">無條件的愛</div>
+                    <div class="desc">打翻你的咖啡，弄髒我的肉球</div>
+                </div>
+
+                <div class="card">
+                    <div class="emoji">🐱</div>
+                    <div class="title">貓咪共和國</div>
+                    <div class="desc">遊戲最初的靈感來源</div>
+                </div>
+
+                <div class="card">
+                    <div class="emoji">🏠</div>
+                    <div class="title">領養代替購買</div>
+                    <div class="desc">整體理念與主題方向</div>
+                </div>
+            </div>
+            <p>本次的故事靈感來自韋禮安的歌曲《貓咪共和國》。 </p>
+            <p>10/26 在發想遊戲並建構可用模組時，我頻繁卡關，又一直因 3D 暈而感到不適，加上多日熬夜，身體狀況每況愈下。於是我決定出門透透氣，當天到台北 101 水舞廣場的 Elle Weekend 聽韋禮安演唱。</p>
+            <p>我突然想起他有一首《貓咪共和國》，其中「打翻你的咖啡，弄髒我的肉球」這句歌詞讓我覺得無奈又可愛，傳達了一種無條件的包容與愛，和我一直想推廣的「領養代替購買」理念有著很自然的連結。於是遊戲的靈感就在那一刻萌芽。</p>
+            <p>雖然最後遊戲的整體設計與這首歌曲已經沒有直接相關，但正是這句歌詞啟發了我，因此我決定以「尋貓」為主題，並將遊戲命名為 </p>
+            <section class="cat-quote-section">
+                <div class="cat-quote-box">
+                    <p class="cat-quote">
+                        一個可以讓貓打翻咖啡的地方
+                    </p>
+                </div>
+            </section>
+            <p>相較於 Hackathon I 時偏沉重的遊戲風格，這次我希望能打造一個更溫暖、更有世界觀的作品。不過由於製作期僅有 30 天，時間非常有限，最終仍不得已做出一些刪減。</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Hsa1h62ZJe8?si=tUQ_HueInb6vf2nn&amp;start=51" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
         <h2>開發時程表</h2>
         <div class="content-detail open">
             <h3>日期與工作時間</h3>
@@ -533,11 +605,8 @@
             </div>
         </div>
 
-        <h2>遊戲概念發想</h2>
-        <div class="content-detail open">
-            <p>本次的故事靈感來自韋禮安的歌曲</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Hsa1h62ZJe8?si=4eEXNwiRkZlD3ryE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+
+
 
         <h2>AI 應用評比</h2>
         <div class="content-detail open">
