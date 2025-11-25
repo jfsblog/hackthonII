@@ -7,39 +7,58 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../favicon.png">
     <style>
-        .card-deck {
+        .ai-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 16px;
-            width: 100%;
+            grid-template-columns: repeat(2, 1fr); /* 兩個一列 */
+            gap: 0.2rem;
+            width: 90%;
             margin: 0 auto;
         }
-
-        .card {
+        .ai-card {
             background: #fafafa;
-            border: 1px solid #e3e3e3;
-            border-radius: 10px;
-            padding: 16px 20px;
+            border: 1px solid #e4e4e4;
+            border-radius: 12px;
+            padding: 20px 22px;
+            margin: 1rem auto;
+            width: 80%;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            font-size: 0.9rem;
         }
 
-        .card-title {
+        .ai-name {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 8px;
-            font-size: 1.05rem;
             color: #333;
         }
 
-        .card ul {
-            padding-left: 22px;
-            margin: 0;
+        .ai-subtitle {
+            text-align: center;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            color: #555;
         }
 
-        @media (max-width: 60rem) {
-            .card-deck {
-                grid-template-columns: 1fr;
+        .ai-card ul {
+            margin: 0;
+            padding-left: 22px;
+        }
+
+        .ai-card li {
+            margin-bottom: 8px;
+        }
+
+        .ai-card li ul li {
+            margin-top: 6px;
+        }
+
+        @media (max-width: 720px) {
+            .ai-card {
                 width: 95%;
             }
         }
+
     </style>
 </head>
 <body>
@@ -99,7 +118,7 @@
 
         <!-- 內文 -->
         <h2>開發時程表</h2>
-        <div class="content-detail">
+        <div class="content-detail open">
             <h3>日期與工作時間</h3>
             <img src="work_time_gantt.png" width="100%" alt="">
             <h3>工作細節整理</h3>
@@ -514,13 +533,17 @@
             </div>
         </div>
 
-        <h2>AI應用說明</h2>
+        <h2>遊戲概念發想</h2>
+        <div class="content-detail open">
+            <p>本次的故事靈感來自韋禮安的歌曲</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Hsa1h62ZJe8?si=4eEXNwiRkZlD3ryE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <h2>AI 應用評比</h2>
         <div class="content-detail open">
             <p>以下評比基於本次 Hackathon II 專案的使用體驗，除了 Claude 為 Pro Plan 外，其他均為免費版本。</p>
             <p>本次 Hackathon II 專案，我採用「多 AI 協作」的模式，將各平台視為我的 Team Member，讓它們之間互相除錯並提供解決方案，而我則扮演 Multi-Context Processing (MCP) 的角色，負責串聯、統整及修正討論結果。</p>
             <p>以下為個人實際使用的心得評價。</p>
-            <h3>AI平台比較</h3>
-
             <div class="table-container">
             <table class="data-table">
                 <thead>
@@ -534,110 +557,123 @@
                         <td>ChatGPT</td>
                         <td>Gemini</td>
                         <td>Claude Pro</td>
-                        <td>Grok、Deepseek</td>
+                        <td>Grok、DeepSeek</td>
                     </tr>
                     <tr>
                         <td><strong>程式碼能力</strong></td>
                         <td>Gemini</td>
                         <td>ChatGPT</td>
                         <td>Claude Pro</td>
-                        <td>Grok、Deepseek</td>
+                        <td>Grok、DeepSeek</td>
                     </tr>
                     <tr>
                         <td><strong>文案與寫作</strong></td>
                         <td>Claude Pro</td>
                         <td>Gemini</td>
                         <td>ChatGPT</td>
-                        <td></td>
+                        <td>Grok、DeepSeek</td>
                     </tr>
                     <tr>
                         <td><strong>圖像生成</strong></td>
                         <td>Gemini</td>
                         <td>Grok</td>
                         <td></td>
-                        <td><em>Gemini 有浮水印，Grok 無浮水印</em></td>
+                        <td>Gemini 有浮水印，Grok 無浮水印</td>
                     </tr>
                     <tr>
                         <td><strong>影片生成</strong></td>
                         <td>Grok</td>
                         <td></td>
                         <td></td>
-                        <td></td>
+                        <td>Gemini 須付費</td>
                     </tr>
                     <tr>
                         <td><strong>3D 物件生成</strong></td>
                         <td>Tripo3D</td>
                         <td>MeshyAI</td>
                         <td>Hitem3D</td>
-                        <td></td>
+                        <td>MeshyAI 免費版不能下載</td>
                     </tr>
                 </tbody>
             </table>
             </div>
 
-            <div class="card-deck">
-
-                <div class="card">
-                    <div class="card-title"><strong>Gemini：全面能力大幅提升，專案貢獻度最大</strong></div>
+            <div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-name">Gemini</div>
+                    <div class="ai-subtitle"><strong>全面能力大幅提升，專案貢獻度最大</strong></div>
                     <ul>
-                        <li>🟢 優勢：在本次專案中提供了最大幫助，程式編纂能力領先 ChatGPT 與 Claude。</li>
-                        <li>🔴 劣勢：程式操作與偵錯描述常過於專業或簡略，可能使不熟悉語言的使用者困惑。</li>
-                        <li>⚪ 潛力：若影片生成能力成熟，將成為下一次付費訂閱首選。</li>
+                        <li>🟢 優勢：在本次專案中提供了最大幫助。其程式碼編纂能力極為出色，小幅度領先 ChatGPT 和 Claude。推出 Nano Banana 後，圖像生成能力也大幅提升。</li>
+                        <li>🔴 劣勢：在程式操作與偵錯方法上，描述常常過於專業或簡略，對於不熟悉該編程語言的用戶來說，容易造成困惑或混亂。</li>
+                        <li>⚪ 潛力：考慮到其全面的提升，特別是未來影片生成能力的發展，Gemini 將是下次付費訂閱的首選目標。</li>
                     </ul>
                 </div>
 
-                <div class="card">
-                    <div class="card-title"><strong>ChatGPT：最容易溝通與理解的 AI 工具</strong></div>
+                <div class="ai-card">
+                    <div class="ai-name">ChatGPT</div>
+                    <div class="ai-subtitle"><strong>最容易溝通與理解的 AI 工具</strong></div>
                     <ul>
-                        <li>🟢 優勢：語氣親和、對話壓力最低，互動體驗最佳。</li>
-                        <li>🔴 劣勢：程式優勢漸弱，文案易略顯敷衍。</li>
+                        <li>🟢 優勢：語氣親和度極高，對話壓力最小，互動體驗最舒適。</li>
+                        <li>🔴 劣勢：相對於 Gemini，其程式碼優勢已漸被超越。此外，在文案編寫方面，產出的內容感覺相對敷衍，精緻度不足。</li>
                     </ul>
                 </div>
 
-                <div class="card">
-                    <div class="card-title"><strong>Claude（Pro Plan）：文案最強，但工程能力不足</strong></div>
+                <div class="ai-card">
+                    <div class="ai-name">Claude (Pro Plan)</div>
+                    <div class="ai-subtitle"><strong>文案寫作能力強，工程表現不佳</strong></div>
                     <ul>
-                        <li>🟢 優勢：文案寫作細膩、品質極好。</li>
+                        <li>🟢 優勢：文案寫作能力極為細膩且精彩。</li>
                         <li>🔴 劣勢：
                             <ul>
-                                <li>Token 設計差：會把已生成的答案收回，導致需重複提問、浪費 Token。</li>
-                                <li>MCP 表現未達預期：精準度有限且消耗大量 Token。</li>
-                                <li>程式碼錯誤率偏高，工程水準未達專業等級。</li>
+                                <li>Token 消耗與錯誤設計：它會將已生成的答案自動收回，導致一個問題需要重複發問，變相消耗兩倍 Token，有浪費資源之感。</li>
+                                <li>MCP 表現不如預期：號稱的 MCP 功能精準度不夠，實用性不如自己手動操作。此外，MCP 本身極為耗費 Token，很快就達到了月費上限。</li>
+                                <li>程式碼品質：Claude 的程式碼編纂能力錯誤率偏高，沒有展現出訂閱 Pro Plan 應有的工程水準。</li>
                             </ul>
                         </li>
                     </ul>
                 </div>
 
-                <div class="card">
-                    <div class="card-title"><strong>Grok：免費影片生成的最佳選擇</strong></div>
+                <div class="ai-card">
+                    <div class="ai-name">Grok</div>
+                    <div class="ai-subtitle"><strong>免費使用者影片生成的最佳選擇</strong></div>
                     <ul>
-                        <li>⚪ 定位：主要作為圖片與影片生成工具。</li>
-                        <li>🟢 優勢：免費額度大方、影片品質不錯且無浮水印。</li>
+                        <li>⚪ 定位：本次主要作為輔助工具，用於圖片和影片生成。</li>
+                        <li>🟢 優勢：Grok 在免費影片生成額度上比 Gemini 更大方，且生成水準不錯，產出的影片沒有浮水印。</li>
                     </ul>
                 </div>
 
-                <div class="card">
-                    <div class="card-title"><strong>Deepseek：鬼打牆時的奇兵</strong></div>
+                <div class="ai-card">
+                    <div class="ai-name">DeepSeek</div>
+                    <div class="ai-subtitle"><strong>鬼打牆時的奇兵</strong></div>
                     <ul>
-                        <li>⚪ 定位：用於打破 Gemini／ChatGPT／Claude 討論僵局。偶爾提供完全不同的解法，有時非常有效。</li>
+                        <li>⚪ 定位：專門用於解決 Gemini、ChatGPT 和 Claude 三者討論陷入僵局或鬼打牆時的備用方案。偶爾能提供截然不同的解決思路，確實有效幫助了幾次。雖然使用頻率低，但其獨特的視角值得肯定。</li>
                     </ul>
                 </div>
 
-                <div class="card">
-                    <div class="card-title"><strong>3D 物件生成工具比較</strong></div>
+                <div class="ai-card">
+                    <div class="ai-name">3D 物件生成工具比較</div>
+                    <div class="ai-subtitle"><strong>三款 3D 生成工具評比</strong></div>
                     <ul>
-                        <li>Tripo3D：生成物件精緻度最高。</li>
-                        <li>MeshyAI：免費額度無法下載 3D 模型。</li>
-                        <li>Hitem3D：生成物件較為粗糙。</li>
+                        <li>Tripo3D：在生成物件的精緻度上有明顯優勢。</li>
+                        <li>MeshyAI：免費額度不能下載生成的 3D 模型。</li>
+                        <li>Hitem3D：生成的物件相對粗糙。</li>
                     </ul>
                 </div>
-
             </div>
 
         </div>
 
+        <h2>AI 應用說明</h2>
+        <div class="content-detail open">
+            <h3>故事概念</h3>
+            <h3>程式碼生成</h3>
+            <h3>影像生成</h3>
+
+        </div>
+
+
         <h2>程式碼模組開發</h2>
-        <div class="content-detail">
+        <div class="content-detail open">
             <p>本次遊戲開發中，將功能程式碼模組化，未來可再次利用。</p>
             <h3>模組一覽圖</h3>
             <img src="CodingTemplate.jpg" style="width:100%; display: block; margin: 0 auto; padding-bottom: 2rem;">
