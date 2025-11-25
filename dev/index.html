@@ -8,56 +8,70 @@
     <link rel="icon" type="image/png" href="../favicon.png">
     <style>
         .table-container {
-            overflow-x: auto; /* 確保表格在窄螢幕上可水平捲動 */
-            margin-top: 1.25rem; /* 20px */
+            height: 30rem;
+            overflow-y: auto;
+            overflow-x: auto;
+            margin-top: 1.25rem;
         }
 
-        .ai-application-card,
-        .project-challenge-card {
-            /* 外觀：讓整體像一張卡片 */
-            background-color: white; /* 白色底 */
-            /* border: 1px solid var(--catGrayBase); */
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
+        .solution-item {
+            border: 0.125rem solid var(--catOrange); /* 2px */
+            margin-bottom: 1rem;
+            border-radius: 0.5rem; /* 8px 圓角 */
+            background-color: var(--catCream);
+            overflow: hidden; /* 確保內容不溢出圓角 */
         }
 
-        /* H3 標籤樣式：使其看起來像卡片的標籤或橫幅 */
-        .ai-application-card h3,
-        .project-challenge-card h3 {
-            /* 核心背景和顏色 */
-            background-color: var(--catOrange); /* 橘色強調色 */
-            color: white;
-            padding: 0.75rem 1.25rem;
-            margin-top: 0; /* 移除瀏覽器預設的頂部間距 */
-            
-            /* 圓角處理：只保留上方圓角 */
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            font-size: 1.2rem;
-            letter-spacing: 0.05rem;
+        /* 標題 (Summary) 樣式 */
+        .solution-item summary {
+            display: block; /* 讓 summary 填滿寬度 */
+            padding: 1rem 1.25rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: var(--catOrange);
+            color: white; /* 確保文字可見 */
+            transition: background-color 0.2s;
+            user-select: none; /* 防止內容被選中時影響美觀 */
         }
 
-        .project-challenge-card h4{
+        .solution-item summary:hover {
+            background-color: #d8894d; /* 稍暗的橘色 */
+        }
+
+        /* details 展開時的箭頭隱藏或調整（可選） */
+        .solution-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .solution-item summary::marker {
+            display: none;
+        }
+
+        /* 內容區塊樣式 */
+        .solution-detail {
+            padding: 1.25rem;
+            background-color: white; /* 內容使用白色底 */
+            border-top: 0.0625rem solid var(--catGrayBase);
+        }
+
+        .solution-detail h3 {
             color: var(--catBrown);
             margin-top: 0.5rem;
-            border-bottom: 0.125rem dotted var(--catGrayBase);
+            border-bottom: 0.125rem dotted var(--catGrayBase); /* 底部虛線 */
             padding-bottom: 0.25rem;
         }
 
-        /* P 內容樣式 */
-        .ai-application-card p,
-        .project-challenge-card p {
-            padding: 1.25rem; /* 增加內邊距，讓內容透氣 */
-            line-height: 1.8; /* 增加行距，提升可讀性 */
-            color: var(--catDarkText); /* 確保文字顏色清晰 */
-            font-size: 1rem;
+        .solution-video-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--catBrown);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.25rem;
         }
-
-        /* 圖標樣式 (如果使用 Font Awesome) */
-        .ai-application-card h3 i,
-        .project-challenge-card h3 i {
-            margin-right: 0.5rem;
+        .solution-video-link:hover {
+            background-color: #55443d;
         }
     </style>
 </head>
@@ -83,602 +97,624 @@
         </div>
     </header>
 
-<main>
 
-    <section style="text-align: center;">
 
-        <h1>開發歷程</h1>
+    <main>
+        <section class="solution-header" style="text-align: center;">
+            <h1>開發歷程</h1>
+            <p>本頁面紀錄開發期間的資訊，活動時間為2025/10/24~2025/11/21，本遊戲共花費了89個小時又20分鐘製作。非上班日僅有10日，時間上非常倉促。</p>
+            <div style="width: 90%; background: #00000020; border-left: 0.5rem solid var(--catBrown); margin: 0 auto; padding: 1rem; border-radius: 0.5rem;">
+                <ul style="text-align: left;">
+                    <li>開發時間：2025/10/24~2025/11/21</li>
+                    <li>非工作日：10/24(五)光復節、10/25(六)、10/26(日)、11/1(六)、11/2(日)、11/8(六)、11/9(日)、11/15(六)、11/16(日)、11/21(五)體檢日</li>
+                    <li>總計時間：89小時20分鐘</li>
+                </ul>
+            </div>
+        </section>
 
-        <p>本頁面紀錄開發期間的資訊，活動時間為2025/10/24~2025/11/21，本遊戲共花費了89個小時又20分鐘製作。非上班日僅有10日，時間上非常倉促。</p>
-
-        <ul style="text-align: left;">
-            <li>開發時間：2025/10/24~2025/11/21</li>
-            <li>非工作日：10/24(五)光復節、10/25(六)、10/26(日)、11/1(六)、11/2(日)、11/8(六)、11/9(日)、11/15(六)、11/16(日)、11/21(五)體檢日</li>
-            <li>總計時間：89小時20分鐘</li>
-        </ul>
-
-    </section>
-
-    <section>
-
-        <h2>開發一覽表</h2>
-
-        <img src="work_time_gantt.png" width="100%" alt="">
-        <div class="table-container">
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>日期</th>
-                        <th>星期</th>
-                        <th>時段</th>
-                        <th>時長</th>
-                        <th>內容</th>
-                        <th>範例</th>
-                        <th>演示</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan="3">10月24日<br>(光復節)</td>
-                        <td rowspan="3">五</td>
-                        <td>14:07 - 15:35</td>
-                        <td>01:28:00</td>
-                        <td>[功能測試] 滿版畫面（無法遮擋 VIVE UI）</td>
-                        <td>✔️滿版畫面（無法遮擋VIVERSE物件）</td>
-                        <td><a href="https://worlds.viverse.com/3k2cRgR" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td>17:36 - 20:10</td>
-                        <td>02:34:00</td>
-                        <td>[功能測試] 滿版畫面</td>
-                        <td>✔️範例：滿版畫面設計</td>
-                        <td><a href="https://worlds.viverse.com/sTAt2L4" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td>22:13 - 23:20</td>
-                        <td>01:07:00</td>
-                        <td>[功能測試] 迷宮創建-樓梯測試</td>
-                        <td>✔️</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="5">10月25日</td>
-                        <td rowspan="5">六</td>
-                        <td>01:15 - 04:04</td>
-                        <td>02:49:00</td>
-                        <td>[功能測試] Claude Approaching weekly limit — MCP 很吃 token</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>11:12 - 12:00</td>
-                        <td>00:48:00</td>
-                        <td>[功能測試] local-player靠近才能點物品</td>
-                        <td>✔️</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>15:00 - 15:30</td>
-                        <td>00:30:00</td>
-                        <td>[功能測試] 顯示面板且可點擊</td>
-                        <td>❌</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>16:30 - 18:37</td>
-                        <td>01:57:00</td>
-                        <td>感到挫敗（兩次記錄合併）</td>
-                        <td> ❌</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>20:55 - 22:12</td>
-                        <td>01:17:00</td>
-                        <td>[功能測試] 場景傳送 + Close for Trigger Enable Click Object + 顯示面板</td>
-                        <td>✔️範例：場景切換</td>
-                        <td><a href="https://worlds.viverse.com/y8aTZkg" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td rowspan="4">10月26日</td>
-                        <td rowspan="4">日</td>
-                        <td>00:54 - 03:06</td>
-                        <td>02:12:00</td>
-                        <td>[功能測試] 模組化迷宮設計</td>
-                        <td>❌</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>11:54 - 12:14</td>
-                        <td>00:20:00</td>
-                        <td>[功能測試] 模組化迷宮設計 (Python Version)<br>感到挫敗 --> 去聽韋禮安唱歌</td>
-                        <td>✔️</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>20:08 - 21:14</td>
-                        <td>01:06:00</td>
-                        <td>[功能測試] 密碼面板設計(HTML DOM)</td>
-                        <td>✔️全螢幕失效：密碼面板設計</td>
-                        <td><a href="https://worlds.viverse.com/zh-TW/JrGeHNP" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td>23:30 - 00:00</td>
-                        <td>00:30:00</td>
-                        <td>[構思] 模組化迷宮設計</td>
-                        <td>❌</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>10月27日</td>
-                        <td>一</td>
-                        <td>00:00 - 01:08</td>
-                        <td>01:08:00</td>
-                        <td>[構思] [功能測試] 模組化迷宮設計 — 但很容易暈眩不能玩</td>
-                        <td>✔️範例：模組化迷宮（雖可用但易暈）</td>
-                        <td><a href="https://worlds.viverse.com/zh-TW/UVV38FB" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td>10月28日</td>
-                        <td>二</td>
-                        <td>09:00 - 10:00</td>
-                        <td>01:00:00</td>
-                        <td>&nbsp;</td>
-                        <td>✔️全螢幕失效：對話框效果</td>
-                        <td><a href="https://worlds.viverse.com/9FjuRsX" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td rowspan="4">11月2日</td>
-                        <td rowspan="4">日</td>
-                        <td>03:45 - 06:35</td>
-                        <td>02:50:00</td>
-                        <td>[功能測試] 物件碰撞計分效果<br>[功能測試] 物件碰撞計分效果應用－－重生效果</td>
-                        <td>✔️全螢幕失效：物件碰撞計分<br>Fail</td>
-                        <td><a href="https://worlds.viverse.com/Debhkct" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td>14:25 - 14:56</td>
-                        <td>00:31:00</td>
-                        <td>[功能測試] 物件碰撞計分效果應用－－重生效果</td>
-                        <td>✔️範例：碰撞扣分+遊戲結束重生</td>
-                        <td><a href="https://create.viverse.com/EVCGKaQ" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td>17:47 - 19:42</td>
-                        <td>01:55:00</td>
-                        <td>[功能測試] 物件碰撞計分效果應用－－重生效果（四處來的飛彈）</td>
-                        <td>❌</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>22:00 - 22:41</td>
-                        <td>00:41:00</td>
-                        <td>[功能測試] 物件碰撞計分效果應用－－重生效果（四處來的飛彈）</td>
-                        <td>✔️全螢幕失效：碰撞計分+重生效果－－躲避飛彈</td>
-                        <td><a href="https://worlds.viverse.com/zh-TW/CDtfB2o" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td>11月3日</td>
-                        <td>一</td>
-                        <td>01:09 - 03:48</td>
-                        <td>02:39:00</td>
-                        <td>[資料整理]</td>
-                        <td>　</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>11月5日</td>
-                        <td>三</td>
-                        <td>03:00 - 03:40</td>
-                        <td>00:40:00</td>
-                        <td>[錯誤修正] 將 HUD 與導引 overlay 附加到 this.app.graphicsDevice.canvas.parentNode 而不是 document.body，配合固定/絕對定位與高 z-index，能確保它們在全螢幕模式下仍然可見。</td>
-                        <td>✔️範例：新手導引提示面板</td>
-                        <td><a href="https://worlds.viverse.com/ymXPNLp" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td>11月6日</td>
-                        <td>四</td>
-                        <td>03:26 - 05:00</td>
-                        <td>01:34:00</td>
-                        <td>[功能測試] 場景切換+資料回傳</td>
-                        <td>✔️範例：場景切換＋全域變數紀錄</td>
-                        <td><a href="https://worlds.viverse.com/zh-TW/Z6vfsib" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td>11月8日</td>
-                        <td>六</td>
-                        <td>22:23 - 24:00:00</td>
-                        <td>01:37:00</td>
-                        <td>[功能測試] NPC對話框</td>
-                        <td>❌</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="6">11月9日</td>
-                        <td rowspan="6">日</td>
-                        <td>00:00 - 00:25</td>
-                        <td>00:25:00</td>
-                        <td>[功能測試] NPC對話框雛形</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>03:30 - 05:58</td>
-                        <td>02:28:00</td>
-                        <td>[功能測試] NPC對話框（部分完成）－－單次顯示</td>
-                        <td>－</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>16:10 - 16:51</td>
-                        <td>00:41:00</td>
-                        <td>[功能測試] NPC對話框（沒有更新的進展）－－單次顯示</td>
-                        <td>－</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>17:20 - 18:10</td>
-                        <td>00:50:00</td>
-                        <td>[功能測試] NPC對話框（一次性）／優化</td>
-                        <td>－</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>21:10 - 21:40</td>
-                        <td>00:30:00</td>
-                        <td>[功能測試] NPC對話框（一次性）／優化</td>
-                        <td>✔️範例：一次性對話框</td>
-                        <td><a href="https://worlds.viverse.com/QQAom5u" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td>22:30 - 23:50</td>
-                        <td>01:20:00</td>
-                        <td>[功能測試] NPC對話框（一次性）＋ICON提示面板</td>
-                        <td>✔️範例：玩家與NPC對話 + 提示ICON</td>
-                        <td><a href="https://worlds.viverse.com/HRVprQM" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td>11月10日</td>
-                        <td>一</td>
-                        <td>02:14 - 03:57</td>
-                        <td>01:43:00</td>
-                        <td>[資料整理] PlayCanvas.com 網站當了只好整理之前寫過的操作</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>11月11日</td>
-                        <td>二</td>
-                        <td>02:56 - 04:05</td>
-                        <td>01:09:00</td>
-                        <td>[功能測試] VIVERSE 原生物件抓取（例如：PLAYER），應用技巧來自：this.app.root.findByName(‘PLAYER’);</td>
-                        <td>✔️範例：追擊玩家+結束面板+玩家重生</td>
-                        <td><a href="https://worlds.viverse.com/zh-TW/3fEerVL" rel="noreferrer noopener" target="_blank">演示</a></td>
-                    </tr>
-                    <tr>
-                        <td>11月12日</td>
-                        <td>三</td>
-                        <td>20:26 - 22:36</td>
-                        <td>02:10:00</td>
-                        <td>[功能測試] 種植系統與經驗值（倒計時面板不佳）</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>11月13日</td>
-                        <td>四</td>
-                        <td>02:30 - 04:14</td>
-                        <td>01:44:00</td>
-                        <td>[功能測試] UI 元素跟隨 3D 物體</td>
-                        <td>❌</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="4">11月15日</td>
-                        <td rowspan="4">六</td>
-                        <td>15:00 - 16:21</td>
-                        <td>01:21:00</td>
-                        <td>[場景建置] Prototype 1 不知為何不能上傳了<br>[場景建置] Prototype 2 對話面板與提示面板調整</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>18:04 - 18:19</td>
-                        <td>00:15:00</td>
-                        <td>[場景建置] 找素材 — 3D暈了</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>21:41 - 21:55</td>
-                        <td>00:14:00</td>
-                        <td>[場景建置] 找素材 — 3D暈更嚴重了</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>23:40 - 24:00</td>
-                        <td>00:20:00</td>
-                        <td>[場景建置] Scene1-1 架設調整+NPC製作</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="4">11月16日</td>
-                        <td rowspan="4">日</td>
-                        <td>01:43 - 14:12</td>
-                        <td>12:29:00</td>
-                        <td>[場景建置] (包含 13:21-13:39 的 00:18:00 間歇)</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>14:10 - 15:07</td>
-                        <td>00:57:00</td>
-                        <td>[場景建置] 3D暈</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>17:25 - 18:54</td>
-                        <td>01:29:00</td>
-                        <td>[場景建置] Scene1-1 架設完成</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>23:40 - 24:00:00</td>
-                        <td>00:20:00</td>
-                        <td>[場景建置] Scene1-1 架設調整+NPC製作</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2">11月17日</td>
-                        <td rowspan="2">一</td>
-                        <td>00:00 - 02:15</td>
-                        <td>02:15:00</td>
-                        <td>[場景建置] Scene1-2 設計</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>21:20 - 22:07</td>
-                        <td>00:47:00</td>
-                        <td>[場景建置] Scene1-2 設計</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2">11月18日</td>
-                        <td rowspan="2">二</td>
-                        <td>18:49 - 20:00</td>
-                        <td>01:11:00</td>
-                        <td>[場景建置] Scene1-2 大致完成</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>22:40 - 23:30</td>
-                        <td>00:50:00</td>
-                        <td>[場景建置] Scene2-1</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="3">11月20日</td>
-                        <td rowspan="3">四</td>
-                        <td>00:31 - 06:01</td>
-                        <td>05:30:00</td>
-                        <td>[場景建置] Scene2-2 大致完成 尚缺細節<br>[場景建置] Scene3-1 </td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>18:00 - 20:47</td>
-                        <td>02:47:00</td>
-                        <td>[場景建置] 開發網站基礎模型</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>21:17 - 24:00:00</td>
-                        <td>02:43:00</td>
-                        <td>[場景建置] Scene4-1</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="3">11月21日<br>(體檢假)</td>
-                        <td rowspan="3">五</td>
-                        <td>00:00 - 03:00</td>
-                        <td>03:00:00</td>
-                        <td>[場景調整] 遊戲內容刪減（時間和空間不足保留基本元素）<br>[場景調整] 場景錯誤修正</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>10:00 - 12:00</td>
-                        <td>02:00:00</td>
-                        <td>[場景調整] 場景錯誤修正<br>[影片製作] 遊戲開始與結束影片製作</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>13:00 - 19:41</td>
-                        <td>06:41:00</td>
-                        <td>[場景調整] 遊戲操作測試<br>[場景調整] 場景錯誤修正<br>[影片製作] 遊戲開始與結束影片製作</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section>
-        <h2>開發說明</h2>
+        <section class="solution-content" style="max-width: 50rem; margin: 0 auto; padding: 0 1.25rem 3rem;">
             
-            <div class="ai-application-card">
-                <h3>
-                    <i class="fas fa-paw"></i> AI應用說明
-                </h3>
-                <p>
-                    TBD
-                </p>
-            </div>
-
-            <div class="project-challenge-card">
-                <h3>
-                    <i class="fas fa-lightbulb"></i> 專案挑戰與突破
-                </h3>
-                <p>
-                    TBD
-                </p>
-            </div>
-
-            <div class="project-challenge-card">
-                <h3>
-                    <i class="fas fa-lightbulb"></i> 時間侷促下的取捨
-                </h3>
-                <p>
-                    TBD
-                </p>
-            </div>
-
-            <div class="ai-application-card">
-                <h3>
-                    <i class="fas fa-paw"></i> 開發模組
-                </h3>
-                <p>
-                    本次遊戲開發中，將功能程式碼模組化，未來可再次利用。
-                </p>
-                <img src="CodingTemplate.jpg" width="90%" style="display: block; margin: 0 auto; padding-bottom: 2rem;">
-                <div class="table-container" style="padding-bottom: 2rem;">
-                    <table class="data-table" style="width: 90%; margin: 0 auto;">
-                        <thead>
-                            <th style="text-align: center;">功能</th>
-                            <th style="text-align: center;">教學<br>JFSBLOG</th>
-                            <th style="text-align: center;">專案<br>PlayCanvas</th>
-                            <th style="text-align: center;">演示<br>VIVERSE</th>
-                            <th>說明</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>滿版畫面</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/project/1412698/overview/-" target="blank">專案</a></td>
-                                <td style="text-align: center;"><a href="https://worlds.viverse.com/sTAt2L4" target="blank">演示</a></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>場景切換（課程範例）</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/editor/scene/2339363" target="blank">專案</a></td>
-                                <td style="text-align: center;"><a href="https://worlds.viverse.com/y8aTZkg" target="blank">演示</a></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>場景切換＋全域變數紀錄</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/project/1419435/overview/tbd-" target="blank">專案</a></td>
-                                <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/Z6vfsib" target="blank">演示</a></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>密碼面板</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/project/1413680/overview/-" target="blank">專案</a></td>
-                                <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/JrGeHNP" target="blank">演示</a></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>模組化迷宮</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/project/1413388/overview/-" target="blank">專案</a></td>
-                                <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/UVV38FB" target="blank">演示</a></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>對話框</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/project/1414436/overview/-" target="blank">專案</a></td>
-                                <td style="text-align: center;"><a href="https://worlds.viverse.com/9FjuRsX" target="blank">演示</a></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>物件碰撞計分</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/project/1416963/overview/-" target="blank">專案</a></td>
-                                <td style="text-align: center;"><a href="https://worlds.viverse.com/Debhkct" target="blank">演示</a></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>物件碰撞計分＋玩家重生</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/project/1416996/overview/-" target="blank">專案</a></td>
-                                <td style="text-align: center;"><a href="https://create.viverse.com/EVCGKaQ" target="blank">演示</a></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>物件碰撞計分＋玩家重生－－躲避飛彈</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/project/1417152/overview/-" target="blank">專案</a></td>
-                                <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/CDtfB2o" target="blank">演示</a></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>導引提示面板</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/project/1418584/overview/--iii" target="blank">專案</a></td>
-                                <td style="text-align: center;"><a href="https://worlds.viverse.com/ymXPNLp" target="blank">演示</a></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>一次性對話框（NPC）</td>
-                                <td style="text-align: center;"><a href="https://jfsblog.com/learning-notes/playcanvas/viverse-npc-dialog-panel" target="_blank">文章</a></td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/project/1420990/overview/-" target="blank">專案</a></td>
-                                <td style="text-align: center;"><a href="https://worlds.viverse.com/QQAom5u" target="blank">演示</a></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>重複觸發對話框（NPC）</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;">N/A</td>
-                                <td style="text-align: center;">N/A</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>一次性對話框（NPC）＋任務提示面板</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/project/1421343/overview/npcicon" target="blank">專案</a></td>
-                                <td style="text-align: center;"><a href="https://worlds.viverse.com/HRVprQM" target="blank">演示</a></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>VIVERSE原生物件抓取→追擊玩家＋結束面板＋玩家重生</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/project/1421886/overview/-" target="blank">專案</a></td>
-                                <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/3fEerVL" target="blank">演示</a></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>種植系統與經驗值</td>
-                                <td style="text-align: center;">文章</td>
-                                <td style="text-align: center;"><a href="https://playcanvas.com/project/1422827/overview/-" target="blank">專案</a></td>
-                                <td style="text-align: center;">N/A</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <details class="solution-item" open>
+                <summary>開發一覽表</summary>
+                <div class="solution-detail">
+                    <h3>日期與工作時間</h3>
+                    <img src="work_time_gantt.png" width="100%" alt="">
+                    <h3>工作細節整理</h3>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>日期</th>
+                                    <th>星期</th>
+                                    <th>時段</th>
+                                    <th>時長</th>
+                                    <th>內容</th>
+                                    <th>範例</th>
+                                    <th>演示</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3">10月24日<br>(光復節)</td>
+                                    <td rowspan="3">五</td>
+                                    <td>14:07 - 15:35</td>
+                                    <td>01:28:00</td>
+                                    <td>[功能測試] 滿版畫面（無法遮擋 VIVE UI）</td>
+                                    <td>✔️滿版畫面（無法遮擋VIVERSE物件）</td>
+                                    <td><a href="https://worlds.viverse.com/3k2cRgR" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td>17:36 - 20:10</td>
+                                    <td>02:34:00</td>
+                                    <td>[功能測試] 滿版畫面</td>
+                                    <td>✔️範例：滿版畫面設計</td>
+                                    <td><a href="https://worlds.viverse.com/sTAt2L4" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td>22:13 - 23:20</td>
+                                    <td>01:07:00</td>
+                                    <td>[功能測試] 迷宮創建-樓梯測試</td>
+                                    <td>✔️</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5">10月25日</td>
+                                    <td rowspan="5">六</td>
+                                    <td>01:15 - 04:04</td>
+                                    <td>02:49:00</td>
+                                    <td>[功能測試] Claude Approaching weekly limit — MCP 很吃 token</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>11:12 - 12:00</td>
+                                    <td>00:48:00</td>
+                                    <td>[功能測試] local-player靠近才能點物品</td>
+                                    <td>✔️</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>15:00 - 15:30</td>
+                                    <td>00:30:00</td>
+                                    <td>[功能測試] 顯示面板且可點擊</td>
+                                    <td>❌</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>16:30 - 18:37</td>
+                                    <td>01:57:00</td>
+                                    <td>感到挫敗（兩次記錄合併）</td>
+                                    <td> ❌</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>20:55 - 22:12</td>
+                                    <td>01:17:00</td>
+                                    <td>[功能測試] 場景傳送 + Close for Trigger Enable Click Object + 顯示面板</td>
+                                    <td>✔️範例：場景切換</td>
+                                    <td><a href="https://worlds.viverse.com/y8aTZkg" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">10月26日</td>
+                                    <td rowspan="4">日</td>
+                                    <td>00:54 - 03:06</td>
+                                    <td>02:12:00</td>
+                                    <td>[功能測試] 模組化迷宮設計</td>
+                                    <td>❌</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>11:54 - 12:14</td>
+                                    <td>00:20:00</td>
+                                    <td>[功能測試] 模組化迷宮設計 (Python Version)<br>感到挫敗 --> 去聽韋禮安唱歌</td>
+                                    <td>✔️</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>20:08 - 21:14</td>
+                                    <td>01:06:00</td>
+                                    <td>[功能測試] 密碼面板設計(HTML DOM)</td>
+                                    <td>✔️全螢幕失效：密碼面板設計</td>
+                                    <td><a href="https://worlds.viverse.com/zh-TW/JrGeHNP" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td>23:30 - 00:00</td>
+                                    <td>00:30:00</td>
+                                    <td>[構思] 模組化迷宮設計</td>
+                                    <td>❌</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>10月27日</td>
+                                    <td>一</td>
+                                    <td>00:00 - 01:08</td>
+                                    <td>01:08:00</td>
+                                    <td>[構思] [功能測試] 模組化迷宮設計 — 但很容易暈眩不能玩</td>
+                                    <td>✔️範例：模組化迷宮（雖可用但易暈）</td>
+                                    <td><a href="https://worlds.viverse.com/zh-TW/UVV38FB" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td>10月28日</td>
+                                    <td>二</td>
+                                    <td>09:00 - 10:00</td>
+                                    <td>01:00:00</td>
+                                    <td>&nbsp;</td>
+                                    <td>✔️全螢幕失效：對話框效果</td>
+                                    <td><a href="https://worlds.viverse.com/9FjuRsX" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">11月2日</td>
+                                    <td rowspan="4">日</td>
+                                    <td>03:45 - 06:35</td>
+                                    <td>02:50:00</td>
+                                    <td>[功能測試] 物件碰撞計分效果<br>[功能測試] 物件碰撞計分效果應用－－重生效果</td>
+                                    <td>✔️全螢幕失效：物件碰撞計分<br>Fail</td>
+                                    <td><a href="https://worlds.viverse.com/Debhkct" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td>14:25 - 14:56</td>
+                                    <td>00:31:00</td>
+                                    <td>[功能測試] 物件碰撞計分效果應用－－重生效果</td>
+                                    <td>✔️範例：碰撞扣分+遊戲結束重生</td>
+                                    <td><a href="https://create.viverse.com/EVCGKaQ" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td>17:47 - 19:42</td>
+                                    <td>01:55:00</td>
+                                    <td>[功能測試] 物件碰撞計分效果應用－－重生效果（四處來的飛彈）</td>
+                                    <td>❌</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>22:00 - 22:41</td>
+                                    <td>00:41:00</td>
+                                    <td>[功能測試] 物件碰撞計分效果應用－－重生效果（四處來的飛彈）</td>
+                                    <td>✔️全螢幕失效：碰撞計分+重生效果－－躲避飛彈</td>
+                                    <td><a href="https://worlds.viverse.com/zh-TW/CDtfB2o" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td>11月3日</td>
+                                    <td>一</td>
+                                    <td>01:09 - 03:48</td>
+                                    <td>02:39:00</td>
+                                    <td>[資料整理]</td>
+                                    <td>　</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>11月5日</td>
+                                    <td>三</td>
+                                    <td>03:00 - 03:40</td>
+                                    <td>00:40:00</td>
+                                    <td>[錯誤修正] 將 HUD 與導引 overlay 附加到 this.app.graphicsDevice.canvas.parentNode 而不是 document.body，配合固定/絕對定位與高 z-index，能確保它們在全螢幕模式下仍然可見。</td>
+                                    <td>✔️範例：新手導引提示面板</td>
+                                    <td><a href="https://worlds.viverse.com/ymXPNLp" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td>11月6日</td>
+                                    <td>四</td>
+                                    <td>03:26 - 05:00</td>
+                                    <td>01:34:00</td>
+                                    <td>[功能測試] 場景切換+資料回傳</td>
+                                    <td>✔️範例：場景切換＋全域變數紀錄</td>
+                                    <td><a href="https://worlds.viverse.com/zh-TW/Z6vfsib" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td>11月8日</td>
+                                    <td>六</td>
+                                    <td>22:23 - 24:00:00</td>
+                                    <td>01:37:00</td>
+                                    <td>[功能測試] NPC對話框</td>
+                                    <td>❌</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="6">11月9日</td>
+                                    <td rowspan="6">日</td>
+                                    <td>00:00 - 00:25</td>
+                                    <td>00:25:00</td>
+                                    <td>[功能測試] NPC對話框雛形</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>03:30 - 05:58</td>
+                                    <td>02:28:00</td>
+                                    <td>[功能測試] NPC對話框（部分完成）－－單次顯示</td>
+                                    <td>－</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>16:10 - 16:51</td>
+                                    <td>00:41:00</td>
+                                    <td>[功能測試] NPC對話框（沒有更新的進展）－－單次顯示</td>
+                                    <td>－</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>17:20 - 18:10</td>
+                                    <td>00:50:00</td>
+                                    <td>[功能測試] NPC對話框（一次性）／優化</td>
+                                    <td>－</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>21:10 - 21:40</td>
+                                    <td>00:30:00</td>
+                                    <td>[功能測試] NPC對話框（一次性）／優化</td>
+                                    <td>✔️範例：一次性對話框</td>
+                                    <td><a href="https://worlds.viverse.com/QQAom5u" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td>22:30 - 23:50</td>
+                                    <td>01:20:00</td>
+                                    <td>[功能測試] NPC對話框（一次性）＋ICON提示面板</td>
+                                    <td>✔️範例：玩家與NPC對話 + 提示ICON</td>
+                                    <td><a href="https://worlds.viverse.com/HRVprQM" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td>11月10日</td>
+                                    <td>一</td>
+                                    <td>02:14 - 03:57</td>
+                                    <td>01:43:00</td>
+                                    <td>[資料整理] PlayCanvas.com 網站當了只好整理之前寫過的操作</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>11月11日</td>
+                                    <td>二</td>
+                                    <td>02:56 - 04:05</td>
+                                    <td>01:09:00</td>
+                                    <td>[功能測試] VIVERSE 原生物件抓取（例如：PLAYER），應用技巧來自：this.app.root.findByName(‘PLAYER’);</td>
+                                    <td>✔️範例：追擊玩家+結束面板+玩家重生</td>
+                                    <td><a href="https://worlds.viverse.com/zh-TW/3fEerVL" rel="noreferrer noopener" target="_blank">演示</a></td>
+                                </tr>
+                                <tr>
+                                    <td>11月12日</td>
+                                    <td>三</td>
+                                    <td>20:26 - 22:36</td>
+                                    <td>02:10:00</td>
+                                    <td>[功能測試] 種植系統與經驗值（倒計時面板不佳）</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>11月13日</td>
+                                    <td>四</td>
+                                    <td>02:30 - 04:14</td>
+                                    <td>01:44:00</td>
+                                    <td>[功能測試] UI 元素跟隨 3D 物體</td>
+                                    <td>❌</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">11月15日</td>
+                                    <td rowspan="4">六</td>
+                                    <td>15:00 - 16:21</td>
+                                    <td>01:21:00</td>
+                                    <td>[場景建置] Prototype 1 不知為何不能上傳了<br>[場景建置] Prototype 2 對話面板與提示面板調整</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>18:04 - 18:19</td>
+                                    <td>00:15:00</td>
+                                    <td>[場景建置] 找素材 — 3D暈了</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>21:41 - 21:55</td>
+                                    <td>00:14:00</td>
+                                    <td>[場景建置] 找素材 — 3D暈更嚴重了</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>23:40 - 24:00</td>
+                                    <td>00:20:00</td>
+                                    <td>[場景建置] Scene1-1 架設調整+NPC製作</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">11月16日</td>
+                                    <td rowspan="4">日</td>
+                                    <td>01:43 - 14:12</td>
+                                    <td>12:29:00</td>
+                                    <td>[場景建置] (包含 13:21-13:39 的 00:18:00 間歇)</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>14:10 - 15:07</td>
+                                    <td>00:57:00</td>
+                                    <td>[場景建置] 3D暈</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>17:25 - 18:54</td>
+                                    <td>01:29:00</td>
+                                    <td>[場景建置] Scene1-1 架設完成</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>23:40 - 24:00:00</td>
+                                    <td>00:20:00</td>
+                                    <td>[場景建置] Scene1-1 架設調整+NPC製作</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">11月17日</td>
+                                    <td rowspan="2">一</td>
+                                    <td>00:00 - 02:15</td>
+                                    <td>02:15:00</td>
+                                    <td>[場景建置] Scene1-2 設計</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>21:20 - 22:07</td>
+                                    <td>00:47:00</td>
+                                    <td>[場景建置] Scene1-2 設計</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">11月18日</td>
+                                    <td rowspan="2">二</td>
+                                    <td>18:49 - 20:00</td>
+                                    <td>01:11:00</td>
+                                    <td>[場景建置] Scene1-2 大致完成</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>22:40 - 23:30</td>
+                                    <td>00:50:00</td>
+                                    <td>[場景建置] Scene2-1</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">11月20日</td>
+                                    <td rowspan="3">四</td>
+                                    <td>00:31 - 06:01</td>
+                                    <td>05:30:00</td>
+                                    <td>[場景建置] Scene2-2 大致完成 尚缺細節<br>[場景建置] Scene3-1 </td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>18:00 - 20:47</td>
+                                    <td>02:47:00</td>
+                                    <td>[場景建置] 開發網站基礎模型</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>21:17 - 24:00:00</td>
+                                    <td>02:43:00</td>
+                                    <td>[場景建置] Scene4-1</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">11月21日<br>(體檢假)</td>
+                                    <td rowspan="3">五</td>
+                                    <td>00:00 - 03:00</td>
+                                    <td>03:00:00</td>
+                                    <td>[場景調整] 遊戲內容刪減（時間和空間不足保留基本元素）<br>[場景調整] 場景錯誤修正</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>10:00 - 12:00</td>
+                                    <td>02:00:00</td>
+                                    <td>[場景調整] 場景錯誤修正<br>[影片製作] 遊戲開始與結束影片製作</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>13:00 - 19:41</td>
+                                    <td>06:41:00</td>
+                                    <td>[場景調整] 遊戲操作測試<br>[場景調整] 場景錯誤修正<br>[影片製作] 遊戲開始與結束影片製作</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
+            </details>
+            
 
-    </section>
+            <details class="solution-item" open>
+                <summary>AI應用說明</summary>
+                <div class="solution-detail">
+                    <h3>AI平台比較</h3>
+                        <ul>
+                            <li>對話親和度：ChatGPT > Gemini > Claude</li>
+                            <li>程式碼能力：Gemini > ChatGPT > Claude</li>
+                            <li>寫文案能力：Claude > Gemini > ChatGPT</li>
+                            <li>圖像生成：Gemini = Grok</li>
+                            <li>影片生成：Grok</li>
+                            <li>3D物件生成：Tripo3D > MeshyAI > Hitem3D</li>
+                        </ul>
+                        <p>
+                            年初時的 HackthonI 製作過程我大多以 ChatGPT 為使用平台，但這次明顯有感 Gemini 的能力大幅提升，
+                            我這邊還只是使用免費版的，在整體 debug 能力、程式碼編程水準都明顯贏過其他幾個平台，
+                            不過就是對話的親和能力不佳，常常用太過專業或省略的方式去寫 debug 的方法，所以未必對使用者有利。
+                        </p>
+                        <p>
+                            ChatGPT 最吸引人的地方是他的對話方式很有溫度，很人性，也會鉅細靡遺，但相比這次的 Gemini，他寫出來的程式 Bug 也比較多。
+                        </p>
+                        <p>
+                            Claude Pro 具有 MCP 的能力，可惜編程能力有，但水準不夠，回答完問題會自己刪掉答案，
+                            還要重複問，白白浪費 Token，而且 MCP 非常浪費 Token，一下就到使用限制了，這次文案雖然有訂閱了 Claude Pro，但基本上他都在扯後腿。
+                        </p>
+                            
+                        
+                    <h3>程式碼整合</h3>
+                    <h3>文字生成</h3>
+                    <h3>圖像生成</h3>
+                    <h3>影片生成</h3>
+                    <h3>3D資產生成</h3>
+                </div>
+            </details>
 
 
+            <details class="solution-item" open>
+                <summary>專案挑戰與突破</summary>
+                <div class="solution-detail">
+
+                </div>
+            </details>
 
 
-</main>
+            <details class="solution-item" open>
+                <summary>時間侷促下的取捨</summary>
+                <div class="solution-detail">
+
+                </div>
+            </details>
+
+
+            <details class="solution-item" open>
+                <summary>PlayCanvas + Viverse World 程式碼模組</summary>
+                <div class="solution-detail">
+                    <p>本次遊戲開發中，將功能程式碼模組化，未來可再次利用。</p>
+                    <h3>模組一覽圖</h3>
+                    <img src="CodingTemplate.jpg" style="width:100%; display: block; margin: 0 auto; padding-bottom: 2rem;">
+                    <h3>模組一覽表</h3>
+                    <div class="table-container" style="padding-bottom: 2rem;">
+                        <table class="data-table" style="margin: 0 auto;">
+                            <thead>
+                                <th style="text-align: center;">功能</th>
+                                <th style="text-align: center;">教學<br>JFSBLOG</th>
+                                <th style="text-align: center;">專案<br>PlayCanvas</th>
+                                <th style="text-align: center;">演示<br>VIVERSE</th>
+                                <th>說明</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>滿版畫面</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/project/1412698/overview/-" target="blank">專案</a></td>
+                                    <td style="text-align: center;"><a href="https://worlds.viverse.com/sTAt2L4" target="blank">演示</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>場景切換（課程範例）</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/editor/scene/2339363" target="blank">專案</a></td>
+                                    <td style="text-align: center;"><a href="https://worlds.viverse.com/y8aTZkg" target="blank">演示</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>場景切換＋全域變數紀錄</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/project/1419435/overview/tbd-" target="blank">專案</a></td>
+                                    <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/Z6vfsib" target="blank">演示</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>密碼面板</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/project/1413680/overview/-" target="blank">專案</a></td>
+                                    <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/JrGeHNP" target="blank">演示</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>模組化迷宮</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/project/1413388/overview/-" target="blank">專案</a></td>
+                                    <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/UVV38FB" target="blank">演示</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>對話框</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/project/1414436/overview/-" target="blank">專案</a></td>
+                                    <td style="text-align: center;"><a href="https://worlds.viverse.com/9FjuRsX" target="blank">演示</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>物件碰撞計分</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/project/1416963/overview/-" target="blank">專案</a></td>
+                                    <td style="text-align: center;"><a href="https://worlds.viverse.com/Debhkct" target="blank">演示</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>物件碰撞計分＋玩家重生</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/project/1416996/overview/-" target="blank">專案</a></td>
+                                    <td style="text-align: center;"><a href="https://create.viverse.com/EVCGKaQ" target="blank">演示</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>物件碰撞計分＋玩家重生－－躲避飛彈</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/project/1417152/overview/-" target="blank">專案</a></td>
+                                    <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/CDtfB2o" target="blank">演示</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>導引提示面板</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/project/1418584/overview/--iii" target="blank">專案</a></td>
+                                    <td style="text-align: center;"><a href="https://worlds.viverse.com/ymXPNLp" target="blank">演示</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>一次性對話框（NPC）</td>
+                                    <td style="text-align: center;"><a href="https://jfsblog.com/learning-notes/playcanvas/viverse-npc-dialog-panel" target="_blank">文章</a></td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/project/1420990/overview/-" target="blank">專案</a></td>
+                                    <td style="text-align: center;"><a href="https://worlds.viverse.com/QQAom5u" target="blank">演示</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>重複觸發對話框（NPC）</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;">N/A</td>
+                                    <td style="text-align: center;">N/A</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>一次性對話框（NPC）＋任務提示面板</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/project/1421343/overview/npcicon" target="blank">專案</a></td>
+                                    <td style="text-align: center;"><a href="https://worlds.viverse.com/HRVprQM" target="blank">演示</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>VIVERSE原生物件抓取→追擊玩家＋結束面板＋玩家重生</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/project/1421886/overview/-" target="blank">專案</a></td>
+                                    <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/3fEerVL" target="blank">演示</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>種植系統與經驗值</td>
+                                    <td style="text-align: center;">文章</td>
+                                    <td style="text-align: center;"><a href="https://playcanvas.com/project/1422827/overview/-" target="blank">專案</a></td>
+                                    <td style="text-align: center;">N/A</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </details>
+
+        </section>
+
+    </main>
 
     <footer style="text-align: center; padding: 20px; background-color: var(--catBrown); color: var(--catCream);">
         Copyright © Shengle

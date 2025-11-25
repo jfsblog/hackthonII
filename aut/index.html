@@ -93,35 +93,34 @@
         font-style: italic;
         line-height: 1.5;
         margin-bottom: 0.5rem;
-        position: relative; /* 確保子元素絕對定位的參考點 */
-        padding: 0 1.5rem; /* 增加左右內邊距，為大引號留出空間 */
+        position: relative; 
+        padding: 0 1.5rem;
     }
 
     .cat-quote::before,
     .cat-quote::after {
         content: '❝';
-        font-family: Arial, sans-serif; /* 使用更具視覺衝擊力的字體 */
-        font-size: 4em; /* 放大引號，作為視覺重點 */
-        color: var(--catOrange); /* 使用主題橘色 */
+        font-size: 4em;
+        color: var(--catOrange);
         position: absolute;
-        opacity: 0.5; /* 降低透明度，讓它看起來是背景裝飾 */
-        line-height: 1; /* 調整行高以控制定位 */
-        z-index: 0; /* 確保引號在文字之下 */
+        opacity: 0.2;
+        line-height: 1;
+        z-index: 0;
     }
 
     /* 左上角引號 */
     .cat-quote::before {
-        left: 0;
-        top: -1.5rem; /* 移到行文字上方 */
-        transform: translateX(-50%); /* 微調置中 */
+        left: 0.5em;
+        top: -1.5rem;
+        transform: translateX(-50%);
     }
 
     /* 右下角引號 */
     .cat-quote::after {
-        content: '❞'; /* 使用不同的引號，更美觀 */
-        right: 0;
-        bottom: -1rem; /* 移到行文字下方 */
-        transform: rotate(180deg) translateX(-50%); /* 旋轉並微調置中 */
+        content: '❞';
+        right:0.5em;
+        bottom: -1rem; 
+        transform: rotate(180deg) translateX(-50%);
     }
     .quote-source {
         font-size: 0.9em;
@@ -200,7 +199,7 @@
     }
 
     .contact-btn {
-        padding: 0.75rem 1.5625rem;
+        padding: 0.5rem 1rem;
         border-radius: 3.125rem;
         text-decoration: none;
         font-weight: bold;
@@ -259,7 +258,8 @@
                     <span class="tag">遊戲開發，新手上路</span>
                     <span class="tag">硬體工程師</span>
                     <span class="tag">攝影愛好者</span>
-                    <span class="tag">SEO</span>
+                    <span class="tag">SEO行銷</span>
+                    <span class="tag">科學化資料整理</span>
                 </div>
                 
                 <p class="story-paragraph">我是 Shengle，一名硬體工程師，喜歡到處走走的 SUPER I 人，每天都要和 AI 聊天，無可救藥的水豚控。熱愛攝影、文學創作與登山健行。目前以「撰風」之名於網路創作，經營個人網站撰風 I 人旅行誌，並為漫步時光的編輯。</p>
@@ -269,9 +269,9 @@
         <section class="cat-quote-section">
             <div class="cat-quote-box">
                 <p class="cat-quote">
-                    在貓咪打翻咖啡前，完成你的程式碼。那是唯一的 deadline。
+                    Bug 就像貓：不叫牠，它自己會跳到你鍵盤上。
                 </p>
-                <p class="quote-source">— 虛擬貓咪，程式哲學家</p>
+                <p class="quote-source">— 貓咪程式哲學家</p>
             </div>
         </section>
 
