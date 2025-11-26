@@ -717,6 +717,7 @@ main {
     padding: 2.5rem 1.25rem;
     text-align: center;
     color: white;
+    border-radius: 0.5rem;
 }
 
 .cat-quote-box {
@@ -729,7 +730,6 @@ main {
     font-size: 1.6em;
     font-style: italic;
     line-height: 1.5;
-    margin-bottom: 0.5rem;
     position: relative; 
     padding: 0 1.5rem;
 }
