@@ -93,80 +93,125 @@
         }
 
 
-/* 桌面版保持網格 */
-.ai-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
-    margin: 20px auto;
-}
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
 
-/* 卡片桌面版 */
-.ai-card {
-    background: #f9f9f9; /* 中性灰底色 */
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
+        .ai-card {
+            background: #f9f9f9; /* 中性灰底色 */
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transform: translateY(-0.25rem);
 
-.ai-card .ai-name {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #555;
-    margin-bottom: 8px;
-}
+        }
 
-.ai-card .ai-subtitle {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 12px;
-}
+        .ai-card:hover{
+            transform: translateY(-0.25rem);
+            box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+        }
 
-.ai-card ul {
-    padding-left: 20px;
-}
+        .ai-card .ai-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #555;
+            margin-bottom: 8px;
+            text-align: center;
+        }
 
-/* 窄螢幕 */
-@media (max-width: 60rem) {
-    .ai-grid {
-        display: block; /* 單列堆疊 */
-        max-width: 100%;
-        margin: 20px auto;
-    }
+        .ai-card .ai-subtitle {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 12px;
+            text-align: center;
+        }
 
-    .ai-card {
-        padding: 15px;
-        margin: 1rem 0;
-        border-radius: 0.5rem;
-        background-color: #f2f2f2;
-        border: 1px solid #bbb;
-        text-align: left;
-    }
+        .ai-card ul {
+            padding-left: 20px;
+        }
 
-    .ai-card .ai-name {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #333;
-        margin-bottom: 5px;
-    }
+        .ai-pros::before{
+            content: "優勢";
+            display: block;
+            text-align: center;
+            background-color: rgb(135, 176, 120);
+            border-radius: 0.8rem;
+        }
+        .ai-pros{
+            background-color: rgb(182, 219, 169);
+            border-radius: 0.8rem;
+        }
 
-    .ai-card .ai-subtitle {
-        font-weight: 600;
-        font-size: 1rem;
-        color: #444;
-        margin-bottom: 8px;
-    }
+        .ai-cons::before{
+            content: "劣勢";
+            display: block;
+            text-align: center;
+            background-color: rgb(206 163 163);
+            border-radius: 0.8rem;
+        }
+        .ai-cons{
+            background-color: rgb(228 211 211);
+            border-radius: 0.8rem;
+        }
 
-    .ai-card ul {
-        padding-left: 15px;
-    }
+        .ai-note::before{
+            content: "補充";
+            display: block;
+            text-align: center;
+            background-color: rgb(180, 180, 180);
+            border-radius: 0.8rem;
+        }
+        .ai-note{
+            background-color: rgb(215, 215, 215);
+            border-radius: 0.8rem;
+        }
 
-    .ai-card ul ul {
-        padding-left: 15px; /* 多層列表縮排 */
-    }
-}
+        /* 窄螢幕 */
+        @media (max-width: 60rem) {
+            .ai-grid {
+                display: block; /* 單列堆疊 */
+                max-width: 100%;
+                margin: 20px auto;
+            }
+
+            .ai-card {
+                padding: 15px;
+                margin: 1rem 0;
+                border-radius: 0.5rem;
+                background-color: #f2f2f2;
+                border: 1px solid #bbb;
+                text-align: left;
+            }
+
+            .ai-card .ai-name {
+                font-size: 1.3rem;
+                font-weight: 700;
+                color: #333;
+                margin-bottom: 5px;
+                text-align: center;
+            }
+
+            .ai-card .ai-subtitle {
+                font-weight: 600;
+                font-size: 1rem;
+                color: #444;
+                margin-bottom: 8px;
+                text-align: center;
+            }
+
+            .ai-card ul {
+                padding-left: 15px;
+            }
+
+            .ai-card ul ul {
+                padding-left: 15px; /* 多層列表縮排 */
+            }
+        }
 
 
 
@@ -208,24 +253,16 @@
         <p>本頁面紀錄開發期間的資訊，活動時間為2025/10/24~2025/11/21，本遊戲共花費了89個小時又20分鐘製作。非上班日僅有10日，時間上非常倉促。</p>
 
         <!-- infobox -->
-        <div class="alert-box">
-            <div class="alert-icon" style="text-align: center;">📅活動資訊</div>
-            <div class="alert-text">
+        <ul>
+            <li>開發時間：2025/10/24~2025/11/21</li>
+            <li>非工作日：
                 <ul>
-                    <li>開發時間：2025/10/24~2025/11/21</li>
-                    <li>非工作日：
-                        <ul>
-                            <li>10/24(五)光復節</li>
-                            <li>10/25(六)、10/26(日)</li>
-                            <li>11/1(六)、11/2(日)</li>
-                            <li>11/8(六)、11/9(日)</li>
-                            <li>11/15(六)、11/16(日)</li>
-                            <li>11/21(五)體檢日</li>
-                        </ul>
-                    <li>總計時間：89小時20分鐘</li>
+                    <li>國定假日：10/24(五)光復節</li>
+                    <li>週末六日：10/25(六)、10/26(日)、11/1(六)、11/2(日)、11/8(六)、11/9(日)、11/15(六)、11/16(日)</li>
+                    <li>其他休息：11/21(五)體檢日</li>
                 </ul>
-            </div>
-        </div>
+            <li>總計時間：89小時20分鐘</li>
+        </ul>
 
         <!-- 內文 -->
 
@@ -262,7 +299,9 @@
                 </div>
             </section>
             <p>相較於 Hackathon I 時偏沉重的遊戲風格，這次我希望能打造一個更溫暖、更有世界觀的作品。不過由於製作期僅有 30 天，時間非常有限，最終仍不得已做出一些刪減。</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Hsa1h62ZJe8?si=tUQ_HueInb6vf2nn&amp;start=51" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div style="text-align: center;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Hsa1h62ZJe8?si=tUQ_HueInb6vf2nn&amp;start=51" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </div>
 
         <h2>開發時程表</h2>
@@ -747,62 +786,96 @@
                 <div class="ai-card">
                     <div class="ai-name">Gemini</div>
                     <div class="ai-subtitle"><strong>全面能力大幅提升，專案貢獻度最大</strong></div>
-                    <ul>
-                        <li>🟢 優勢：在本次專案中提供了最大幫助。其程式碼編纂能力極為出色，小幅度領先 ChatGPT 和 Claude。推出 Nano Banana 後，圖像生成能力也大幅提升。</li>
-                        <li>🔴 劣勢：在程式操作與偵錯方法上，描述常常過於專業或簡略，對於不熟悉該編程語言的用戶來說，容易造成困惑或混亂。</li>
-                        <li>⚪ 潛力：考慮到其全面的提升，特別是未來影片生成能力的發展，Gemini 將是下次付費訂閱的首選目標。</li>
-                    </ul>
+                    <div class="ai-pros">
+                        <ul>
+                            <li>程式：大幅提升，編纂能力極為出色，小幅度領先 ChatGPT 和 Claude</li>
+                            <li>圖像：大幅提升</li>
+                            <li>文案：小幅提升</li>
+                        </ul>
+                    </div>
+                    <div class="ai-cons">
+                        <ul>
+                            <li>程式：操作與偵錯方法上，描述常常過於簡略或用過於專業的寫法，容易造成困惑或混亂</li>
+                            <li>程式：在含有中文的程式碼中，空格字元會用<code>U+0020</code>來顯示，這無法運作，需要手動取代成<code>U+00A0</code></li>
+                        </ul>
+                    </div>
+                    <div class="ai-note">
+                        <ul>
+                            <li>考慮到其全面的提升，特別是未來影片生成能力的發展，Gemini 將是下次付費訂閱的首選目標</li>
+                            <li>生成圖片與影片，如果是20美元/月的話，還是會有浮水印</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="ai-card">
                     <div class="ai-name">ChatGPT</div>
                     <div class="ai-subtitle"><strong>最容易溝通與理解的 AI 工具</strong></div>
-                    <ul>
-                        <li>🟢 優勢：語氣親和度極高，對話壓力最小，互動體驗最舒適。</li>
-                        <li>🔴 劣勢：相對於 Gemini，其程式碼優勢已漸被超越。此外，在文案編寫方面，產出的內容感覺相對敷衍，精緻度不足。</li>
-                    </ul>
+                    <div class="ai-pros">
+                        <ul>
+                            <li>對話：語氣親和度極高，對話壓力最小，互動體驗最舒適</li>
+                        </ul>
+                    </div>
+                    <div class="ai-cons">
+                        <ul>
+                            <li>程式：相對於Gemini，其程式撰寫優勢已漸被超越</li>
+                            <li>文案：產出的內容感覺相對敷衍</li>
+                            <li>對話：過度的讚美讓鼓勵變得有些廉價，失去前一次在情緒上的鼓舞感</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="ai-card">
                     <div class="ai-name">Claude (Pro Plan)</div>
                     <div class="ai-subtitle"><strong>文案寫作能力強，工程表現不佳</strong></div>
-                    <ul>
-                        <li>🟢 優勢：文案寫作能力極為細膩且精彩。</li>
-                        <li>🔴 劣勢：
-                            <ul>
-                                <li>Token 消耗與錯誤設計：它會將已生成的答案自動收回，導致一個問題需要重複發問，變相消耗兩倍 Token，有浪費資源之感。</li>
-                                <li>MCP 表現不如預期：號稱的 MCP 功能精準度不夠，實用性不如自己手動操作。此外，MCP 本身極為耗費 Token，很快就達到了月費上限。</li>
-                                <li>程式碼品質：Claude 的程式碼編纂能力錯誤率偏高，沒有展現出訂閱 Pro Plan 應有的工程水準。</li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <div class="ai-pros">
+                        <ul>
+                            <li>文案：寫作能力極為細膩且精彩</li>
+                        </ul>
+                    </div>
+                    <div class="ai-cons">
+                        <ul>
+                            <li>對話：將已生成的答案自動收回，導致一個問題需要重複發問，變相消耗兩倍 Token</li>
+                            <li>MCP：精準度不夠，實用性不如自己手動操作，MCP 極為耗費 Token</li>
+                            <li>程式：錯誤率偏高</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="ai-card">
                     <div class="ai-name">Grok</div>
                     <div class="ai-subtitle"><strong>免費使用者影片生成的最佳選擇</strong></div>
-                    <ul>
-                        <li>⚪ 定位：本次主要作為輔助工具，用於圖片和影片生成。</li>
-                        <li>🟢 優勢：Grok 在免費影片生成額度上比 Gemini 更大方，且生成水準不錯，產出的影片沒有浮水印。</li>
-                    </ul>
+                    <div class="ai-pros">
+                        <ul>
+                            <li>影片：在免費影片生成額度上比 Gemini 更大方，且生成水準不錯，產出的影片沒有浮水印</li>
+                        </ul>
+                    </div>
+                    <div class="ai-note">
+                        <ul>
+                            <li>本次主要作為輔助工具，用於圖片和影片生成</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="ai-card">
                     <div class="ai-name">DeepSeek</div>
                     <div class="ai-subtitle"><strong>鬼打牆時的奇兵</strong></div>
-                    <ul>
-                        <li>⚪ 定位：專門用於解決 Gemini、ChatGPT 和 Claude 三者討論陷入僵局或鬼打牆時的備用方案。偶爾能提供截然不同的解決思路，確實有效幫助了幾次。雖然使用頻率低，但其獨特的視角值得肯定。</li>
-                    </ul>
+                    <div class="ai-note">
+                        <ul>
+                            <li>專門用於解決 Gemini、ChatGPT 和 Claude 三者討論陷入僵局或鬼打牆時的備用方案。偶爾能提供截然不同的解決思路，確實有效幫助了幾次。雖然使用頻率低，但其獨特的視角值得肯定。</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="ai-card">
                     <div class="ai-name">3D 物件生成工具比較</div>
                     <div class="ai-subtitle"><strong>三款 3D 生成工具評比</strong></div>
-                    <ul>
-                        <li>Tripo3D：在生成物件的精緻度上有明顯優勢。</li>
-                        <li>MeshyAI：免費額度不能下載生成的 3D 模型。</li>
-                        <li>Hitem3D：生成的物件相對粗糙。</li>
-                    </ul>
+                    <div class="ai-note">
+                        <ul>
+                            <li>Tripo3D：在生成物件的精緻度上有明顯優勢。</li>
+                            <li>MeshyAI：免費額度不能下載生成的 3D 模型。</li>
+                            <li>Hitem3D：生成的物件相對粗糙。</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -810,7 +883,6 @@
 
         <h2>AI 應用說明</h2>
         <div class="content-detail open">
-            <h3>故事概念</h3>
             <h3>程式碼生成</h3>
             <h3>影像生成</h3>
 
