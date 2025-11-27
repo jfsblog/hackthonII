@@ -433,6 +433,14 @@ footer{
     padding: 0 1rem;
 }
 
+highlight {
+    background: var(--catBrown);
+    color: white;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 2px;
+}
+
 .alert-box {
     display: flex;
     align-items: center;
