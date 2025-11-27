@@ -885,12 +885,12 @@
         <div class="content-detail open">
             <h3>程式碼</h3>
             <ul>
-                <li>啟　　動 (A)：產生新的編程想法或接收一個任務。</li>
-                <li>協作撰寫 (C)：使用多個模型平行或迭代地撰寫程式碼。</li>
-                <li>互相除錯 (D)：讓不同的模型檢查、驗證並修復彼此或自己生成的程式碼。</li>
-                <li>外部諮詢 (E)：當主要模型無法解決時，引入 DeepSeek 尋求不同的思路或更專業的建議。</li>
-                <li>整合測試 (F)：將最終程式碼投入執行環境進行測試 (類似 MCP - Master Control Program 的核心測試概念)。</li>
-                <li>結　　束 (G)：測試成功，任務完成。</li>
+                <li>靈感出現：產生新的編程想法或接收一個任務。</li>
+                <li>協作撰寫：使用多個模型平行或迭代地撰寫程式碼。</li>
+                <li>互相除錯：讓不同的模型檢查、驗證並修復彼此或自己生成的程式碼。</li>
+                <li>外部諮詢：當主要模型無法解決時，引入 DeepSeek 尋求不同的思路或更專業的建議。</li>
+                <li>整合測試：將最終程式碼投入執行環境進行測試 (類似 MCP - Master Control Program 的核心測試概念)。</li>
+                <li>測試完成：測試成功，任務完成。</li>
             </ul>
             <img src="coding.jpg" width="100%">
             <h3>影像生成</h3>
@@ -907,12 +907,49 @@
                 <li>Grok 生成影片：指令可包含動畫內容、鏡位移動、光線變化等</li>
             </ul>
             <img src="3.jpg" width="100%">
-
         </div>
 
-        <h2>hackthon II 製作心得</h2>
+        <h2>hackthon II 製作心得與淺見</h2>
         <div class="content-detail open">
-            
+
+            <h3>開發時程管理與資源配置</h3>
+            <p>本次 Hackathon II 的開發週期設定為不足一個月，相較於 Hackathon I 的一個半月時程，時間壓力明顯。</p>
+            <ul>
+                <li><strong>時程壓縮對產出的影響</strong>：本次活動週期的進一步縮短，直接限制了作品的完整性與細節品質。例如，本團隊原設計中，包含特殊關卡、支線任務及世界互動等進階內容，最終因時程因素，被迫刪減並退回核心單線劇情。</li>
+                <li><strong>工時彈性建議</strong>：由於活動與近期專案的高負荷時期重疊，開發工作主要仰賴個人業餘時間投入。為維持同仁健康狀態並鼓勵持續參與，建議主辦方未來能提供適度的工時調配彈性，以優化個人資源的配置效益。</li>
+                <li><strong>未來時程建議</strong>：建議未來活動能預留更充裕的開發週期（例如，重新考慮一個半月至兩個月的時間），以支持參與者實現更高水準的設計與功能。</li>
+            </ul>
+
+            <h3>平台技術限制與優化建議</h3>
+            <p>Viverse World 平台在內容創建與用戶體驗方面，存在兩項關鍵限制，影響了作品的性能與品質。</p>
+            <ul>
+                <li><strong>載入速度與資源限制</strong>：平台在載入大型或複雜的 3D 場景時，用戶體驗明顯下降。為確保即時載入性能，開發者必須對空間資源（如模型精細度、材質數量）進行嚴格的配額控制。此限制直接制約了遊戲畫質的提升，以及場景的豐富度。</li>
+                <li><strong>角色動作與互動彈性</strong>：目前 Viverse 內建角色的動作系統彈性有限，難以滿足製作動作型遊戲或複雜互動的需求。建議擴充平台內建的角色動作庫，或開放更靈活的骨架與動畫導入/控制介面，以拓展遊戲類型的可能性。</li>
+            </ul>
+
+            <h3>培訓課程與入門資源</h3>
+            <p>活動課程與資源的設計，對非專業背景的新手參與者形成了較高門檻。</p>
+            <ul>
+                <li><strong>課程實作不足</strong>：關於排行榜等特定技術的課程，內容傾向於概念性講解，但缺乏基於 PlayCanvas 平台的實戰操作與範例示範。多數非遊戲開發背景的同仁，難以將課程知識轉化為實際應用。</li>
+                <li><strong>入門門檻拉鋸</strong>：本次活動延續前屆基礎，但缺乏專門的前導銜接資源。這使得未參與 Hackathon I 或新進同仁，難以在短時間內彌補知識缺口，可能降低新手的參與意願。</li>
+            </ul>
+
+            <h3>未來課程期望</h3>
+            <p>期待平台能提供更多元的的遊戲基礎元素課程，例如：</p>
+            <ul>
+                <li>粒子系統</li>
+                <li>骨架與動畫綁定</li>
+                <li>遊戲分鏡概念</li>
+                <li>多人連線互動</li>
+            </ul>
+            <p>希望是以欲推廣的 PlayCanvas 平台實際操作最小可行範例。</p>
+
+            <h3>文件與開發者支援</h3>
+            <p>Viverse Document 作為重要的開發參考依據，其可用性與易讀性有待提升。</p>
+            <ul>
+                <li><strong>搜尋系統穩定性</strong>：Document 的搜尋功能偶爾出現失效或當機的情況，影響開發時的資料檢索效率。</li>
+                <li><strong>文件易讀性</strong>：部分說明文件過度傾向專業語言，對非相關背景的人而言理解門檻偏高。</li>
+            </ul>
         </div>
 
 
@@ -930,7 +967,7 @@
                         <th style="text-align: center;">教學<br>JFSBLOG</th>
                         <th style="text-align: center;">專案<br>PlayCanvas</th>
                         <th style="text-align: center;">演示<br>VIVERSE</th>
-                        <th>說明</th>
+                        <th style="text-align: center;">說明</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -938,105 +975,105 @@
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/project/1412698/overview/-" target="blank">專案</a></td>
                             <td style="text-align: center;"><a href="https://worlds.viverse.com/sTAt2L4" target="blank">演示</a></td>
-                            <td></td>
+                            <td>使用 PlayCanvas 內建的滿版畫面時，會被 Viverse World 的一些圖示與元件擋住，因此透過 HTML DOM 的方式可以強行蓋過這些元件，更適合用於開場或結束畫面</td>
                         </tr>
                         <tr>
                             <td>場景切換（課程範例）</td>
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/editor/scene/2339363" target="blank">專案</a></td>
                             <td style="text-align: center;"><a href="https://worlds.viverse.com/y8aTZkg" target="blank">演示</a></td>
-                            <td></td>
+                            <td>Hackthon II 課程的範例操作</td>
                         </tr>
                         <tr>
                             <td>場景切換＋全域變數紀錄</td>
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/project/1419435/overview/tbd-" target="blank">專案</a></td>
                             <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/Z6vfsib" target="blank">演示</a></td>
-                            <td></td>
+                            <td>將 Hackthon II 課程的範例操作加上全域變數的資料紀錄。如果採用原本的作法，那麼切換場景後，場景會直接回歸原狀，且無法連動其他場景改變，如果有全域變數的紀錄，就能達到整體遊戲的資料改變，例如紀錄當下的場景情況、回傳訊息給其他場景等效果。</td>
                         </tr>
                         <tr>
                             <td>密碼面板</td>
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/project/1413680/overview/-" target="blank">專案</a></td>
                             <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/JrGeHNP" target="blank">演示</a></td>
-                            <td></td>
+                            <td>一個可輸入密碼的面板，若輸入正確，可使指定物件 enable/disable；若輸入錯誤，則顯示輸入錯誤。</td>
                         </tr>
                         <tr>
                             <td>模組化迷宮</td>
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/project/1413388/overview/-" target="blank">專案</a></td>
                             <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/UVV38FB" target="blank">演示</a></td>
-                            <td></td>
+                            <td>將 PlayCanvas 中的元件模組化，使可以自動生成不同類型的迷宮，每次進去都可以 Ramdom。不過 3D 化的迷宮走起來非常容易暈，所以最終遊戲體驗應該不高，但最初希望自動化生成迷宮的效果是可以實現的。</td>
                         </tr>
                         <tr>
                             <td>對話框</td>
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/project/1414436/overview/-" target="blank">專案</a></td>
                             <td style="text-align: center;"><a href="https://worlds.viverse.com/9FjuRsX" target="blank">演示</a></td>
-                            <td></td>
+                            <td>透過 HTML DOM 的方製作對話框的效果。</td>
                         </tr>
                         <tr>
                             <td>物件碰撞計分</td>
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/project/1416963/overview/-" target="blank">專案</a></td>
                             <td style="text-align: center;"><a href="https://worlds.viverse.com/Debhkct" target="blank">演示</a></td>
-                            <td></td>
+                            <td>當碰撞到指定物件的時候，可以記錄分數，可用於加分或扣分，後續可進一步應用。</td>
                         </tr>
                         <tr>
                             <td>物件碰撞計分＋玩家重生</td>
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/project/1416996/overview/-" target="blank">專案</a></td>
                             <td style="text-align: center;"><a href="https://create.viverse.com/EVCGKaQ" target="blank">演示</a></td>
-                            <td></td>
+                            <td>當碰撞到指定物件的時候，可以記錄分數，用於扣分，當玩家持續碰撞使生命值扣為 0 時，使場景瞬間消失，玩家會落下重生回原點。</td>
                         </tr>
                         <tr>
                             <td>物件碰撞計分＋玩家重生－－躲避飛彈</td>
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/project/1417152/overview/-" target="blank">專案</a></td>
                             <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/CDtfB2o" target="blank">演示</a></td>
-                            <td></td>
+                            <td>當碰撞到指定物件的時候，可以記錄分數，用於扣分，當玩家持續碰撞使生命值扣為 0 時，使場景瞬間消失，玩家會落下重生回原點。在此將碰撞物變為不同移動路徑的物件，例如飛彈。</td>
                         </tr>
                         <tr>
                             <td>導引提示面板</td>
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/project/1418584/overview/--iii" target="blank">專案</a></td>
                             <td style="text-align: center;"><a href="https://worlds.viverse.com/ymXPNLp" target="blank">演示</a></td>
-                            <td></td>
+                            <td>玩家第一次進入遊戲時，透過框線或高亮的方式提示遊戲面板上的重要資訊。</td>
                         </tr>
                         <tr>
                             <td>一次性對話框（NPC）</td>
                             <td style="text-align: center;"><a href="https://jfsblog.com/learning-notes/playcanvas/viverse-npc-dialog-panel" target="_blank">文章</a></td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/project/1420990/overview/-" target="blank">專案</a></td>
                             <td style="text-align: center;"><a href="https://worlds.viverse.com/QQAom5u" target="blank">演示</a></td>
-                            <td></td>
+                            <td>對話框效果，可用於 NPC 的對話。</td>
                         </tr>
                         <tr>
                             <td>重複觸發對話框（NPC）</td>
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;">N/A</td>
                             <td style="text-align: center;">N/A</td>
-                            <td></td>
+                            <td>對話框效果，可用於 NPC 的對話</td>
                         </tr>
                         <tr>
                             <td>一次性對話框（NPC）＋任務提示面板</td>
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/project/1421343/overview/npcicon" target="blank">專案</a></td>
                             <td style="text-align: center;"><a href="https://worlds.viverse.com/HRVprQM" target="blank">演示</a></td>
-                            <td></td>
+                            <td>對話框效果，可用於 NPC 的對話，並在之後將 NPC 的任務以可展開的任務提示面板顯示在側邊。</td>
                         </tr>
                         <tr>
                             <td>VIVERSE原生物件抓取→追擊玩家＋結束面板＋玩家重生</td>
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/project/1421886/overview/-" target="blank">專案</a></td>
                             <td style="text-align: center;"><a href="https://worlds.viverse.com/zh-TW/3fEerVL" target="blank">演示</a></td>
-                            <td></td>
+                            <td>抓取 VIVERSE WORLD 中原生的物件的資訊，並設計追擊計分的方式，來達到類似怪物追擊玩家的效果，在分數扣除到指定的數字時，玩家重生。</td>
                         </tr>
                         <tr>
                             <td>種植系統與經驗值</td>
                             <td style="text-align: center;">文章</td>
                             <td style="text-align: center;"><a href="https://playcanvas.com/project/1422827/overview/-" target="blank">專案</a></td>
                             <td style="text-align: center;">N/A</td>
-                            <td></td>
+                            <td>類似開心農場種植與採收的效果，不過面板顯示設計尚待改善。</td>
                         </tr>
                     </tbody>
                 </table>

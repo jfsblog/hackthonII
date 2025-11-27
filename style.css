@@ -473,7 +473,7 @@ footer{
 #toc {
     position: sticky;
     top: 100px;  /* sticky navbar 下方 */
-    background-color: var(--catCream);
+    background-color: #f7f7f7;
     border: 1px solid var(--catGrayBase);
     border-radius: 0.5rem;
     padding: 1rem;
