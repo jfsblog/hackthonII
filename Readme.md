@@ -1,6 +1,7 @@
+![alt text](Header.png)
+
 # 一個可以讓貓打翻咖啡的地方
 
-**A small narrative prototype built for VIVERSE Hackathon II.**
 本作品為一款以街貓為主題的小型互動遊戲，提供簡單的場景探索與任務流程。
 
 > 在城市的角落裡，有一群不曾被忽視、卻常被遺忘的小生命。
@@ -21,7 +22,7 @@
 * **專案資訊（介紹／開發紀錄／解法）：**
   [https://jfsblog.github.io/hackthonII/dev/index.html](https://jfsblog.github.io/hackthonII/dev/index.html)
 
----
+![alt text](stills/stills0.JPG)
 
 ## 操作方式
 
@@ -34,7 +35,6 @@
 | 互動／對話／點擊物件 | **滑鼠左鍵**          |
 | 視角移動       | **滑鼠移動**          |
 
----
 
 ## 遊戲內容
 
@@ -47,7 +47,6 @@
 
 （不描述劇情本身，以避免劇透。）
 
----
 
 ## 開發資訊
 
@@ -58,7 +57,6 @@
 * **類型：** 原型｜探索｜解謎
 * **平台：** VIVERSE（建議使用電腦）
 
----
 
 ## 相關頁面
 
