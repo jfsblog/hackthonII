@@ -1,0 +1,74 @@
+# 一個可以讓貓打翻咖啡的地方
+
+**A small narrative prototype built for VIVERSE Hackathon II.**
+本作品為一款以街貓為主題的小型互動遊戲，提供簡單的場景探索與任務流程。
+
+> 在城市的角落裡，有一群不曾被忽視、卻常被遺忘的小生命。
+> 牠們穿梭在你的世界邊緣，靜靜等待一束願意停下的光。
+
+遊戲聚焦於：
+
+* 追尋兩隻迷途的小貓
+* 透過探索與對話逐步了解牠們
+* 完成兩段互動任務
+* 傳達 **包容、陪伴、領養代替購買** 的主題寓意
+
+
+## 遊玩連結
+
+* **VIVERSE 遊戲入口：**
+  [https://worlds.viverse.com/zh-TW/XdktB3m](https://worlds.viverse.com/zh-TW/XdktB3m)
+* **專案資訊（介紹／開發紀錄／解法）：**
+  [https://jfsblog.github.io/hackthonII/dev/index.html](https://jfsblog.github.io/hackthonII/dev/index.html)
+
+---
+
+## 操作方式
+
+遊戲採用基本的 3D 探索操作：
+
+| 動作         | 控制                |
+| ---------- | ----------------- |
+| 移動         | **W / A / S / D** |
+| 跳躍         | **Space**         |
+| 互動／對話／點擊物件 | **滑鼠左鍵**          |
+| 視角移動       | **滑鼠移動**          |
+
+---
+
+## 遊戲內容
+
+本遊戲包含：
+
+* 小型場景探索
+* 兩段互動任務
+* 基礎解謎機制（含音階關卡）
+* 結尾互動畫面
+
+（不描述劇情本身，以避免劇透。）
+
+---
+
+## 開發資訊
+
+* **開發者：** Shengle Wang
+* **開發時程：** 2025/10/24 ～ 2025/11/21
+* **總工時：** 89 小時 20 分鐘
+* **語言：** 繁體中文
+* **類型：** 原型｜探索｜解謎
+* **平台：** VIVERSE（建議使用電腦）
+
+---
+
+## 相關頁面
+
+* 遊戲介紹頁：
+  [https://jfsblog.github.io/hackthonII/index.html](https://jfsblog.github.io/hackthonII/index.html)
+* 開發紀錄：
+  [https://jfsblog.github.io/hackthonII/dev/index.html](https://jfsblog.github.io/hackthonII/dev/index.html)
+* 過關解答（含劇透）：
+  [https://jfsblog.github.io/hackthonII/sol/index.html](https://jfsblog.github.io/hackthonII/sol/index.html)
+* 素材與資源：
+  [https://jfsblog.github.io/hackthonII/res/index.html](https://jfsblog.github.io/hackthonII/res/index.html)
+* 作者介紹：
+  [https://jfsblog.github.io/hackthonII/aut/index.html](https://jfsblog.github.io/hackthonII/aut/index.html)
