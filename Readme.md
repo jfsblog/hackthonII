@@ -10,6 +10,8 @@
 * 完成互動任務
 * 傳達包容、陪伴、領養代替購買的寓意
 
+## 遊戲連結
+
 * **遊戲入口：**
   [https://worlds.viverse.com/zh-TW/XdktB3m](https://worlds.viverse.com/zh-TW/XdktB3m)
 * **專案資訊：**
