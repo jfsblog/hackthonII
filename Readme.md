@@ -33,7 +33,7 @@
 | 互動／對話／點擊物件 | **滑鼠左鍵**          |
 | 視角移動       | **滑鼠移動**          |
 
-![alt text](stills/stills6.JPG)
+![alt text](stills/stills1.JPG)
 
 ## 遊戲內容
 
@@ -44,6 +44,7 @@
 * 基礎解謎機制（含音階關卡）
 * 結尾互動畫面
 
+![alt text](stills/stills6.JPG)
 
 ## 開發資訊
 
@@ -58,15 +59,10 @@
 
 ## 相關頁面
 
-* 遊戲介紹頁：
-  [https://jfsblog.github.io/hackthonII/index.html](https://jfsblog.github.io/hackthonII/index.html)
-* 開發紀錄：
-  [https://jfsblog.github.io/hackthonII/dev/index.html](https://jfsblog.github.io/hackthonII/dev/index.html)
-* 過關解答（含劇透）：
-  [https://jfsblog.github.io/hackthonII/sol/index.html](https://jfsblog.github.io/hackthonII/sol/index.html)
-* 素材與資源：
-  [https://jfsblog.github.io/hackthonII/res/index.html](https://jfsblog.github.io/hackthonII/res/index.html)
-* 作者介紹：
-  [https://jfsblog.github.io/hackthonII/aut/index.html](https://jfsblog.github.io/hackthonII/aut/index.html)
+* [遊戲介紹](https://jfsblog.github.io/hackthonII/index.html)
+* [過關解答](https://jfsblog.github.io/hackthonII/sol/index.html)
+* [開發紀錄](https://jfsblog.github.io/hackthonII/dev/index.html)
+* [素材資源](https://jfsblog.github.io/hackthonII/res/index.html)
+* [作者介紹](https://jfsblog.github.io/hackthonII/aut/index.html)
 
 ![alt text](Black.png)
