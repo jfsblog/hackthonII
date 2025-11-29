@@ -13,12 +13,7 @@
 ## 遊戲連結
 
 * 遊戲入口：[https://worlds.viverse.com/zh-TW/XdktB3m](https://worlds.viverse.com/zh-TW/XdktB3m)
-* 專案資訊
-  * [遊戲介紹](https://jfsblog.github.io/hackthonII/index.html)
-  * [過關解答](https://jfsblog.github.io/hackthonII/sol/index.html)
-  * [開發紀錄](https://jfsblog.github.io/hackthonII/dev/index.html)
-  * [素材資源](https://jfsblog.github.io/hackthonII/res/index.html)
-  * [作者介紹](https://jfsblog.github.io/hackthonII/aut/index.html)
+* 專案資訊：[遊戲介紹](https://jfsblog.github.io/hackthonII/index.html)｜[開發紀錄](https://jfsblog.github.io/hackthonII/dev/index.html)｜[素材資源](https://jfsblog.github.io/hackthonII/res/index.html)｜[作者介紹](https://jfsblog.github.io/hackthonII/aut/index.html)
 
 ![alt text](stills/stills0.JPG)
 
@@ -61,11 +56,4 @@
 
 我是 Shengle，一名硬體工程師，喜歡到處走走的 SUPER I 人，每天都要和 AI 聊天，無可救藥的水豚控。熱愛攝影、文學創作與登山健行。目前以「撰風」之名於網路創作，經營個人網站撰風 I 人旅行誌，並為漫步時光的編輯。
 
-* [撰風旅食](https://jfsblog.com/)
-* [漫步時光](https://strolltimes.com/)
-* [Facebook](https://www.facebook.com/strolltimes/)
-* [Instagram](https://www.instagram.com/strolltimes/)
-* [GitHub](https://github.com/jfsblog)
-* [VIVERSE World](https://worlds.viverse.com/zh-TW/profile/shengle)
-
-![alt text](aut/author.png)
+[撰風旅食](https://jfsblog.com/)｜[漫步時光](https://strolltimes.com/)｜[Facebook](https://www.facebook.com/strolltimes/)｜[Instagram](https://www.instagram.com/strolltimes/)｜[GitHub](https://github.com/jfsblog)｜[VIVERSE World](https://worlds.viverse.com/zh-TW/profile/shengle)
