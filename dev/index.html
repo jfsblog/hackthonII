@@ -721,6 +721,55 @@
         </div>
 
 
+        <h2>發布前測試</h2>
+        <div class="content-detail open">
+            <p>本測試為最終發布的遊戲 Debug，確保可正常運行。</p>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">關卡</th>
+                            <th>流程</th>
+                            <th>細節</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align:center">Scene1_1_NPC</td>
+                            <td>✅遊戲開場<br>✅遊戲方式（Player --&gt; NPC --&gt; CAR --&gt; Scene1_1_Task）</td>
+                            <td>✅對話細節<br>✅對話反覆出現效果<br>✅提示框修正<br>⬜背景音樂</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">Scene1_1_Task</td>
+                            <td>✅遊戲方式（Player --&gt; CAT --&gt; Scene2_1_NPC）</td>
+                            <td>✅對話細節<br>⬜穿模修正<br>⬜畫面細節<br>⬜背景音樂</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">Scene2_1_NPC</td>
+                            <td>✅遊戲方式（Player --&gt; NPC --&gt; CAR --&gt; Scene2_2_Task）</td>
+                            <td>✅對話細節<br>⬜畫面細節<br>✅提示物件</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">Scene2_2_Task</td>
+                            <td>✅遊戲方式（Player --&gt; PassWord --&gt; CAT --&gt; Scene3_1_NPC）</td>
+                            <td>✅對話細節<br>⬜畫面細節</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">Scene3_1_NPC</td>
+                            <td>✅遊戲方式（Player --&gt; Click --&gt; Scene4_Ending）</td>
+                            <td>✅對話細節<br>⬜畫面細節</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center">Scene4_Ending</td>
+                            <td>✅結局呈現</td>
+                            <td>N/A</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
 
 
         <h2>AI 應用評比</h2>
@@ -907,6 +956,13 @@
                 <li>Grok 生成影片：指令可包含動畫內容、鏡位移動、光線變化等</li>
             </ul>
             <img src="3.jpg" width="100%">
+
+            <h3>3D 物件生成</h3>
+            <ul>
+                <li>[Chat AI] 影像生成</li>
+                <li>[Tripo3D] 3D物件生成</li>
+                <li>[Blender] 物件減面</li>
+            </ul>
         </div>
 
         <h2>hackthon II 製作心得與淺見</h2>
